@@ -558,6 +558,11 @@ ul {
         --mini: 13px;
     }
 
+    #menu div {
+        font-size: var(--mini); /* Riduci la dimensione del testo dei pulsanti */
+        padding: 0 10px; /* Riduci il padding dei pulsanti se necessario */
+    }
+
     #midNav {
         width: 100%;
         height: 100%;
