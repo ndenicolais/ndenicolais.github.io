@@ -26,15 +26,16 @@
 </head>
 
 <body>
-    <div id="navbar">
-        <div id="menu">
-            <a class="buttonPages is-outlined" href="../index.html">Home</a>
-            <a class="buttonPages is-outlined" href="skills.html">Skills</a>
-            <a class="buttonPages is-outlined" href="jobs.html">Jobs</a>
-            <a class="buttonPages is-outlined" href="world.html">World</a>
-        </div>
+    <button onclick="topFunction()" id="backToTopButton" title="Go to top"><img src="../img/topArrow.png"></button>
 
-        <div id="midNav">
+    <div id="topSection">
+        <div id="menu">
+            <a class="menuButton" href="../index.html">Home</a>
+            <a class="menuButton" href="skills.html">Skills</a>
+            <a class="menuButton" href="jobs.html">Jobs</a>
+            <a class="menuButton" href="world.html">World</a>
+        </div>
+        <div id="titlePage">
             <div>
                 <p id="title">MY<br>PROJECTS</p>
             </div>
@@ -257,29 +258,48 @@
             </div>
         </div>
 
-        <a href="#" class="buttonTop"><img src="../img/topArrow.png"></a>
-
         <div id="footer">
-            <div class="socialColumn">
-                <a href="mailto:dn21developer@gmail.com">
-                    <div class="socialButton">
-                        <div class="socialButtonImg"><img src="../img/mail.png"></div>
-                    </div>
-                </a>
-                <a href="https://github.com/ndenicolais" target="_blank">
-                    <div class="socialButton">
-                        <div class="socialButtonImg"><img src="../img/github.png"></div>
-                    </div>
-                </a>
-                <a href="https://it.linkedin.com/in/nicoladenicolais" target="_blank">
-                    <div class="socialButton">
-                        <div class="socialButtonImg"><img src="../img/linkedin.png"></div>
-                    </div>
-                </a>
+            <div class="footerContainer">
+                <div class="footerColumn">
+                    <a href="mailto:dn21developer@gmail.com">
+                        <div class="footerButton">
+                            <div class="footerButtonImg"><img src="../img/mail.png"></div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/ndenicolais" target="_blank">
+                        <div class="footerButton">
+                            <div class="footerButtonImg"><img src="../img/github.png"></div>
+                        </div>
+                    </a>
+                    <a href="https://it.linkedin.com/in/nicoladenicolais" target="_blank">
+                        <div class="footerButton">
+                            <div class="footerButtonImg"><img src="../img/linkedin.png"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <p class="miniText"><span class="boldText colorDarkGreyText">ndenicolais</span></p>
         </div>
     </div>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("backToTopButton");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 
 </html>
