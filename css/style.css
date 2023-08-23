@@ -210,9 +210,8 @@ a {
 /* DOUBLE CONTAINER */
 
 .doubleContainer {
-    max-width: 100%;
-    height: auto;
     display: flex;
+    align-items: center;
 }
 
 .doubleText {
@@ -520,7 +519,7 @@ ul {
 @media only screen and (max-width: 1000px) {
     :root {
         /*Font size*/
-        --mega: 85px;
+        --mega: 60px;
         --big: 28px;
         --medium: 25px;
         --small: 18px;
@@ -537,6 +536,11 @@ ul {
 }
 
 @media only screen and (max-width: 1600px) {
+    #midNav {
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+
     .project {
         flex-direction: column;
     }
@@ -556,7 +560,7 @@ ul {
 @media only screen and (max-width: 475px) {
     :root {
         /*Font size*/
-        --mega: 70px;
+        --mega: 60px;
         --big: 22px;
         --medium: 20px;
         --small: 16px;
@@ -581,6 +585,10 @@ ul {
 
     .contentContainer::after {
         left: 0;
+    }
+
+    .doubleContainer {
+        flex-direction: column;
     }
 
     .projectImg {
@@ -614,7 +622,7 @@ ul {
 @media only screen and (max-width: 300px) {
     :root {
         /*Font size*/
-        --mega: 70px;
+        --mega: 60px;
         --big: 18px;
         --medium: 20px;
         --small: 16px;
