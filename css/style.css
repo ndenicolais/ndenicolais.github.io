@@ -530,6 +530,12 @@ ul {
     .progress {
         width: 300px;
     }
+
+    .buttonTop {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-width: 1600px) {
@@ -592,9 +598,9 @@ ul {
     }
 
     .buttonTop {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 10px;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
     }
 
     .buttonTop img {
@@ -624,6 +630,12 @@ ul {
     .socialButtonImg {
         width: 40px;
         height: 40px;
+    }
+
+    .buttonTop {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 3px;
     }
 }
 
