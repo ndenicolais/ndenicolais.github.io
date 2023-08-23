@@ -261,6 +261,7 @@ img {
 .technologiesColumn {
     width: fit-content;
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* PROGRESS BAR */
