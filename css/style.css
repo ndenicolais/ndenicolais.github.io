@@ -592,9 +592,9 @@ ul {
     }
 
     .buttonPages {
-        padding: 0.5rem 1rem;
-        font-size: 1em;
-        line-height: 1.25rem;
+        padding: 0.15rem 0.65rem;
+        font-size: 0.8em;
+        line-height: 0.9rem;
     }
 }
 
