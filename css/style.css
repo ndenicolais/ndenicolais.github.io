@@ -95,6 +95,8 @@ a {
     flex-direction: row;
 }
 
+/* MENU */
+
 #menu {
     position: absolute;
     top: 20px;
@@ -158,6 +160,8 @@ a {
     flex-direction: column;
 }
 
+/* ARROW CONTAINER */
+
 #arrowContainer {
     width: 100%;
     height: 15vh;
@@ -170,6 +174,8 @@ a {
 #arrowContainer img {
     width: 50px;
 }
+
+/* CONTENT CONTAINER */
 
 .contentContainer {
     width: 65%;
@@ -201,40 +207,63 @@ a {
     left: 25px;
 }
 
-.contentSubtitle {
-    margin-top: 30px;
-}
+/* DOUBLE CONTAINER */
 
-.textImageContainer {
-    display: flex;
-    align-items: center;
-}
-
-.textImageText {
-    flex: 1;
-    padding-left: 20px;
-}
-
-.textImageImage {
-    flex: 1;
-    text-align: left;
-    max-width: 40%;
-    /* Imposta la larghezza massima dell'area dell'immagine */
-}
-
-img {
+.doubleContainer {
     max-width: 100%;
-    /* Imposta la larghezza massima dell'immagine al 100% del suo contenitore */
     height: auto;
-    /* Mantieni l'aspetto originale dell'immagine */
+    display: flex;
 }
+
+.doubleText {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.doubleImage {
+    flex: 1;
+    text-align: right;
+    max-width: 40%;
+}
+
+.doubleImage img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* APP CONTAINER */
+
+.appContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.appBox {
+    width: 30%;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.appBox a {
+    display: block;
+}
+
+.appBox img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* COLUMNS */
 
 .socialColumn {
     width: fit-content;
     display: flex;
 }
 
-.lingue {
+.languages {
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -244,16 +273,16 @@ img {
     margin: 10px 0;
 }
 
-.lingue img {
+.languages img {
     height: calc(var(--big) + 15px);
     margin-right: 10px;
 }
 
-.lingue span {
+.languages span {
     margin-right: 10px;
 }
 
-.competenzeColumn {
+.skillsColumn {
     display: inline-block;
     margin-right: 50px;
 }
@@ -404,31 +433,6 @@ ul {
 .buttonPages.is-outlined:active {
     border-color: #c0412a;
     color: #c0412a;
-}
-
-/* APP CONTAINER */
-
-.appContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.appBox {
-    width: 30%;
-    margin-bottom: 15px;
-    margin-right: 15px;
-    text-align: center;
-}
-
-.appBox a {
-    display: block;
-}
-
-.appBox img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 /* BUTTON TOP */
@@ -624,7 +628,7 @@ ul {
 }
 
 @media only screen and (max-width: 400px) {
-    .lingue span:nth-of-type(2) {
+    .languages span:nth-of-type(2) {
         display: none;
     }
 }
