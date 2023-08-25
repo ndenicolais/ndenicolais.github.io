@@ -9,6 +9,7 @@
     --lightyellow: #FFF3E0;
     --darkgrey: #3C3E4B;
     --lightsand: #d6d193;
+    --peach: #f3b0a4;
     --white: #ffffff;
 
     /*Font*/
@@ -72,6 +73,10 @@
     color: var(--darkgrey)
 }
 
+.colorQuoteText {
+    color: var(--peach)
+}
+
 body {
     background-color: var(--lightyellow);
     color: var(--darkgrey);
@@ -106,7 +111,7 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #f3b0a4;
+    background-color: var(--peach);
     border-radius: 10px;
 }
 
@@ -200,8 +205,8 @@ ul {
 }
 
 .menuButton:active {
-    border-color: #f3b0a4;
-    color: #f3b0a4;
+    border-color: var(--peach);
+    color: var(--peach);
     transition-duration: 75ms;
 }
 
@@ -332,7 +337,7 @@ ul {
 }
 
 .appBox {
-    width: 30%;
+    width: 20%;
     margin-bottom: 15px;
     margin-right: 15px;
     text-align: center;
