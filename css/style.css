@@ -309,7 +309,7 @@ ul {
 /* DOUBLE CONTAINER */
 
 .doubleContainer {
-    display: flex;
+    display:inline;
     align-items: center;
 }
 
