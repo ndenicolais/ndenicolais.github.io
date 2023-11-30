@@ -18,6 +18,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&family=Montserrat:wght@400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
 
@@ -29,13 +30,23 @@
     <button onclick="topFunction()" id="backToTopButton" title="Go to top"><img src="../img/topArrow.png"></button>
 
     <!-- <div id="topSection"> -->
-    <div id="menu">
+    <div class="menu">
+        <button id="menuButton"><i class="fa fa-bars fa-fw"></i></button>
+        <ul id="dropdownMenu">
+            <li><i class="fa fa-home fa-fw"></i><a href="../index.html">Home</a></li>
+            <li><i class="fa fa-book fa-fw"></i><a href="skills.html">Skills</a></li>
+            <li><i class="fa fa-laptop fa-fw"></i><a href="jobs.html">Jobs</a></li>
+            <li><i class="fa fa-code fa-fw"></i><a href="projects.html">Projects</a></li>
+            <li><i class="fa fa-globe fa-fw"></i><a href="world.html">World</a></li>
+        </ul>
+    </div>
+    <!-- <div id="menu">
         <a class="menuButton" href="../index.html">Home</a>
         <a class="menuButton" href="skills.html">Skills</a>
         <a class="menuButton" href="jobs.html">Jobs</a>
         <a class="menuButton" href="projects.html">Projects</a>
         <a class="menuButton" href="world.html">World</a>
-    </div>
+    </div> -->
     <div id="titlePage">
         <div>
             <p id="title">MY<br>WORLD</p>
@@ -228,6 +239,25 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuButton = document.getElementById('menuButton');
+            var dropdownMenu = document.getElementById('dropdownMenu');
+
+            menuButton.addEventListener('click', function () {
+                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function (event) {
+                var isClickInside = menuButton.contains(event.target) || dropdownMenu.contains(event.target);
+
+                if (!isClickInside) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
     </script>
 </body>
 
