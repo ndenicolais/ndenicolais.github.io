@@ -384,7 +384,7 @@ ul {
 .doubleImage {
     flex: 1;
     text-align: right;
-    max-width: 40%;
+    max-width: 30%;
 }
 
 .doubleImage img {
