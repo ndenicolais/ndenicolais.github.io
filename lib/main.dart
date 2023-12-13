@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Nicola De Nicolais",
       theme: Provider.of<ThemeNotifier>(context).currentTheme,
       initialRoute: Routes.intro,
       routes: Routes.getRoutes(),

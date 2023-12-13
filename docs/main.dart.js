@@ -10141,11 +10141,12 @@ Ig:function Ig(){},
 arx(){return new A.tF(new A.Xr(),A.D(t.K,t.Qu))},
 a3U:function a3U(a,b){this.a=a
 this.b=b},
-un:function un(a,b,c,d){var _=this
+un:function un(a,b,c,d,e){var _=this
 _.f=a
 _.r=b
-_.db=c
-_.a=d},
+_.cx=c
+_.db=d
+_.a=e},
 Xr:function Xr(){},
 Xv:function Xv(){},
 yd:function yd(a){var _=this
@@ -41317,15 +41318,16 @@ if(l==null)l=o.ax.b
 k.a.toString
 s=b==null?B.iD:b
 return new A.vW(A.SB(new A.r4(o,s,B.a4,B.X,j,j),l,j,j,n),j)},
-SE(a){var s,r,q=this,p=null,o=q.a,n=o.db
-n=n.fr
-s=n
+SE(a){var s,r,q,p=this,o=null,n=p.a,m=n.db
+m=m.fr
+s=m
 if(s==null)s=B.et
-n=o.f
-o=o.r
-r=q.gXf()
-q.a.toString
-return new A.x6(p,p,p,new A.a82(),p,p,p,p,p,p,n,p,p,o,B.Cs,q.gXn(),"",p,B.LU,s,p,r,p,p,B.l8,!1,!1,!1,!1,q.gX1(),!0,p,p,p,new A.mc(q,t.bT))},
+m=n.f
+r=n.r
+n=n.cx
+q=p.gXf()
+p.a.toString
+return new A.x6(o,o,o,new A.a82(),o,o,o,o,o,o,m,o,o,r,B.Cs,p.gXn(),n,o,B.LU,s,o,q,o,o,B.l8,!1,!1,!1,!1,p.gX1(),!0,o,o,o,new A.mc(p,t.bT))},
 L(a){var s,r=null,q=A.tu(!1,!1,this.SE(a),r,r,r,r,!0,r,r,new A.a83(),r,r,r)
 this.a.toString
 s=this.d
@@ -67276,7 +67278,7 @@ $1(a){return new A.jw(A.HC(null,B.fO,null),$.aN())},
 $S:418}
 A.Ez.prototype={
 L(a){var s=A.adZ(a,!0,t.hQ).a
-return new A.un(A.asU(),"/intro",s,null)}}
+return new A.un(A.asU(),"/intro","Nicola De Nicolais",s,null)}}
 A.Dv.prototype={
 L(a1){var s,r,q,p,o,n,m,l,k,j,i=null,h="CustomFont",g=A.cS(u.i,0,i),f=t.p,e=A.aK(A.a([A.n("NICOLA\nDE NICOLAIS",A.m(i,i,A.d(a1).ax.f,i,i,i,i,i,h,i,i,140,i,i,B.f,i,i,!0,i,i,i,i,i,i,i,i),B.a3),A.n(" MOBILE APP DEVELOPER",A.m(i,i,A.d(a1).ax.f,i,i,i,i,i,h,i,i,30,i,i,i,i,i,!0,i,i,i,i,i,i,i,i),i)],f),B.B,B.n),d=A.ch(A.d(a1).ax.f,250,250,1),c=A.an(A.a([A.ac("assets/images/myPhoto.png",250,250),B.w9,A.j_(A.aK(A.a([A.n("ABOUT ME",A.m(i,i,A.d(a1).ax.f,i,i,i,i,i,h,i,i,30,i,i,B.f,i,i,!0,i,i,i,i,i,i,i,i),i),A.n(u.v,A.m(i,i,A.d(a1).ax.f,i,i,i,i,i,h,i,i,16,i,i,i,i,i,!0,i,i,i,i,i,i,i,i),i)],f),B.B,B.n))],f),B.B,B.q,B.l),b=A.bP(B.hg,A.d(a1).ax.b,i,i,24),a=A.n("CV",A.m(i,i,A.d(a1).ax.b,i,i,i,i,i,h,i,i,18,i,i,B.f,i,i,!0,i,i,i,i,i,i,i,i),i),a0=A.d(a1)
 a0=A.c_(A.hv(b,a,new A.VC(g),A.ew(i,i,A.d(a1).ax.f,i,i,i,i,i,i,a0.ax.b,i,i,B.h9,i,new A.bo(A.aR(25),B.o),i,i,i,i)),50,120)
