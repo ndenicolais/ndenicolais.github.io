@@ -1,218 +1,59 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-    <title>Nicola De Nicolais - Webpage</title>
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-    <meta name="description" content="Pagina web personale di Nicola De Nicolais">
-    <meta name="keywords" content="nicola de nicolais, nicoladenicolais, ndenicolais">
-    <meta name="author" content="Nicola De Nicolais">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Nicola De Nicolais">
-    <meta property="og:description" content="Pagina web personale di Nicola De Nicolais">
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&family=Montserrat:wght@400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
 
-    <meta name="viewport" content="width=device-width">
-    <meta name="theme-color" content="#62929E">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="my_portfolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>my_portfolio</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "3640811716";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
 </head>
-
 <body>
-    <button onclick="topFunction()" id="backToTopButton" title="Go to top"><img src="./img/topArrow.png"></button>
-
-    <!-- <div id="topSection"> -->
-    <div class="menu">
-        <button id="menuButton"><i class="fa fa-bars fa-fw"></i></button>
-        <ul id="dropdownMenu">
-            <li><i class="fa fa-home fa-fw"></i><a href="../index.html">Home</a></li>
-            <li><i class="fa fa-book fa-fw"></i><a href="pages/skills.html">Skills</a></li>
-            <li><i class="fa fa-laptop fa-fw"></i><a href="pages/jobs.html">Jobs</a></li>
-            <li><i class="fa fa-code fa-fw"></i><a href="pages/projects.html">Projects</a></li>
-            <li><i class="fa fa-globe fa-fw"></i><a href="pages/world.html">World</a></li>
-        </ul>
-    </div>
-    <!-- <div id="menu">
-        <a class="menuButton" href="../index.html">Home</a>
-        <a class="menuButton" href="pages/skills.html">Skills</a>
-        <a class="menuButton" href="pages/jobs.html">Jobs</a>
-        <a class="menuButton" href="pages/projects.html">Projects</a>
-        <a class="menuButton" href="pages/world.html">World</a>
-    </div> -->
-    <div id="titlePage">
-        <div>
-            <p id="title">NICOLA<br>DE NICOLAIS</p>
-            <p id="subtitle">&nbsp;&nbsp;SOFTWARE DEVELOPER</p>
-        </div>
-    </div>
-    <!-- </div> -->
-
-    <div id="content">
-        <div id="arrowContainer">
-            <a href="#aboutMe">
-                <img src="./img/arrow.svg">
-            </a>
-        </div>
-
-        <div class="contentContainer" id="aboutMe" titolo="About me">
-            <div class="doubleContainer">
-                <div class="doubleText">
-                    <div class="smallText">
-                        Sono Nicola De Nicolais, ho 32 anni e sono originario di Benevento. Sin da piccolo, ho
-                        coltivato una profonda passione per il mondo scientifico e tecnologico, una passione che mi ha
-                        guidato verso l'ambito dello sviluppo software. Questa passione mi ha portato ad esplorare il
-                        mondo del software e in particolare quello degli smartphone tanto da dilettarmi a
-                        smontarli per poi riassemblarli o ad apportare modifiche al software (ROM).<br>
-                        Questo interesse inoltre, è stato determinante nella scelta del percorso di studi che ho
-                        intrapreso. Dopo aver frequentato il Liceo Scientifico, ho proseguito il mio percorso
-                        all'Università, dove ho conseguito la Laurea in Ingegneria Informatica.
-                        Durante il mio percorso accademico, ho scelto di approfondire l'argomento della Blockchain
-                        per la sua rilevanza nell'innovazione tecnologica e per le numerose applicazioni pratiche che
-                        offre in diversi settori. L'entusiasmo che questa tecnologia ha suscitato in me mi ha spinto
-                        a dedicarle l'argomento della mia tesi di laurea.<br>
-                        Dopo aver conseguito la laurea, ho intrapreso la carriera di sviluppatore software, inizialmente
-                        sviluppando con i linguaggi Javascript e Typescript, con i quali ho realizzato delle semplici
-                        app desktop con React fino ad interessarmi alle Progressive Web Application (PWA). In seguito,
-                        anche per motivi lavorativi, ho rivolto il mio focus verso la piattaforma Android dedicandomi
-                        allo sviluppo di applicazioni mobile Android utilizzando il linguaggio Kotlin.<br>
-                        Attualmente lavoro nel reparto di <span class="colorYellowText italicText">Ricerca, Sviluppo &
-                            Innovazione (RSI)</span> interno alla società
-                        Arethusa Srl. Ho partecipato e, tutt'ora, sto partecipando alla realizzazione di tre <span
-                            class="colorYellowText italicText">Progetti di
-                            Ricerca</span> finanziati dalla Regione Campania e dal MISE:
-                        <div class="smallText tertiaryText"><a href="https://rsi-na.it/diggerly/"
-                                target="_blank">DIGGERly</a></div>
-                        <div class="smallText tertiaryText"><a href="https://rsi-na.it/progetto-di-ricerca-reasset/"
-                                target="_blank">ReASSET</a></div>
-                        <div class="smallText tertiaryText"><a href="https://rsi-na.it/progetto-cads/" target="_blank">
-                                CADS</a></div>
-                        <br>
-                        </span>
-                    </div>
-                </div>
-                <!-- <div class="doubleImage">
-                    <img src="img/NicolaDeNicolais.png" alt="Nicola De Nicolais">
-                </div> -->
-            </div>
-        </div>
-
-        <div class="contentContainer" id="education" titolo="Education">
-            <div class="mediumText tertiaryText boldText">Diploma scientifico</div>
-            <div class="smallText">Liceo Scientifico Statale G. Rummo di Benevento</div>
-            <br>
-            <div class="mediumText tertiaryText boldText">Laurea triennale in Ingegneria Informatica</div>
-            <div class="smallText">Università degli Studi Guglielmo Marconi di Roma</div>
-            <br>
-            <div class="smallText">
-                <span class="smallText underlineText">Titolo tesi</span><br>
-                <span class="italicText">Blockchain e Smart Contract: Il futuro è digitale</span>
-                <br><br>
-                <span class="smallText underlineText">Argomenti tesi</span><br>
-                Infrastrutture Blockchain, Distributed Ledger Technology, Ethereum, Smart Contract.
-                <br><br>
-                <span class="smallText underlineText">Progetto tesi</span><br>
-                Comprensione e capacita di scrittura di smart contracts con il linguaggio di programmazione Solidity.
-                lnterazione degli smart contracts su piattaforma Ethereum. Utilizzo dei tools Ganache, Truffle e Remix
-                per lo sviluppo di applicazioni decentralizzate (DApps) su piattaforma Ethereum.<br>
-            </div>
-        </div>
-
-        <div class="contentContainer" id="languages" titolo="Languages">
-            <div class="languagesColumn">
-                <img src="./img/italian.png">
-                <div class="progressBar">
-                    <div style="width: 100%"></div>
-                </div>
-            </div>
-            <div class="languagesColumn">
-                <img src="./img/english.png">
-                <div class="progressBar">
-                    <div style="width: 60%"></div>
-                </div>
-            </div>
-            <br>
-
-            <div class="mediumText tertiaryText">2008</div>
-            <div class="mediumText tertiaryText">Euro Master Studio</div>
-            <div class="mediumText tertiaryText boldText">Certificazione di formazione linguistica</div>
-            <div class="smallText">Certificazione di lingua inglese B2 conseguita presso il Trinity Hall
-                College di Dublino</div>
-            <br>
-            <div class="mediumText tertiaryText">2007</div>
-            <div class="mediumText tertiaryText">Euro Master Studio</div>
-            <div class="mediumText tertiaryText boldText">Certificazione di formazione linguistica</div>
-            <div class="smallText">Certificazione di lingua inglese B2 conseguita presso il Goldsmiths
-                College di Londra</div>
-        </div>
-
-        <div id="footer">
-            <div class="footerContainer">
-                <div class="footerColumn">
-                    <a href="mailto:n.denicolais@outlook.it">
-                        <div class="footerButton">
-                            <div class="footerButtonImg"><img src="./img/mail.png"></div>
-                        </div>
-                    </a>
-                    <a href="https://github.com/ndenicolais" target="_blank">
-                        <div class="footerButton">
-                            <div class="footerButtonImg"><img src="./img/github.png"></div>
-                        </div>
-                    </a>
-                    <a href="https://it.linkedin.com/in/nicoladenicolais" target="_blank">
-                        <div class="footerButton">
-                            <div class="footerButtonImg"><img src="./img/linkedin.png"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <p class="miniText"><span class="boldText colorDarkGreyText">ndenicolais</span></p>
-        </div>
-    </div>
-
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("backToTopButton");
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
         }
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuButton = document.getElementById('menuButton');
-            var dropdownMenu = document.getElementById('dropdownMenu');
-
-            menuButton.addEventListener('click', function () {
-                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.style.display = "none";
-                }
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </body>
-
 </html>
