@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/theme/app_theme.dart';
+import 'package:ndenicolais/theme/app_theme.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   ThemeData _currentTheme =

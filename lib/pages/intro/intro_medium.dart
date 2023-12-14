@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:my_portfolio/routes.dart';
+import 'package:ndenicolais/routes.dart';
 
-class IntroPageMedium extends StatelessWidget {
-  const IntroPageMedium({super.key});
+class IntroPageMedium extends StatefulWidget {
+  const IntroPageMedium({Key? key}) : super(key: key);
 
+  @override
+  IntroPageMediumState createState() => IntroPageMediumState();
+}
+
+class IntroPageMediumState extends State<IntroPageMedium> {
+  @override
+  void initState() {
+    super.initState();
+    navigateToHomePage();
+  }
+
+  navigateToHomePage() async {
+    await Future.delayed(const Duration(seconds: 4));
+
+    // Verifica se il widget è ancora montato prima di eseguire la navigazione
+    if (mounted) {
+      Navigator.of(context).pushNamed(Routes.home);
+    }
+  }
+
+  @override
   @override
   Widget build(BuildContext context) {
     navigateToHomePage() async {

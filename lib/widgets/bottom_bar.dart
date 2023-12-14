@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_portfolio/utils/responsive_layout.dart';
+import 'package:ndenicolais/utils/responsive_layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyBottomBar extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/utils/responsive_layout.dart';
+import 'package:ndenicolais/utils/responsive_layout.dart';
 
 class Routes {
   static const String intro = '/intro';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/utils/responsive_layout.dart';
-import 'package:my_portfolio/utils/strings.dart';
+import 'package:ndenicolais/utils/responsive_layout.dart';
+import 'package:ndenicolais/utils/strings.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ComposeCards extends StatefulWidget {

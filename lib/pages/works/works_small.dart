@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_portfolio/utils/strings.dart';
-import 'package:my_portfolio/widgets/bottom_bar.dart';
-import 'package:my_portfolio/widgets/top_bar.dart';
+import 'package:ndenicolais/utils/strings.dart';
+import 'package:ndenicolais/widgets/bottom_bar.dart';
+import 'package:ndenicolais/widgets/top_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WorksPageSmall extends StatelessWidget {

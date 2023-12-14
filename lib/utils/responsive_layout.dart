@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 // import 'package:logger/logger.dart';
-import 'package:my_portfolio/pages/home/home_large.dart';
-import 'package:my_portfolio/pages/home/home_medium.dart';
-import 'package:my_portfolio/pages/home/home_small.dart';
-import 'package:my_portfolio/pages/intro/intro_large.dart';
-import 'package:my_portfolio/pages/intro/intro_medium.dart';
-import 'package:my_portfolio/pages/intro/intro_small.dart';
-import 'package:my_portfolio/pages/projects/projects_large.dart';
-import 'package:my_portfolio/pages/projects/projects_medium.dart';
-import 'package:my_portfolio/pages/projects/projects_small.dart';
-import 'package:my_portfolio/pages/works/works_large.dart';
-import 'package:my_portfolio/pages/works/works_medium.dart';
-import 'package:my_portfolio/pages/works/works_small.dart';
+import 'package:ndenicolais/pages/home/home_large.dart';
+import 'package:ndenicolais/pages/home/home_medium.dart';
+import 'package:ndenicolais/pages/home/home_small.dart';
+import 'package:ndenicolais/pages/intro/intro_large.dart';
+import 'package:ndenicolais/pages/intro/intro_medium.dart';
+import 'package:ndenicolais/pages/intro/intro_small.dart';
+import 'package:ndenicolais/pages/projects/projects_large.dart';
+import 'package:ndenicolais/pages/projects/projects_medium.dart';
+import 'package:ndenicolais/pages/projects/projects_small.dart';
+import 'package:ndenicolais/pages/works/works_large.dart';
+import 'package:ndenicolais/pages/works/works_medium.dart';
+import 'package:ndenicolais/pages/works/works_small.dart';
 
 // var logger = Logger();
 

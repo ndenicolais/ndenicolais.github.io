@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_portfolio/routes.dart';
-import 'package:my_portfolio/providers/theme_notifier.dart';
-import 'package:my_portfolio/utils/responsive_layout.dart';
+import 'package:ndenicolais/routes.dart';
+import 'package:ndenicolais/providers/theme_notifier.dart';
+import 'package:ndenicolais/utils/responsive_layout.dart';
 import 'package:provider/provider.dart';
 
 class MyTopBar extends StatefulWidget {
@@ -16,7 +16,16 @@ class MyTopBarState extends State<MyTopBar> {
   bool isDarkMode = false;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    setState(() {
+      isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    });
+
     return ResponsiveLayout.isSmallScreen(context)
         ? AppBar(
             automaticallyImplyLeading: false,
@@ -66,7 +75,7 @@ class MyTopBarState extends State<MyTopBar> {
                 onSelected: (value) {
                   // Implement the logic for each menu item
                   if (value == 'menuItem1') {
-                    Navigator.of(context).pushReplacementNamed(Routes.home);
+                    Navigator.of(context).pushNamed(Routes.home);
                   } else if (value == 'menuItem2') {
                     Navigator.of(context).pushNamed(Routes.works);
                   } else if (value == 'menuItem3') {
@@ -160,7 +169,7 @@ class MyTopBarState extends State<MyTopBar> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacementNamed(Routes.home);
+                        Navigator.of(context).pushNamed(Routes.home);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:

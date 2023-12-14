@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/theme/app_colors.dart';
+import 'package:ndenicolais/theme/app_colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme() {

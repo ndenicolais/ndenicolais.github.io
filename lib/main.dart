@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/routes.dart';
+import 'package:ndenicolais/routes.dart';
 import 'package:provider/provider.dart';
-import 'package:my_portfolio/providers/theme_notifier.dart';
+import 'package:ndenicolais/providers/theme_notifier.dart';
 
 void main() {
   runApp(
