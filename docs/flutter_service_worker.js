@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "ed42b840e3844d8c23c66bbbde30ec19",
-"assets/AssetManifest.bin.json": "afaf3e1c627bfea35336c59f804e4330",
-"assets/AssetManifest.json": "0ba2606e65f473e6d49ee3ccc97cf1ac",
+const RESOURCES = {"assets/AssetManifest.bin": "783e19f0e1988e221ff7c98e398157b1",
+"assets/AssetManifest.bin.json": "d638d6abcc3d6bb5fed9309b5ac068ff",
+"assets/AssetManifest.json": "04f2d9681b6a54e17e5f0db73907dc55",
 "assets/assets/fonts/montserrat.ttf": "5e077c15f6e1d334dd4e9be62b28ac75",
 "assets/assets/images/app_wip.png": "e676c41a83e23808f4ad4c907ef25c82",
 "assets/assets/images/development/compose.png": "998518e6a33da6236ce76d69590e51cc",
@@ -25,6 +25,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "ed42b840e3844d8c23c66bbbde30ec19
 "assets/assets/images/english.png": "7ff5dacab96414cb75fff06a6be3064e",
 "assets/assets/images/github.png": "1b9b9f71269e504156ce9d89a00f2551",
 "assets/assets/images/italian.png": "6f6d09685eb03af0d9a6973b574fbbde",
+"assets/assets/images/logo.png": "f5899e2d09d90e559a582c41b8d1c20d",
 "assets/assets/images/myPhoto.png": "1018e45c7a26c5779c105c21ab0719ea",
 "assets/assets/images/projects/compose/compose_contact.png": "0495129f56a29295cc050b42e9e8e7b3",
 "assets/assets/images/projects/compose/compose_countdown.png": "0ad0df2d18982b6980afbde5861892cc",
@@ -51,7 +52,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "ed42b840e3844d8c23c66bbbde30ec19
 "assets/assets/images/projects/xml/xml_sql_lite.png": "9768fd62b990406dfb6ad6238fef9b6a",
 "assets/assets/images/projects/xml/xml_switch_language.png": "f87f41e2f7e06fca19944ea9970a8f38",
 "assets/assets/images/projects/xml/xml_toast_message.png": "34855112c0b26fb5b2b4f063a79c4f82",
-"assets/assets/pdf/Nicola_De_Nicolais_CV.pdf": "786c4f0559001791edb1ffedc712437d",
+"assets/assets/pdf/Nicola_De_Nicolais_CV.pdf": "44f6eca3125321556794399519b1ff2d",
 "assets/FontManifest.json": "bc135047dd0fbac1c70fde28321b3764",
 "assets/fonts/MaterialIcons-Regular.otf": "9d4b4936f00f2c06016e2931d4dad402",
 "assets/NOTICES": "3d31ca780c5b3201246cfdde94893ccf",
@@ -73,11 +74,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "ed42b840e3844d8c23c66bbbde30ec19
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "0d6ef79792d7fd77d70d44fa7cb04983",
-"/": "0d6ef79792d7fd77d70d44fa7cb04983",
-"main.dart.js": "05c52fd974e0a83a520df6699324cc65",
+"index.html": "e27d0996d7a38f39632b697988e7af96",
+"/": "e27d0996d7a38f39632b697988e7af96",
+"main.dart.js": "0aaae09d57c60158cf8769faf3428853",
 "manifest.json": "41a8a67d1dfa76b3f3f05f86901efdb5",
-"version.json": "9b818ca9511483c901bed1545384376c"};
+"version.json": "9bfafc23ed57941a6a0d1ff30f7e8371"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
