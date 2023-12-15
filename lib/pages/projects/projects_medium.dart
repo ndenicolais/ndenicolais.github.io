@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ndenicolais/utils/strings.dart';
 import 'package:ndenicolais/widgets/bottom_bar.dart';
-import 'package:ndenicolais/widgets/p_compose_card.dart';
-import 'package:ndenicolais/widgets/p_react_card.dart';
-import 'package:ndenicolais/widgets/p_xml_card.dart';
+import 'package:ndenicolais/widgets/cards/compose_card.dart';
+import 'package:ndenicolais/widgets/cards/flutter_card.dart';
+import 'package:ndenicolais/widgets/cards/react_card.dart';
+import 'package:ndenicolais/widgets/cards/xml_card.dart';
 import 'package:ndenicolais/widgets/top_bar.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -250,6 +251,16 @@ class ProjectsPageMedium extends StatelessWidget {
                                   fontFamily: 'CustomFont',
                                 ),
                               ),
+                              Text(
+                                'PROJECTS ARE WORK IN PROGRESS',
+                                style: TextStyle(
+                                    fontSize: 24,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'CustomFont'),
+                              ),
+                              const FlutterCards(),
                               const SizedBox(height: 20),
                               Text(
                                 'Android',
