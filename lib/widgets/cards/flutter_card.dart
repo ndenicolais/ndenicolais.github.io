@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ndenicolais/models/card_model.dart';
 import 'package:ndenicolais/utils/responsive_layout.dart';
 // import 'package:ndenicolais/utils/strings.dart';
 // import 'package:url_launcher/url_launcher_string.dart';
@@ -35,11 +36,23 @@ class FlutterCardsState extends State<FlutterCards> {
                 child: Row(
                   children: [
                     buildFlutterCard(
-                        context,
-                        'WIP',
-                        'WIP',
-                        'assets/images/app_wip.png',
-                        'https://github.com/ndenicolais'),
+                      context,
+                      CardModel(
+                          title: 'WIP',
+                          description: 'WIP',
+                          imagePath:
+                              'assets/images/projects/flutter/flutter_todo.png',
+                          githubLink: 'https://github.com/ndenicolais'),
+                    ),
+                    buildFlutterCard(
+                      context,
+                      CardModel(
+                          title: 'WIP',
+                          description: 'WIP',
+                          imagePath:
+                              'assets/images/projects/flutter/flutter_inventory.png',
+                          githubLink: 'https://github.com/ndenicolais'),
+                    ),
                   ],
                 ),
               ),
@@ -62,11 +75,23 @@ class FlutterCardsState extends State<FlutterCards> {
                 child: Row(
                   children: [
                     buildFlutterCard(
-                        context,
-                        'WIP',
-                        'WIP',
-                        'assets/images/app_wip.png',
-                        'https://github.com/ndenicolais'),
+                      context,
+                      CardModel(
+                          title: 'WIP',
+                          description: 'WIP',
+                          imagePath:
+                              'assets/images/projects/flutter/flutter_todo.png',
+                          githubLink: 'https://github.com/ndenicolais'),
+                    ),
+                    buildFlutterCard(
+                      context,
+                      CardModel(
+                          title: 'WIP',
+                          description: 'WIP',
+                          imagePath:
+                              'assets/images/projects/flutter/flutter_inventory.png',
+                          githubLink: 'https://github.com/ndenicolais'),
+                    ),
                   ],
                 ),
               ),
@@ -74,8 +99,7 @@ class FlutterCardsState extends State<FlutterCards> {
           );
   }
 
-  Widget buildFlutterCard(BuildContext context, String title, String content,
-      String imagePath, String link) {
+  Widget buildFlutterCard(BuildContext context, CardModel card) {
     return ResponsiveLayout.isSmallScreen(context)
         ? Padding(
             padding: const EdgeInsets.all(2),
@@ -87,7 +111,7 @@ class FlutterCardsState extends State<FlutterCards> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7),
               ),
-              color: cardHoverMap[imagePath] ?? false
+              color: cardHoverMap[card.imagePath] ?? false
                   ? Theme.of(context).colorScheme.tertiary
                   : Theme.of(context).colorScheme.secondary,
               elevation: 5.0,
@@ -98,7 +122,7 @@ class FlutterCardsState extends State<FlutterCards> {
                   duration: const Duration(milliseconds: 100),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(imagePath),
+                    child: Image.asset(card.imagePath),
                   ),
                 ),
               ),
@@ -108,14 +132,16 @@ class FlutterCardsState extends State<FlutterCards> {
         : Padding(
             padding: const EdgeInsets.all(8),
             child: MouseRegion(
-              onEnter: (_) => setState(() => cardHoverMap[imagePath] = true),
-              onExit: (_) => setState(() => cardHoverMap[imagePath] = false),
+              onEnter: (_) =>
+                  setState(() => cardHoverMap[card.imagePath] = true),
+              onExit: (_) =>
+                  setState(() => cardHoverMap[card.imagePath] = false),
               // child: InkWell(
               //   onTap: () {
               //     launchUrlString(link);
               //   },
               child: Card(
-                color: cardHoverMap[imagePath] ?? false
+                color: cardHoverMap[card.imagePath] ?? false
                     ? Theme.of(context).colorScheme.tertiary
                     : Theme.of(context).colorScheme.secondary,
                 elevation: 5.0,
@@ -132,11 +158,11 @@ class FlutterCardsState extends State<FlutterCards> {
                         child: child,
                       );
                     },
-                    child: cardHoverMap[imagePath] ?? false
+                    child: cardHoverMap[card.imagePath] ?? false
                         ? Padding(
                             padding: const EdgeInsets.all(16),
                             child: Text(
-                              content,
+                              card.description,
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Theme.of(context).colorScheme.primary,
@@ -146,7 +172,7 @@ class FlutterCardsState extends State<FlutterCards> {
                           )
                         : ClipRRect(
                             borderRadius: BorderRadius.circular(5),
-                            child: Image.asset(imagePath),
+                            child: Image.asset(card.imagePath),
                           ),
                   ),
                 ),
