@@ -62,7 +62,7 @@ android {
 }
 
 flutter {
-    source '../..'
+    source 'C:/Users/ndenicolais/source/repos/Android/Flutter/myGithub'
 }
 
 dependencies {}
