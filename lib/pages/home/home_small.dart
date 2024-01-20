@@ -19,7 +19,7 @@ class HomePageSmallState extends State<HomePageSmall> {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     final isDarkMode = themeNotifier.currentTheme == ThemeNotifier.darkTheme;
     final Uri uriPdf = Uri.parse(
-        'https://drive.google.com/file/d/1lN1opIY6BbQkqM8DHkm0QMASYaq9G3v5/view?usp=sharing');
+        'https://drive.google.com/file/d/121DzheH806LYd9T3wsXurMPIiUk2-kAS/view?usp=drive_link');
 
     return Scaffold(
       appBar: AppBar(
@@ -60,7 +60,7 @@ class HomePageSmallState extends State<HomePageSmall> {
                           textAlign: TextAlign.start,
                         ),
                         Text(
-                          ' MOBILE APP DEVELOPER',
+                          ' SOFTWARE DEVELOPER',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.secondary,
                             fontSize: 15,

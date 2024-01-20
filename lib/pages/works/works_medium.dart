@@ -108,7 +108,7 @@ class WorksPageMedium extends StatelessWidget {
                                   ),
                                 ),
                                 child: Text(
-                                  '2022-Present',
+                                  '2022-2023',
                                   style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.secondary,
