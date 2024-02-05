@@ -1,9 +1,9 @@
 // HOME PAGE
 String description = '''
-Sono uno mobile app developer con un anno di esperienza nello sviluppo di applicazioni mobile Android sia native che cross-platform. Ho sviluppato app Android con linguaggio nativo Kotlin, sia con gli XML Layouts che con il framework Jetpack Compose, e app cross-platform con linguaggio Dart utilizzando il framework Flutter. La mia passione per la tecnologia è stata determinante per spingermi a seguire la strada dello sviluppatore, dato che la volontà di trovare soluzioni a sfide complesse è diventata un'occasione per apprendere e perfezionare le mie abilità.
+Sono un software developer con un anno di esperienza nello sviluppo di applicazioni mobile Android sia native che cross-platform. Ho sviluppato app Android con linguaggio nativo Kotlin, sia con gli XML Layouts che con il framework Jetpack Compose, e app cross-platform con linguaggio Dart utilizzando il framework Flutter. La mia passione per la tecnologia è stata determinante per spingermi a seguire la strada dello sviluppatore, dato che la volontà di trovare soluzioni a sfide complesse è diventata un'occasione per apprendere e perfezionare le mie abilità.
 ''';
 String arethusa = '''
-Attualmente lavoro nel reparto di Ricerca, Sviluppo & Innovazione (RSI) interno alla società Arethusa Srl. Ho partecipato alla realizzazione di tre Progetti di Ricerca finanziati dalla Regione Campania e dal MISE: ReASSET, DIGGERly e CADS.
+Ho lavorato nel reparto di Ricerca, Sviluppo & Innovazione (RSI) interno alla società Arethusa Srl. Ho partecipato alla realizzazione di tre Progetti di Ricerca finanziati dalla Regione Campania e dal MISE: ReASSET, DIGGERly e CADS.
 Per questi progetti ho contribuito a:
 • Sviluppo di software web, desktop e mobile utilizzando diversi linguaggi di programmazione / piattaforme / tecnologie;
 • Collaborazione con team di sviluppo e di progettazione per garantire la qualità del prodotto;
