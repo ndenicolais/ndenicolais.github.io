@@ -24,7 +24,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e
 "assets/assets/images/english.png": "7ff5dacab96414cb75fff06a6be3064e",
 "assets/assets/images/github.png": "1b9b9f71269e504156ce9d89a00f2551",
 "assets/assets/images/italian.png": "6f6d09685eb03af0d9a6973b574fbbde",
-"assets/assets/images/logo.png": "f5899e2d09d90e559a582c41b8d1c20d",
+"assets/assets/images/logo.png": "2685675f20e85d2b50ffa903d7021f1a",
 "assets/assets/images/myPhoto.png": "1018e45c7a26c5779c105c21ab0719ea",
 "assets/assets/images/projects/compose/compose_contact.png": "0495129f56a29295cc050b42e9e8e7b3",
 "assets/assets/images/projects/compose/compose_countdown.png": "0ad0df2d18982b6980afbde5861892cc",
@@ -75,9 +75,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "27707b59ba440febd0fe167005671348",
-"/": "27707b59ba440febd0fe167005671348",
-"main.dart.js": "d6994c1e65cfda972cb4b9e3965e7bfe",
+"index.html": "a2094906f4afe770864988e79a51765d",
+"/": "a2094906f4afe770864988e79a51765d",
+"main.dart.js": "6c8bc12d65409bdf83922bab94769d4d",
 "manifest.json": "41a8a67d1dfa76b3f3f05f86901efdb5",
 "version.json": "9bfafc23ed57941a6a0d1ff30f7e8371"};
 // The application shell files that are downloaded before a service worker can
