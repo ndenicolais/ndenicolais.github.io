@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e",
-"assets/AssetManifest.bin.json": "1d9c5205dcac2de1e7f6c2478587794f",
-"assets/AssetManifest.json": "5d4e0ff96ee8aca840d1e2940ec31e2a",
+const RESOURCES = {"assets/AssetManifest.bin": "7746b097a3b7a1c80664be43dc598b6a",
+"assets/AssetManifest.bin.json": "f7334a16a944952fa5adb0b080eb18ff",
+"assets/AssetManifest.json": "d377f092900d02b39c26c9e1cc0e672e",
 "assets/assets/fonts/montserrat.ttf": "5e077c15f6e1d334dd4e9be62b28ac75",
 "assets/assets/images/development/compose.png": "998518e6a33da6236ce76d69590e51cc",
 "assets/assets/images/development/css.png": "4f62343427002846cadebf7b572aa3bd",
@@ -24,7 +24,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e
 "assets/assets/images/english.png": "7ff5dacab96414cb75fff06a6be3064e",
 "assets/assets/images/github.png": "1b9b9f71269e504156ce9d89a00f2551",
 "assets/assets/images/italian.png": "6f6d09685eb03af0d9a6973b574fbbde",
-"assets/assets/images/logo.png": "2685675f20e85d2b50ffa903d7021f1a",
+"assets/assets/images/logo.png": "24b8041bea95941f29d0855491060d2a",
 "assets/assets/images/myPhoto.png": "1018e45c7a26c5779c105c21ab0719ea",
 "assets/assets/images/projects/compose/compose_contact.png": "0495129f56a29295cc050b42e9e8e7b3",
 "assets/assets/images/projects/compose/compose_countdown.png": "0ad0df2d18982b6980afbde5861892cc",
@@ -53,7 +53,6 @@ const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e
 "assets/assets/images/projects/xml/xml_sql_lite.png": "9768fd62b990406dfb6ad6238fef9b6a",
 "assets/assets/images/projects/xml/xml_switch_language.png": "f87f41e2f7e06fca19944ea9970a8f38",
 "assets/assets/images/projects/xml/xml_toast_message.png": "34855112c0b26fb5b2b4f063a79c4f82",
-"assets/assets/pdf/Nicola_De_Nicolais_CV.pdf": "44f6eca3125321556794399519b1ff2d",
 "assets/FontManifest.json": "bc135047dd0fbac1c70fde28321b3764",
 "assets/fonts/MaterialIcons-Regular.otf": "9d4b4936f00f2c06016e2931d4dad402",
 "assets/NOTICES": "16a3b1d482b5b8b3b4544978208e3cbf",
@@ -70,14 +69,14 @@ const RESOURCES = {"assets/AssetManifest.bin": "0528e68afad9137e608e702beb56435e
 "canvaskit/skwasm.wasm": "2fc47c0a0c3c7af8542b601634fe9674",
 "canvaskit/skwasm.worker.js": "bfb704a6c714a75da9ef320991e88b03",
 "flutter.js": "59a12ab9d00ae8f8096fffc417b6e84f",
-"icon.ico": "8aa385abe01de263efa5bc626914d46f",
+"icon.ico": "c7116a3b74be3de0756e980940be7e4b",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "a2094906f4afe770864988e79a51765d",
-"/": "a2094906f4afe770864988e79a51765d",
-"main.dart.js": "6c8bc12d65409bdf83922bab94769d4d",
+"index.html": "bac9e02fd335252274fd60a81aa18557",
+"/": "bac9e02fd335252274fd60a81aa18557",
+"main.dart.js": "7e8202bad050a789de8b8571c73cc515",
 "manifest.json": "41a8a67d1dfa76b3f3f05f86901efdb5",
 "version.json": "9bfafc23ed57941a6a0d1ff30f7e8371"};
 // The application shell files that are downloaded before a service worker can
