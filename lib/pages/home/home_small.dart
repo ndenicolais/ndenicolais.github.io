@@ -19,7 +19,7 @@ class HomePageSmallState extends State<HomePageSmall> {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     final isDarkMode = themeNotifier.currentTheme == ThemeNotifier.darkTheme;
     final Uri uriPdf = Uri.parse(
-        'https://drive.google.com/file/d/121DzheH806LYd9T3wsXurMPIiUk2-kAS/view?usp=drive_link');
+        'https://drive.google.com/file/d/1XY10jnOqsJbNAeiPJV00Pw8LfErro5TI/view?usp=sharing');
 
     return Scaffold(
       appBar: AppBar(
