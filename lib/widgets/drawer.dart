@@ -163,7 +163,7 @@ class MyDrawer extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () async {
-                            await launchUrl(uriLinkedin);
+                            await launchUrl(uriGithub);
                           },
                           icon: Icon(
                             size: 14,
@@ -173,7 +173,7 @@ class MyDrawer extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () async {
-                            await launchUrl(uriGithub);
+                            await launchUrl(uriLinkedin);
                           },
                           icon: Icon(
                             size: 14,
