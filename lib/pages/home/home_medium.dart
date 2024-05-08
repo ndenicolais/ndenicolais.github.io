@@ -11,7 +11,7 @@ class HomePageMedium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Uri uriPdf = Uri.parse(
-        'https://drive.google.com/file/d/121DzheH806LYd9T3wsXurMPIiUk2-kAS/view?usp=drive_link');
+        'https://drive.google.com/file/d/1XY10jnOqsJbNAeiPJV00Pw8LfErro5TI/view?usp=sharing');
 
     return PopScope(
       canPop: false,
