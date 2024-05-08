@@ -316,171 +316,171 @@ class WorksPageSmallState extends State<WorksPageSmall> {
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 22),
-                                Text(
-                                  'Studio Fotografico Rosati Studio',
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                Text(
-                                  'Assitente fotografo',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .tertiary,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                const SizedBox(height: 6),
-                                Container(
-                                  height: 30,
-                                  padding: const EdgeInsets.all(6),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    border: Border.all(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Text(
-                                    '2015',
-                                    style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary,
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'CustomFont'),
-                                  ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  rosati,
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Okaidi',
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                Text(
-                                  'Addetto inventario',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .tertiary,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                const SizedBox(height: 6),
-                                Container(
-                                  height: 30,
-                                  padding: const EdgeInsets.all(6),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    border: Border.all(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Text(
-                                    '2010',
-                                    style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary,
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'CustomFont'),
-                                  ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  okaidi,
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Benevento Città Spettacolo',
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                Text(
-                                  'Steward eventi',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .tertiary,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CustomFont'),
-                                ),
-                                const SizedBox(height: 6),
-                                Container(
-                                  height: 30,
-                                  padding: const EdgeInsets.all(6),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    border: Border.all(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Text(
-                                    '2009, 2010, 2011',
-                                    style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary,
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'CustomFont'),
-                                  ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  spettacolo,
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontFamily: 'CustomFont'),
-                                ),
+                                // const SizedBox(height: 22),
+                                // Text(
+                                //   'Studio Fotografico Rosati Studio',
+                                //   style: TextStyle(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontSize: 24,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // Text(
+                                //   'Assitente fotografo',
+                                //   style: TextStyle(
+                                //       fontSize: 18,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .tertiary,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // const SizedBox(height: 6),
+                                // Container(
+                                //   height: 30,
+                                //   padding: const EdgeInsets.all(6),
+                                //   decoration: BoxDecoration(
+                                //     borderRadius: BorderRadius.circular(25),
+                                //     border: Border.all(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       width: 2,
+                                //     ),
+                                //   ),
+                                //   child: Text(
+                                //     '2015',
+                                //     style: TextStyle(
+                                //         color: Theme.of(context)
+                                //             .colorScheme
+                                //             .secondary,
+                                //         fontSize: 10,
+                                //         fontWeight: FontWeight.bold,
+                                //         fontFamily: 'CustomFont'),
+                                //   ),
+                                // ),
+                                // const SizedBox(height: 8),
+                                // Text(
+                                //   rosati,
+                                //   style: TextStyle(
+                                //       fontSize: 14,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // const SizedBox(height: 8),
+                                // Text(
+                                //   'Okaidi',
+                                //   style: TextStyle(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontSize: 24,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // Text(
+                                //   'Addetto inventario',
+                                //   style: TextStyle(
+                                //       fontSize: 18,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .tertiary,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // const SizedBox(height: 6),
+                                // Container(
+                                //   height: 30,
+                                //   padding: const EdgeInsets.all(6),
+                                //   decoration: BoxDecoration(
+                                //     borderRadius: BorderRadius.circular(25),
+                                //     border: Border.all(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       width: 2,
+                                //     ),
+                                //   ),
+                                //   child: Text(
+                                //     '2010',
+                                //     style: TextStyle(
+                                //         color: Theme.of(context)
+                                //             .colorScheme
+                                //             .secondary,
+                                //         fontSize: 10,
+                                //         fontWeight: FontWeight.bold,
+                                //         fontFamily: 'CustomFont'),
+                                //   ),
+                                // ),
+                                // const SizedBox(height: 8),
+                                // Text(
+                                //   okaidi,
+                                //   style: TextStyle(
+                                //       fontSize: 14,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // const SizedBox(height: 8),
+                                // Text(
+                                //   'Benevento Città Spettacolo',
+                                //   style: TextStyle(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontSize: 24,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // Text(
+                                //   'Steward eventi',
+                                //   style: TextStyle(
+                                //       fontSize: 18,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .tertiary,
+                                //       fontWeight: FontWeight.bold,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
+                                // const SizedBox(height: 6),
+                                // Container(
+                                //   height: 30,
+                                //   padding: const EdgeInsets.all(6),
+                                //   decoration: BoxDecoration(
+                                //     borderRadius: BorderRadius.circular(25),
+                                //     border: Border.all(
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       width: 2,
+                                //     ),
+                                //   ),
+                                //   child: Text(
+                                //     '2009, 2010, 2011',
+                                //     style: TextStyle(
+                                //         color: Theme.of(context)
+                                //             .colorScheme
+                                //             .secondary,
+                                //         fontSize: 10,
+                                //         fontWeight: FontWeight.bold,
+                                //         fontFamily: 'CustomFont'),
+                                //   ),
+                                // ),
+                                // const SizedBox(height: 8),
+                                // Text(
+                                //   spettacolo,
+                                //   style: TextStyle(
+                                //       fontSize: 14,
+                                //       color: Theme.of(context)
+                                //           .colorScheme
+                                //           .secondary,
+                                //       fontFamily: 'CustomFont'),
+                                // ),
                               ],
                             ),
                           ),
