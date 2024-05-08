@@ -1,6 +1,6 @@
 // HOME PAGE
 String description = '''
-Sono un software developer con un anno di esperienza nello sviluppo di applicazioni mobile Android sia native che cross-platform. Ho sviluppato app Android con linguaggio nativo Kotlin, sia con gli XML Layouts che con il framework Jetpack Compose, e app cross-platform con linguaggio Dart utilizzando il framework Flutter. La mia passione per la tecnologia è stata determinante per spingermi a seguire la strada dello sviluppatore, dato che la volontà di trovare soluzioni a sfide complesse è diventata un'occasione per apprendere e perfezionare le mie abilità.
+Sono uno sviluppatore software con esperienza sia nel campo delle applicazioni mobile Android nativo che cross-platform. Ho sviluppato app Android utilizzando Kotlin, sia con XML Layouts che con Jetpack Compose, oltre a creare app cross-platform con Flutter utilizzando il linguaggio Dart.
 ''';
 String arethusa = '''
 Ho lavorato nel reparto di Ricerca, Sviluppo & Innovazione (RSI) interno alla società Arethusa Srl. Ho partecipato alla realizzazione di tre Progetti di Ricerca finanziati dalla Regione Campania e dal MISE: ReASSET, DIGGERly e CADS.
@@ -23,25 +23,25 @@ Progetto finalizzato allo sviluppo di procedure standardizzate di progettazione,
 In CADS è stata sviluppata una smart app "DIGENS" in SaaS progettata e implementata con la finalità di realizzare uno strumento di rapida rilevazione, registrazione e valutazione quali-quantitativa dello stato di consistenza e di pericolosità degli elementi non strutturali (ENS), nel loro contesto (ubicazione), nel caso eventi sismici e di sollecitazioni importanti.
 ''';
 
-// WORKS PAGE
-String rosati = '''
-• Responsabile della gestione e trasporto dell'attrezzatura fotografica durante le riprese;
-• Assistenza al montaggio delle attrezzature e degli strumenti in luoghi mobili;
-• Aiuto nello sviluppo pellicole fotografiche;
-• Responsabile della gestione e pulizia regolare di tutte le attrezzature fotografiche;
-• Cura dell'esposizione merce.
-''';
-String okaidi = '''
-• Gestione dell'inventario;
-• Identificazione e rimozione prodotti in deposito;
-• Gestione e report dei prodotti presenti nel punto vendita;
-• Organizzazione e riordino dei prodotti presenti nel punto vendita.
-''';
-String spettacolo = '''
-• Allestimento dei locali per il congresso con predisposizione del materiale utile ai partecipanti;
-• Gestione degli aspetti logistici per il trasferimento dei partecipanti verso il luogo dove si svolge l' evento;
-• Accoglienza e assistenza clienti.
-''';
+// // WORKS PAGE
+// String rosati = '''
+// • Responsabile della gestione e trasporto dell'attrezzatura fotografica durante le riprese;
+// • Assistenza al montaggio delle attrezzature e degli strumenti in luoghi mobili;
+// • Aiuto nello sviluppo pellicole fotografiche;
+// • Responsabile della gestione e pulizia regolare di tutte le attrezzature fotografiche;
+// • Cura dell'esposizione merce.
+// ''';
+// String okaidi = '''
+// • Gestione dell'inventario;
+// • Identificazione e rimozione prodotti in deposito;
+// • Gestione e report dei prodotti presenti nel punto vendita;
+// • Organizzazione e riordino dei prodotti presenti nel punto vendita.
+// ''';
+// String spettacolo = '''
+// • Allestimento dei locali per il congresso con predisposizione del materiale utile ai partecipanti;
+// • Gestione degli aspetti logistici per il trasferimento dei partecipanti verso il luogo dove si svolge l' evento;
+// • Accoglienza e assistenza clienti.
+// ''';
 
 // PROJECTS PAGE
 String github = '''
