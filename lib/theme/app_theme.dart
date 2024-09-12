@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ndenicolais/theme/app_colors.dart';
+import 'package:myportfolio/theme/app_colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme() {
@@ -11,10 +11,8 @@ class AppTheme {
         onSecondary: AppColors.lightYellow,
         tertiary: AppColors.lightSand,
         onTertiary: AppColors.darkYellow,
-        background: AppColors.lightYellow,
-        onBackground: AppColors.darkGrey,
-        surface: AppColors.darkGrey,
-        onSurface: AppColors.lightYellow,
+        surface: AppColors.lightYellow,
+        onSurface: AppColors.darkGrey,
         onError: AppColors.error,
       ),
     );
@@ -29,9 +27,7 @@ class AppTheme {
         onSecondary: AppColors.darkGrey,
         tertiary: AppColors.darkYellow,
         onTertiary: AppColors.lightSand,
-        background: AppColors.darkGrey,
-        onBackground: AppColors.lightYellow,
-        surface: AppColors.lightYellow,
+        surface: AppColors.darkGrey,
         onSurface: AppColors.darkGrey,
         onError: AppColors.error,
       ),

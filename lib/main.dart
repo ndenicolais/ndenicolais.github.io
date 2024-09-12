@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ndenicolais/routes.dart';
+import 'package:myportfolio/pages/intro_page.dart';
+import 'package:myportfolio/theme/app_theme.dart';
 import 'package:provider/provider.dart';
-import 'package:ndenicolais/providers/theme_notifier.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:myportfolio/theme/theme_notifier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,15 +14,9 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  // Carica le preferenze salvate
-  final prefs = await SharedPreferences.getInstance();
-  final isDarkMode = prefs.getBool('isDarkMode') ?? false;
-
   runApp(
     ChangeNotifierProvider(
-      create: (context) => ThemeNotifier(
-        isDarkMode ? ThemeNotifier.darkTheme : ThemeNotifier.lightTheme,
-      ),
+      create: (_) => ThemeNotifier(AppTheme.lightTheme(), false),
       child: const MyApp(),
     ),
   );
@@ -34,14 +28,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
-      builder: (context, themeNotifier, _) {
+      builder: (context, themeNotifier, child) {
+        final brightness = MediaQuery.of(context).platformBrightness;
+
+        if (!themeNotifier.isManualTheme) {
+          if (brightness == Brightness.dark && !themeNotifier.isDarkMode) {
+            themeNotifier.setDarkTheme();
+          } else if (brightness == Brightness.light &&
+              themeNotifier.isDarkMode) {
+            themeNotifier.setLightTheme();
+          }
+          themeNotifier.resetManualTheme();
+        }
+
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: "Nicola De Nicolais",
-          theme: themeNotifier.getTheme(),
-          darkTheme: themeNotifier.getDarkTheme(),
-          themeMode: themeNotifier.getThemeMode(),
-          initialRoute: Routes.intro,
-          routes: Routes.getRoutes(),
+          theme: themeNotifier.currentTheme,
+          home: const IntroPage(),
         );
       },
     );

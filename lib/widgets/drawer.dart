@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ndenicolais/providers/theme_notifier.dart';
-import 'package:ndenicolais/routes.dart';
+import 'package:ming_cute_icons/ming_cute_icons.dart';
+import 'package:myportfolio/theme/theme_notifier.dart';
+import 'package:myportfolio/utils/constants.dart';
+import 'package:myportfolio/utils/globals.dart';
+import 'package:myportfolio/utils/strings.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyDrawer extends StatelessWidget {
-  final bool isDarkMode;
-  final ThemeNotifier themeNotifier;
-  final Uri uriMail = Uri(
-    scheme: 'mailto',
-    path: 'n.denicolais@outlook.it',
-  );
-  final Uri uriLinkedin =
-      Uri.parse('https://it.linkedin.com/in/nicoladenicolais');
-  final Uri uriGithub = Uri.parse('https://github.com/ndenicolais');
+  final Function(GlobalKey) onScrollToSection;
 
-  MyDrawer({super.key, required this.isDarkMode, required this.themeNotifier});
+  const MyDrawer({
+    Key? key,
+    required this.onScrollToSection,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class MyDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.tertiary,
                   width: 2.0,
                 ),
               ),
@@ -57,86 +55,113 @@ class MyDrawer extends StatelessWidget {
             const SizedBox(height: 10),
             ListTile(
               leading: Icon(
-                  size: 14,
-                  FontAwesomeIcons.house,
+                  size: 24,
+                  MingCuteIcons.mgc_arrows_up_fill,
                   color: Theme.of(context).colorScheme.primary),
               title: Text(
-                'Home',
+                dTop,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
                   fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.home);
+                onScrollToSection(GlobalKeys.topSectionKey);
+                Navigator.of(context).pop();
               },
             ),
             ListTile(
               leading: Icon(
-                  size: 14,
-                  FontAwesomeIcons.briefcase,
+                  size: 24,
+                  MingCuteIcons.mgc_user_4_fill,
                   color: Theme.of(context).colorScheme.primary),
               title: Text(
-                'Works',
+                dAbout,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
                   fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.works);
+                onScrollToSection(GlobalKeys.aboutSectionKey);
+                Navigator.of(context).pop();
               },
             ),
             ListTile(
               leading: Icon(
-                  size: 14,
-                  FontAwesomeIcons.code,
+                  size: 24,
+                  MingCuteIcons.mgc_briefcase_fill,
                   color: Theme.of(context).colorScheme.primary),
               title: Text(
-                'Projects',
+                dWorks,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
                   fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.projects);
+                onScrollToSection(GlobalKeys.worksSectionKey);
+                Navigator.of(context).pop();
               },
             ),
             ListTile(
               leading: Icon(
-                  size: 14,
-                  FontAwesomeIcons.palette,
+                  size: 24,
+                  MingCuteIcons.mgc_code_fill,
                   color: Theme.of(context).colorScheme.primary),
               title: Text(
-                'Theme',
+                dProjects,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: 'CustomFont',
+                ),
+              ),
+              onTap: () {
+                onScrollToSection(GlobalKeys.projectsSectionKey);
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                  size: 24,
+                  MingCuteIcons.mgc_palette_fill,
+                  color: Theme.of(context).colorScheme.primary),
+              title: Text(
+                dTheme,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: 14,
                   fontFamily: 'CustomFont',
                 ),
               ),
               trailing: GestureDetector(
                 onTap: () {
-                  themeNotifier.toggleTheme();
+                  Provider.of<ThemeNotifier>(context, listen: false)
+                      .switchTheme();
                 },
-                child: Switch.adaptive(
-                  value: isDarkMode,
+                child: Switch(
+                  value: Provider.of<ThemeNotifier>(context).isDarkMode,
                   onChanged: (value) {
-                    themeNotifier.toggleTheme();
+                    Provider.of<ThemeNotifier>(context, listen: false)
+                        .switchTheme();
                   },
                   activeColor: Theme.of(context).colorScheme.primary,
                   activeTrackColor:
                       Theme.of(context).colorScheme.primary.withOpacity(0.5),
                   inactiveThumbColor: Theme.of(context).colorScheme.secondary,
                   inactiveTrackColor: Theme.of(context).colorScheme.primary,
+                  trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
+                    (Set<WidgetState> states) {
+                      if (states.contains(WidgetState.selected)) {
+                        return Theme.of(context).colorScheme.onTertiary;
+                      }
+                      return Theme.of(context).colorScheme.onTertiary;
+                    },
+                  ),
                 ),
               ),
             ),
@@ -153,31 +178,31 @@ class MyDrawer extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () async {
-                            await launchUrl(uriMail);
+                            await launchUrl(AppConstants.uriMail);
                           },
                           icon: Icon(
-                            size: 14,
-                            FontAwesomeIcons.envelope,
+                            size: 24,
+                            MingCuteIcons.mgc_mail_fill,
                             color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                         IconButton(
                           onPressed: () async {
-                            await launchUrl(uriGithub);
+                            await launchUrl(AppConstants.uriGithub);
                           },
                           icon: Icon(
-                            size: 14,
-                            FontAwesomeIcons.github,
+                            size: 24,
+                            MingCuteIcons.mgc_github_2_fill,
                             color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                         IconButton(
                           onPressed: () async {
-                            await launchUrl(uriLinkedin);
+                            await launchUrl(AppConstants.uriLinkedin);
                           },
                           icon: Icon(
-                            size: 14,
-                            FontAwesomeIcons.linkedinIn,
+                            size: 24,
+                            MingCuteIcons.mgc_linkedin_fill,
                             color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
@@ -185,7 +210,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      '© 2023 Nicola De Nicolais',
+                      copyright,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
