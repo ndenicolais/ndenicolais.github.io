@@ -6,11 +6,12 @@ This is my personal portfolio to showcase my professional profile, skills, works
 
 ## 📎 Screenshots
 Below are some previews of how my portfolio appears across different devices:
+
 ###  💻 Web
-<img height="500em" src="images/myportfolio_screen_web.png" title="Web screen">
+<img src="images/myportfolio_screen_web.png" alt="Web screen" style="max-width: 100%; height: auto;">
 
 ###  📘 Tablet
-<img height="500em" src="images/myportfolio_screen_tablet.png" title="Tablet screen">
+<img src="images/myportfolio_screen_tablet.png" alt="Tablet screen" style="max-width: 100%; height: auto;">
 
 ###  📱 Phone
-<img height="500em" src="images/myportfolio_screen_phone.jpg" title="Phone screen">
+<img src="images/myportfolio_screen_phone.jpg" alt="Phone screen" style="max-width: 100%; height: auto;">
