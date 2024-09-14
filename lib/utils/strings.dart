@@ -27,16 +27,21 @@ String download = 'Download CV';
 String sAbout = 'About me';
 String tBio = 'Bio';
 String description =
-    'I am a software developer with experience in research and development. During this experience I started developing Android applications. I developed both using the native language Kotlin with XML Layouts and Jetpack Compose and the language Dart with Flutter. Additionally, I use Figma to design app structures before converting them into code. In this period I am refining my skills developing with Flutter.';
+    'I am a software developer with 2 years of experience in research and development. During this experience I started developing Android applications, both using the native language Kotlin with XML Layout and Jetpack Compose and the language Dart with Flutter. I use the Figma tool to design my app structures before converting them into code. In this period I am refining my development skills with Flutter.';
 String tEducation = 'Education';
-String eDiploma = 'Scientific Diploma';
-String eLiceo = 'Liceo Scientifico G. Rummo di Benevento';
-String eBachelor = 'Computer Engineering Bachelor';
-String eUni = 'Università degli Studi Guglielmo Marconi di Roma';
+String eDiplomaYear = '2006-2010';
+String eDiplomaType = 'Scientific Diploma';
+String eDiplomaMap = 'Liceo Scientifico G. Rummo of Benevento';
+String eBachelorYear = '2017-2021';
+String eBachelorType = 'Computer Engineering Bachelor';
+String eBachelorMap = 'Università degli Studi Guglielmo Marconi of Roma';
 String tLanguages = 'Languages';
-String lCertification = 'B2 English Language Certification';
-String lTrinity = '2008 | Trinity Hall College of Dublin';
-String lGoldsmith = '2007 | Goldsmiths College of London';
+String lTrinityYear = '2008';
+String lTrinityType = 'B2 English Language Certification';
+String lTrinity = 'Trinity Hall College of Dublin';
+String lGoldsmithYear = '2007';
+String lGoldsmithType = 'B2 English Language Certification';
+String lGoldsmith = 'Goldsmiths College of London';
 
 // MY SKILLS
 String sSkills = 'My Skills';
@@ -55,8 +60,9 @@ String sNode = 'Node.js';
 
 // MY WORKS
 String sWorks = 'My Works';
-String tArethusa = 'Arethusa';
-String dTime = '2022-2023';
+String wArethusaYear = '03/2022-12/2023';
+String wArethusaJob = 'Researcher & Software Engineer';
+String wArethusaMap = 'Arethusa Srl | Casoria (Napoli)';
 String dArethusa = '''
 I worked in the Research, Development & Innovation (RSI) department of Arethusa Srl. I participated in the implementation of three Research Projects financed by the Campania Region and MISE: ReASSET, DIGGERly and CADS.
 In DIGGERly and CADS projects I participated in the creation of smart Android apps with both Kotlin and Dart languages.
@@ -84,8 +90,10 @@ String link = 'Link';
 String sProjects = 'My Projects';
 String tGithub = 'Github';
 String dGithub = '''
-GitHub has all the projects and applications I've developed since the beginning of my career as a software developer. My experience started with the creation of PWA (Progressive Web Application) using JavaScript and TypeScript languages with framework React.js, with backend developed in Node.js with Express.js. Later I expanded my field of expertise in the area of Android development using its native language Kotlin. At first, I created applications with a UI based on the XML Layouts and then adopted the Jetpack Compose toolkit, which I use for my Android application development. In addition, in order to cover multi-platform mobile development, I have extended my skills to Dart and Flutter for the development of mobile apps for Android and multi-platform.
-''';
+GitHub has all the projects and applications I have developed since the beginning of my career as a software developer.
+I started with the development of PWA using JavaScript and TypeScript languages with React.js framework, with backend developed in Node.js with Express.js.
+Later I expanded my field of expertise in the field of Android development using its native language Kotlin with which made applications both with XML Layouts and, later, with the framework Jetpack Compose. Later, I expanded my skills by adopting the Dart language with the Flutter framework with which I am currently developing applications.
+This step allowed me to develop cross-platform apps with modern and responsive interfaces, optimizing the development process thanks to the combination of native and cross-platform code.''';
 
 // Flutter
 String pFlutter = 'Flutter';
