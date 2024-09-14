@@ -1,16 +1,17 @@
-# my_portfolio
+# My Portfolio
+> <b>Author: Nicola De Nicolais</b>
 
-A new Flutter project.
+## 📄 Description
+This is my personal portfolio to showcase my professional profile, skills, works, projects, and contact information. It is build with Flutter multi-platform.
 
-## Getting Started
+## 📎 Screenshots
+Below are some previews of how my portfolio appears across different devices:
 
-This project is a starting point for a Flutter application.
+### 💻 Web
+<img src="images/myportfolio_screen_web.png" alt="Web screen" style="max-width: 100%; height: auto;">
 
-A few resources to get you started if this is your first Flutter project:
+### 📘 Tablet
+<img src="images/myportfolio_screen_tablet.png" alt="Tablet screen" style="width: 300px; height: auto;">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 📱 Phone
+<img src="images/myportfolio_screen_phone.jpg" alt="Phone screen" style="width: 200px; height: auto;">
