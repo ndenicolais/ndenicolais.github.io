@@ -18,7 +18,6 @@ class MyWorks extends StatelessWidget {
       builder: (context, constraints) {
         double screenWidth = constraints.maxWidth;
         double titleFontSize = screenWidth > 800 ? 30 : 20;
-        double sectionTitleFontSize = screenWidth > 800 ? 24 : 18;
         double sectionBodyFontSize = screenWidth > 800 ? 16 : 14;
         double dividerIndent = screenWidth > 800 ? 240 : 80;
 
@@ -53,20 +52,28 @@ class MyWorks extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          tArethusa,
+                          wArethusaYear,
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontSize: sectionTitleFontSize,
+                            fontSize: sectionBodyFontSize,
+                            color: Theme.of(context).colorScheme.tertiary,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'CustomFont',
                           ),
                         ),
-                        const SizedBox(width: 10),
                         Text(
-                          dTime,
+                          wArethusaJob,
                           style: TextStyle(
+                            fontSize: sectionBodyFontSize,
                             color: Theme.of(context).colorScheme.secondary,
-                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'CustomFont',
+                          ),
+                        ),
+                        Text(
+                          wArethusaMap,
+                          style: TextStyle(
+                            fontSize: sectionBodyFontSize,
+                            color: Theme.of(context).colorScheme.secondary,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'CustomFont',
                           ),

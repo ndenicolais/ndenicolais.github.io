@@ -84,6 +84,7 @@ class MyBio extends StatelessWidget {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 14),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -97,7 +98,7 @@ class MyBio extends StatelessWidget {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              eDiploma,
+                              eDiplomaYear,
                               style: TextStyle(
                                 fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.tertiary,
@@ -106,7 +107,16 @@ class MyBio extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              eLiceo,
+                              eDiplomaType,
+                              style: TextStyle(
+                                fontSize: sectionBodyFontSize,
+                                color: Theme.of(context).colorScheme.secondary,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'CustomFont',
+                              ),
+                            ),
+                            Text(
+                              eDiplomaMap,
                               style: TextStyle(
                                 fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.secondary,
@@ -115,7 +125,7 @@ class MyBio extends StatelessWidget {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              eBachelor,
+                              eBachelorYear,
                               style: TextStyle(
                                 fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.tertiary,
@@ -124,7 +134,16 @@ class MyBio extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              eUni,
+                              eBachelorType,
+                              style: TextStyle(
+                                fontSize: sectionBodyFontSize,
+                                color: Theme.of(context).colorScheme.secondary,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'CustomFont',
+                              ),
+                            ),
+                            Text(
+                              eBachelorMap,
                               style: TextStyle(
                                 fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.secondary,
@@ -133,7 +152,7 @@ class MyBio extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 14),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -195,10 +214,19 @@ class MyBio extends StatelessWidget {
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              lCertification,
+                              lTrinityYear,
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.tertiary,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'CustomFont',
+                              ),
+                            ),
+                            Text(
+                              lTrinityType,
+                              style: TextStyle(
+                                fontSize: sectionBodyFontSize,
+                                color: Theme.of(context).colorScheme.secondary,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'CustomFont',
                               ),
@@ -208,6 +236,25 @@ class MyBio extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: sectionBodyFontSize,
                                 color: Theme.of(context).colorScheme.secondary,
+                                fontFamily: 'CustomFont',
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              lGoldsmithYear,
+                              style: TextStyle(
+                                fontSize: sectionBodyFontSize,
+                                color: Theme.of(context).colorScheme.tertiary,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'CustomFont',
+                              ),
+                            ),
+                            Text(
+                              lGoldsmithType,
+                              style: TextStyle(
+                                fontSize: sectionBodyFontSize,
+                                color: Theme.of(context).colorScheme.secondary,
+                                fontWeight: FontWeight.bold,
                                 fontFamily: 'CustomFont',
                               ),
                             ),
