@@ -7,7 +7,7 @@ class AppConstants {
       Uri.parse('https://it.linkedin.com/in/nicoladenicolais');
   static final Uri uriGithub = Uri.parse('https://github.com/ndenicolais');
   static final Uri uriPdf = Uri.parse(
-    'https://drive.google.com/file/d/1XY10jnOqsJbNAeiPJV00Pw8LfErro5TI/view',
+    'https://drive.google.com/file/d/1z61lH-7SbcnQGG90fi8IvuTAYxdYa4Sk/view',
   );
   static const String uriDiggerly = 'https://rsi-na.it/diggerly/';
   static const String uriReasset =
