@@ -1,11 +1,11 @@
 {
-    "name": "ndenicolais",
-    "short_name": "ndenicolais",
+    "name": "MyPortfolio",
+    "short_name": "MyPortfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Nicola De Nicolais's Portfolio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
