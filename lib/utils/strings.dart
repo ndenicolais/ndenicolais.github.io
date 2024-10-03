@@ -6,14 +6,14 @@ String copyright = '© 2024 Nicola De Nicolais';
 String tTitle = 'My Portfolio';
 String tDrawer = 'NDN';
 String tTop = 'Top';
-String tAbout = 'About me';
+String tAbout = 'Bio';
 String tSkills = 'Skills';
 String tWorks = 'Work';
 String tProjects = 'Projects';
 
 // DRAWER
 String dTop = 'Top';
-String dAbout = 'About me';
+String dBio = 'Bio';
 String dSkills = 'Skills';
 String dWorks = 'Work';
 String dProjects = 'Projects';
@@ -21,13 +21,14 @@ String dTheme = 'Theme';
 
 // MY TOP
 String job = 'Software Developer';
-String download = 'Download CV';
+String cvLarge = 'Download CV';
+String cvSmall = 'CV';
 
 // MY BIO
-String sAbout = 'About me';
+String sBio = 'My Bio';
 String tBio = 'Bio';
 String description =
-    'I am a software developer with 2 years of experience in research and development. During this experience I started developing Android applications, both using the native language Kotlin with XML Layout and Jetpack Compose and the language Dart with Flutter. I use the Figma tool to design my app structures before converting them into code. In this period I am refining my development skills with Flutter.';
+    'I am a software developer with 2 years of experience in research and development. During this time, I started developing Android applications using both the native Kotlin language with XML Layout and the Jetpack Compose framework, as well as the Dart language with the Flutter framework. To design the structures of my apps, I use the tool Figma before translating the designs into code. Currently, I am refining my skills in cross-platform mobile app development with Flutter.';
 String tEducation = 'Education';
 String eDiplomaYear = '2006-2010';
 String eDiplomaType = 'Scientific Diploma';
@@ -47,12 +48,16 @@ String lGoldsmith = 'Goldsmiths College of London';
 String sSkills = 'My Skills';
 String sDart = 'Dart';
 String sFlutter = 'Flutter';
-String sFirebase = 'Firebase';
-String sAndroid = 'Android';
 String sKotlin = 'Kotlin';
+String sCompose = 'Compose';
 String sFigma = 'Figma';
-String sJavascript = 'Javascript';
-String sTypescript = 'Typescript';
+String sCanva = 'Canva';
+String sVsc = 'VSCode';
+String sStudio = 'Studio';
+String sFirebase = 'Firebase';
+String sMongo = 'MongoDB';
+String sJavascript = 'JavaScript';
+String sTypescript = 'TypeScript';
 String sHTML = 'HTML';
 String sCSS = 'CSS';
 String sReact = 'React';
@@ -89,11 +94,8 @@ String link = 'Link';
 // MY PROJECTS
 String sProjects = 'My Projects';
 String tGithub = 'Github';
-String dGithub = '''
-GitHub has all the projects and applications I have developed since the beginning of my career as a software developer.
-I started with the development of PWA using JavaScript and TypeScript languages with React.js framework, with backend developed in Node.js with Express.js.
-Later I expanded my field of expertise in the field of Android development using its native language Kotlin with which made applications both with XML Layouts and, later, with the framework Jetpack Compose. Later, I expanded my skills by adopting the Dart language with the Flutter framework with which I am currently developing applications.
-This step allowed me to develop cross-platform apps with modern and responsive interfaces, optimizing the development process thanks to the combination of native and cross-platform code.''';
+String dGithub =
+    'All the projects and applications I have developed since the beginning of my career as a software developer are available on GitHub. I started by developing Progressive Web Apps (PWA) using JavaScript and TypeScript, with React.js for the frontend and Node.js with Express.js for the backend. Later, I specialized in developing Android applications using Kotlin, building several apps with traditional XML layouts and later adopting Jetpack Compose to create more modern and dynamic interfaces. I then expanded my skill set by incorporating the Dart language and the Flutter framework, with which I am currently developing applications. This allows me to create high-quality cross-platform solutions, with modern and responsive interfaces, optimizing development with a single codebase for multiple platforms.';
 
 // Flutter
 String pFlutter = 'Flutter';
