@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:myportfolio/pages/sections/my_bio.dart';
 import 'package:myportfolio/pages/sections/my_projects.dart';
 import 'package:myportfolio/pages/sections/my_skills.dart';
@@ -16,6 +17,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
   void scrollToSection(GlobalKey key) {
     final context = key.currentContext;
     if (context != null) {
@@ -38,29 +41,52 @@ class HomePageState extends State<HomePage> {
             drawer: MyDrawer(
               onScrollToSection: scrollToSection,
             ),
-            body: CustomScrollView(
-              slivers: [
-                MyTopBar(
-                  onScrollToSection: scrollToSection,
-                ),
-                const SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      MyTop(),
-                      SizedBox(height: 40),
-                      MyBio(),
-                      SizedBox(height: 40),
-                      MySkills(),
-                      SizedBox(height: 40),
-                      MyWorks(),
-                      SizedBox(height: 40),
-                      MyProjects(),
-                      SizedBox(height: 40),
-                      MyFooter(),
-                    ],
+            body: Focus(
+              autofocus: true,
+              onKeyEvent: (FocusNode node, KeyEvent event) {
+                if (event is KeyDownEvent) {
+                  var offset = _scrollController.offset;
+                  if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+                    setState(() {
+                      _scrollController.animateTo(offset - 200,
+                          duration: const Duration(milliseconds: 30),
+                          curve: Curves.ease);
+                    });
+                  } else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+                    setState(() {
+                      _scrollController.animateTo(offset + 200,
+                          duration: const Duration(milliseconds: 30),
+                          curve: Curves.ease);
+                    });
+                  }
+                }
+                return KeyEventResult.ignored;
+              },
+              child: CustomScrollView(
+                controller: _scrollController,
+                slivers: [
+                  MyTopBar(
+                    onScrollToSection: scrollToSection,
                   ),
-                ),
-              ],
+                  const SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        MyTop(),
+                        SizedBox(height: 40),
+                        MyBio(),
+                        SizedBox(height: 40),
+                        MySkills(),
+                        SizedBox(height: 40),
+                        MyWorks(),
+                        SizedBox(height: 40),
+                        MyProjects(),
+                        SizedBox(height: 40),
+                        MyFooter(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
