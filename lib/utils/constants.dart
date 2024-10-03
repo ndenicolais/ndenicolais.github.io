@@ -5,12 +5,13 @@ class AppConstants {
   );
   static final Uri uriLinkedin =
       Uri.parse('https://it.linkedin.com/in/nicoladenicolais');
+
   static final Uri uriGithub = Uri.parse('https://github.com/ndenicolais');
   static final Uri uriPdf = Uri.parse(
-    'https://drive.google.com/file/d/1z61lH-7SbcnQGG90fi8IvuTAYxdYa4Sk/view',
+    'https://drive.google.com/file/d/1cG4GSKNZFyhRdgD5_Wccya8vIHHDGdyn/view',
   );
-  static const String uriDiggerly = 'https://rsi-na.it/diggerly/';
-  static const String uriReasset =
-      'https://rsi-na.it/progetto-di-ricerca-reasset/';
-  static const String uriCads = 'https://rsi-na.it/progetto-cads/';
+  static final Uri uriDiggerly = Uri.parse('https://rsi-na.it/diggerly/');
+  static final Uri uriReasset =
+      Uri.parse('https://rsi-na.it/progetto-di-ricerca-reasset/');
+  static final Uri uriCads = Uri.parse('https://rsi-na.it/progetto-cads/');
 }
