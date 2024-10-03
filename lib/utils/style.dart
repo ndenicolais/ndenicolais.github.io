@@ -42,7 +42,7 @@ class StyleParams {
 
 class Style {
   static StyleParams getStyleParams(double screenWidth) {
-    bool isMobile = screenWidth < 800;
+    bool isMobile = screenWidth < 900;
 
     return StyleParams(
       megaSize: screenWidth > 800 ? 40 : 28,
