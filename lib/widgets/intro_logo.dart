@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HeartbeatLogo extends StatefulWidget {
+class IntroLogo extends StatefulWidget {
   final double width;
   final double height;
 
-  const HeartbeatLogo({
+  const IntroLogo({
     Key? key,
     required this.width,
     required this.height,
   }) : super(key: key);
 
   @override
-  HeartbeatLogoState createState() => HeartbeatLogoState();
+  IntroLogoState createState() => IntroLogoState();
 }
 
-class HeartbeatLogoState extends State<HeartbeatLogo>
+class IntroLogoState extends State<IntroLogo>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -24,10 +24,10 @@ class HeartbeatLogoState extends State<HeartbeatLogo>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(seconds: 1),
     )..repeat(reverse: true);
 
-    _animation = Tween<double>(begin: 1.0, end: 1.2).animate(
+    _animation = Tween<double>(begin: 1.0, end: 1.4).animate(
       CurvedAnimation(
         parent: _controller,
         curve: Curves.easeInOut,

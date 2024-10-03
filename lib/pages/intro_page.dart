@@ -17,7 +17,7 @@ class IntroPageState extends State<IntroPage> {
   }
 
   navigateToHomePage() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       Navigator.pushReplacement(
         context,
@@ -28,61 +28,31 @@ class IntroPageState extends State<IntroPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth < 600) {
-            return _buildSmallScreenLayout();
-          } else if (constraints.maxWidth < 1200) {
-            return _buildMediumScreenLayout();
-          } else {
-            return _buildLargeScreenLayout();
-          }
-        },
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IntroLogo(
+              width: _getLogoSize(screenWidth),
+              height: _getLogoSize(screenWidth),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildSmallScreenLayout() {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          HeartbeatLogo(
-            width: 120,
-            height: 120,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMediumScreenLayout() {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          HeartbeatLogo(
-            width: 140,
-            height: 140,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLargeScreenLayout() {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          HeartbeatLogo(
-            width: 180,
-            height: 180,
-          ),
-        ],
-      ),
-    );
+  double _getLogoSize(double screenWidth) {
+    if (screenWidth < 600) {
+      return 120;
+    } else if (screenWidth < 1200) {
+      return 140;
+    } else {
+      return 180;
+    }
   }
 }
