@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
 import 'package:myportfolio/utils/constants.dart';
 import 'package:myportfolio/utils/strings.dart';
+import 'package:myportfolio/utils/style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyFooter extends StatelessWidget {
@@ -9,85 +11,70 @@ class MyFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        double screenWidth = constraints.maxWidth;
-        double padding = screenWidth > 1200
-            ? 420 // Web o tablet grandi
-            : screenWidth > 800
-                ? 120 // Tablet
-                : 20; // Telefono
+    double screenWidth = MediaQuery.of(context).size.width;
+    final styles = Style.getStyleParams(screenWidth);
 
-        double iconSize = screenWidth > 800 ? 30 : 24;
-        double textFontSize = screenWidth > 800 ? 18 : 14;
-        double smallTextFontSize = screenWidth > 800 ? 16 : 12;
-        double contactSpacing = screenWidth > 800 ? 12 : 6;
-
-        if (screenWidth <= 800) {
-          return Container(
-            color: Theme.of(context).colorScheme.secondary,
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: padding),
-            child: Center(
-              child: Text(
-                copyright,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: smallTextFontSize,
-                  fontFamily: 'CustomFont',
-                ),
-              ),
+    if (styles.isMobile) {
+      return Container(
+        color: Theme.of(context).colorScheme.secondary,
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: styles.padding),
+        child: Center(
+          child: Text(
+            copyright,
+            style: GoogleFonts.montserrat(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: styles.smallSize,
             ),
-          );
-        }
+          ),
+        ),
+      );
+    }
 
-        return Container(
-          color: Theme.of(context).colorScheme.secondary,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: padding),
-          child: Column(
+    return Container(
+      color: Theme.of(context).colorScheme.secondary,
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: styles.padding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _buildInfoRow(context, MingCuteIcons.mgc_home_6_fill, fHome,
-                      iconSize, textFontSize),
-                  SizedBox(width: contactSpacing),
-                  _buildInfoRow(context, MingCuteIcons.mgc_phone_fill, fPhone,
-                      iconSize, textFontSize),
-                  SizedBox(width: contactSpacing),
-                  _buildInfoRow(context, MingCuteIcons.mgc_mail_fill, fMail,
-                      iconSize, textFontSize),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _buildIconButton(context, AppConstants.uriMail,
-                      MingCuteIcons.mgc_mail_send_fill, fEmail, iconSize),
-                  SizedBox(width: contactSpacing),
-                  _buildIconButton(context, AppConstants.uriGithub,
-                      MingCuteIcons.mgc_github_2_fill, fGithub, iconSize),
-                  SizedBox(width: contactSpacing),
-                  _buildIconButton(context, AppConstants.uriLinkedin,
-                      MingCuteIcons.mgc_linkedin_fill, fLinkedin, iconSize),
-                ],
-              ),
-              const SizedBox(height: 12),
-              Text(
-                copyright,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: smallTextFontSize,
-                  fontFamily: 'CustomFont',
-                ),
-              ),
+              _buildInfoRow(context, MingCuteIcons.mgc_home_6_fill, fHome,
+                  styles.iconSize, styles.textFontSize),
+              SizedBox(width: styles.contactSpacing),
+              _buildInfoRow(context, MingCuteIcons.mgc_phone_fill, fPhone,
+                  styles.iconSize, styles.textFontSize),
+              SizedBox(width: styles.contactSpacing),
+              _buildInfoRow(context, MingCuteIcons.mgc_mail_fill, fMail,
+                  styles.iconSize, styles.textFontSize),
             ],
           ),
-        );
-      },
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _buildIconButton(context, AppConstants.uriMail,
+                  MingCuteIcons.mgc_mail_send_fill, fEmail, styles.iconSize),
+              SizedBox(width: styles.contactSpacing),
+              _buildIconButton(context, AppConstants.uriGithub,
+                  MingCuteIcons.mgc_github_2_fill, fGithub, styles.iconSize),
+              SizedBox(width: styles.contactSpacing),
+              _buildIconButton(context, AppConstants.uriLinkedin,
+                  MingCuteIcons.mgc_linkedin_fill, fLinkedin, styles.iconSize),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            copyright,
+            style: GoogleFonts.montserrat(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: styles.smallSize,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -103,7 +90,7 @@ class MyFooter extends StatelessWidget {
         const SizedBox(width: 8),
         Text(
           text,
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             color: Theme.of(context).colorScheme.primary,
             fontSize: textFontSize,
           ),

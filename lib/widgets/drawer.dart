@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
 import 'package:myportfolio/theme/theme_notifier.dart';
 import 'package:myportfolio/utils/constants.dart';
@@ -55,15 +56,15 @@ class MyDrawer extends StatelessWidget {
             const SizedBox(height: 10),
             ListTile(
               leading: Icon(
-                  size: 24,
-                  MingCuteIcons.mgc_arrows_up_fill,
-                  color: Theme.of(context).colorScheme.primary),
+                size: 24,
+                MingCuteIcons.mgc_arrows_up_fill,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: Text(
                 dTop,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
@@ -73,33 +74,33 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                  size: 24,
-                  MingCuteIcons.mgc_user_4_fill,
-                  color: Theme.of(context).colorScheme.primary),
+                size: 24,
+                MingCuteIcons.mgc_user_4_fill,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: Text(
-                dAbout,
-                style: TextStyle(
+                dBio,
+                style: GoogleFonts.montserrat(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
-                onScrollToSection(GlobalKeys.aboutSectionKey);
+                onScrollToSection(GlobalKeys.bioSectionKey);
                 Navigator.of(context).pop();
               },
             ),
             ListTile(
               leading: Icon(
-                  size: 24,
-                  MingCuteIcons.mgc_briefcase_fill,
-                  color: Theme.of(context).colorScheme.primary),
+                size: 24,
+                MingCuteIcons.mgc_briefcase_fill,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: Text(
                 dWorks,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
@@ -109,15 +110,15 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                  size: 24,
-                  MingCuteIcons.mgc_code_fill,
-                  color: Theme.of(context).colorScheme.primary),
+                size: 24,
+                MingCuteIcons.mgc_code_fill,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: Text(
                 dProjects,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontFamily: 'CustomFont',
                 ),
               ),
               onTap: () {
@@ -127,15 +128,15 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                  size: 24,
-                  MingCuteIcons.mgc_palette_fill,
-                  color: Theme.of(context).colorScheme.primary),
+                size: 24,
+                MingCuteIcons.mgc_palette_fill,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: Text(
                 dTheme,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
-                  fontFamily: 'CustomFont',
                 ),
               ),
               trailing: GestureDetector(
@@ -211,10 +212,9 @@ class MyDrawer extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       copyright,
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
-                        fontFamily: 'CustomFont',
                       ),
                     ),
                   ],

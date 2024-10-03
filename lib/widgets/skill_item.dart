@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SkillItem extends StatelessWidget {
   const SkillItem({
@@ -24,10 +25,9 @@ class SkillItem extends StatelessWidget {
           width: 140,
           child: Text(
             title,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: Theme.of(context).colorScheme.secondary,
               fontSize: 20,
-              fontFamily: 'CustomFont',
             ),
             textAlign: TextAlign.center,
           ),

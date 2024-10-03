@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/utils/globals.dart';
 import 'package:myportfolio/utils/strings.dart';
+import 'package:myportfolio/utils/style.dart';
 
 class MyBio extends StatelessWidget {
   const MyBio({Key? key}) : super(key: key);
@@ -12,271 +14,194 @@ class MyBio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        double screenWidth = constraints.maxWidth;
-        double titleFontSize = screenWidth > 800 ? 30 : 20;
-        double sectionTitleFontSize = screenWidth > 800 ? 24 : 18;
-        double sectionBodyFontSize = screenWidth > 800 ? 16 : 14;
-        double progressBarWidth = screenWidth > 800 ? 200 : 120;
-        double dividerIndent = screenWidth > 800 ? 240 : 80;
+    double screenWidth = MediaQuery.of(context).size.width;
+    final styles = Style.getStyleParams(screenWidth);
 
-        return Material(
-          color: Theme.of(context).colorScheme.surface,
-          child: Center(
-            child: Column(
-              children: [
-                Text(
-                  sAbout.toUpperCase(),
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'CustomFont',
-                  ),
-                ),
-                Divider(
-                  thickness: 1,
-                  indent: dividerIndent,
-                  endIndent: dividerIndent,
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.12),
-                  child: Container(
-                    key: GlobalKeys.aboutSectionKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    tBio,
-                                    style: TextStyle(
-                                      fontSize: sectionTitleFontSize,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontFamily: 'CustomFont',
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    description,
-                                    style: TextStyle(
-                                      fontSize: sectionBodyFontSize,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontFamily: 'CustomFont',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 14),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tEducation,
-                              style: TextStyle(
-                                fontSize: sectionTitleFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              eDiplomaYear,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.tertiary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              eDiplomaType,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              eDiplomaMap,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              eBachelorYear,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.tertiary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              eBachelorType,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              eBachelorMap,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 14),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tLanguages,
-                              style: TextStyle(
-                                fontSize: sectionTitleFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/italian.png',
-                                  width: 30,
-                                  height: 30,
-                                ),
-                                const SizedBox(width: 4),
-                                SizedBox(
-                                  width: progressBarWidth,
-                                  height: 10,
-                                  child: LinearProgressIndicator(
-                                    value: 1,
-                                    backgroundColor:
-                                        Theme.of(context).colorScheme.primary,
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        Theme.of(context).colorScheme.tertiary),
-                                    borderRadius: BorderRadius.circular(25),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 4),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/english.png',
-                                  width: 30,
-                                  height: 30,
-                                ),
-                                const SizedBox(width: 4),
-                                SizedBox(
-                                  width: progressBarWidth,
-                                  height: 10,
-                                  child: LinearProgressIndicator(
-                                    value: 0.7,
-                                    backgroundColor:
-                                        Theme.of(context).colorScheme.primary,
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        Theme.of(context).colorScheme.tertiary),
-                                    borderRadius: BorderRadius.circular(25),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              lTrinityYear,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.tertiary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              lTrinityType,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              lTrinity,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              lGoldsmithYear,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.tertiary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              lGoldsmithType,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                            Text(
-                              lGoldsmith,
-                              style: TextStyle(
-                                fontSize: sectionBodyFontSize,
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontFamily: 'CustomFont',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    return Material(
+      color: Theme.of(context).colorScheme.surface,
+      child: Center(
+        child: Column(
+          key: GlobalKeys.bioSectionKey,
+          children: [
+            _buildTitle(context, styles),
+            _buildDivider(context, styles),
+            const SizedBox(height: 10),
+            _buildBioBody(context, styles),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTitle(BuildContext context, StyleParams styles) {
+    return Text(
+      sBio.toUpperCase(),
+      style: GoogleFonts.montserrat(
+        color: Theme.of(context).colorScheme.secondary,
+        fontSize: styles.largeSize,
+        fontWeight: FontWeight.w600,
+      ),
+    );
+  }
+
+  Widget _buildDivider(BuildContext context, StyleParams styles) {
+    return Divider(
+      thickness: 1,
+      indent: styles.dividerIndent,
+      endIndent: styles.dividerIndent,
+      color: Theme.of(context).colorScheme.secondary,
+    );
+  }
+
+  Widget _buildBioBody(BuildContext context, StyleParams styles) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildBioText(context, styles),
+          const SizedBox(height: 14),
+          _buildEducationSection(context, styles),
+          const SizedBox(height: 14),
+          _buildLanguagesSection(context, styles),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBioText(BuildContext context, StyleParams styles) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          tBio,
+          style: GoogleFonts.montserrat(
+            color: Theme.of(context).colorScheme.secondary,
+            fontSize: styles.mediumSize,
+            fontWeight: FontWeight.w600,
           ),
-        );
-      },
+        ),
+        Text(
+          description,
+          style: GoogleFonts.montserrat(
+            color: Theme.of(context).colorScheme.secondary,
+            fontSize: styles.smallSize,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildEducationSection(BuildContext context, StyleParams styles) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildEducationText(context, tEducation, styles),
+        _buildEducationDetail(eBachelorYear, styles.smallSize, context,
+            Theme.of(context).colorScheme.tertiary),
+        _buildEducationDetail(eBachelorType, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary,
+            bold: true),
+        _buildEducationDetail(eBachelorMap, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary),
+        const SizedBox(height: 8),
+        _buildEducationDetail(eDiplomaYear, styles.smallSize, context,
+            Theme.of(context).colorScheme.tertiary),
+        _buildEducationDetail(eDiplomaType, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary,
+            bold: true),
+        _buildEducationDetail(eDiplomaMap, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary),
+      ],
+    );
+  }
+
+  Widget _buildEducationText(
+      BuildContext context, String title, StyleParams styles) {
+    return Text(
+      title,
+      style: GoogleFonts.montserrat(
+        color: Theme.of(context).colorScheme.secondary,
+        fontSize: styles.mediumSize,
+        fontWeight: FontWeight.w600,
+      ),
+    );
+  }
+
+  Widget _buildEducationDetail(
+      String text, double? fontSize, BuildContext context, Color color,
+      {bool bold = false}) {
+    return Text(
+      text,
+      style: GoogleFonts.montserrat(
+        color: color,
+        fontSize: fontSize,
+        fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+      ),
+    );
+  }
+
+  Widget _buildLanguagesSection(BuildContext context, StyleParams styles) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildEducationText(context, tLanguages, styles),
+        const SizedBox(height: 8),
+        _buildLanguageRow(
+            context, 'assets/images/italian.png', 1, styles.progressBarWidth),
+        const SizedBox(height: 4),
+        _buildLanguageRow(
+            context, 'assets/images/english.png', 0.7, styles.progressBarWidth),
+        const SizedBox(height: 12),
+        _buildLanguageDetails(
+            lTrinityYear, lTrinityType, lTrinity, context, styles),
+        const SizedBox(height: 8),
+        _buildLanguageDetails(
+            lGoldsmithYear, lGoldsmithType, lGoldsmith, context, styles),
+      ],
+    );
+  }
+
+  Widget _buildLanguageRow(BuildContext context, String imagePath,
+      double proficiency, double? width) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Image.asset(
+          imagePath,
+          width: 30,
+          height: 30,
+        ),
+        const SizedBox(width: 4),
+        SizedBox(
+          width: width,
+          height: 10,
+          child: LinearProgressIndicator(
+            value: proficiency,
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            valueColor: AlwaysStoppedAnimation<Color>(
+                Theme.of(context).colorScheme.tertiary),
+            borderRadius: BorderRadius.circular(25),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLanguageDetails(String year, String type, String name,
+      BuildContext context, StyleParams styles) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildEducationDetail(year, styles.smallSize, context,
+            Theme.of(context).colorScheme.tertiary),
+        _buildEducationDetail(type, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary,
+            bold: true),
+        _buildEducationDetail(name, styles.smallSize, context,
+            Theme.of(context).colorScheme.secondary),
+      ],
     );
   }
 }

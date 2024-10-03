@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
 import 'package:myportfolio/theme/app_colors.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -24,10 +25,9 @@ class CardItem extends StatelessWidget {
         return AlertDialog(
           content: Text(
             description,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: Theme.of(context).colorScheme.secondary,
               fontSize: 16,
-              fontFamily: 'CustomFont',
             ),
           ),
           actions: <Widget>[
@@ -67,11 +67,9 @@ class CardItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
-                    fontSize: 20,
+                  style: GoogleFonts.montserrat(
                     color: Theme.of(context).colorScheme.secondary,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'CustomFont',
+                    fontSize: 20,
                   ),
                 ),
                 Image.asset(
