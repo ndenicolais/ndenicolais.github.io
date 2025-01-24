@@ -99,6 +99,9 @@ String dGithub =
 
 // Flutter
 String pFlutter = 'Flutter';
+String ftitCouplers = 'Couplers';
+String fdesCouplers =
+    'An app for couples to share memories, photos, and moments in one place.';
 String ftitShox = 'Shox';
 String fdesShox =
     'This application allows you to create a digital wardrobe where you can save and view all your Shoes.';

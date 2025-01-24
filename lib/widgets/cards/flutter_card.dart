@@ -35,6 +35,13 @@ class FlutterCardsState extends State<FlutterCards> {
               Row(
                 children: [
                   CardItem(
+                    title: ftitCouplers,
+                    imageUrl:
+                        'assets/images/projects/flutter/logo_couplers.png',
+                    description: fdesCouplers,
+                    linkUrl: 'https://github.com/ndenicolais/Couplers',
+                  ),
+                  CardItem(
                     title: ftitShox,
                     imageUrl: 'assets/images/projects/flutter/logo_shox.png',
                     description: fdesShox,

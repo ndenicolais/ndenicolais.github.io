@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:myportfolio/pages/intro_page.dart';
 import 'package:myportfolio/theme/app_theme.dart';
 import 'package:provider/provider.dart';
@@ -7,12 +6,6 @@ import 'package:myportfolio/theme/theme_notifier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Blocca l'orientamento verticale
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
 
   runApp(
     ChangeNotifierProvider(
