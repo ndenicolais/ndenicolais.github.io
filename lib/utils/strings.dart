@@ -99,14 +99,14 @@ String dGithub =
 
 // Flutter
 String pFlutter = 'Flutter';
+String ftitQRation = 'QRation';
+String fdesQRation = 'A scanner and QR code creator.';
 String ftitCouplers = 'Couplers';
-String fdesCouplers =
-    'An app for couples to share memories, photos, and moments in one place.';
+String fdesCouplers = 'A love events diary.';
 String ftitShox = 'Shox';
-String fdesShox =
-    'This application allows you to create a digital wardrobe where you can save and view all your Shoes.';
+String fdesShox = 'A digital shoes wardrobe.';
 String ftitPortfolio = 'My Portfolio';
-String fdesPortfolio = 'This is my Flutter multi-platform Portfolio.';
+String fdesPortfolio = 'My personal portfolio.';
 
 // Jetpack Compose
 String pCompose = 'Jetpack Compose';
