@@ -99,6 +99,8 @@ String dGithub =
 
 // Flutter
 String pFlutter = 'Flutter';
+String ftitNoteep = 'Noteep';
+String fdesNoteep = 'A digital notebook of tasks.';
 String ftitQRation = 'QRation';
 String fdesQRation = 'A scanner and QR code creator.';
 String ftitCouplers = 'Couplers';

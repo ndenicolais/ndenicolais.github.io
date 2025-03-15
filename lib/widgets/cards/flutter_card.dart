@@ -35,6 +35,12 @@ class FlutterCardsState extends State<FlutterCards> {
               Row(
                 children: [
                   CardItem(
+                    title: ftitNoteep,
+                    imageUrl: 'assets/images/projects/flutter/logo_noteep.png',
+                    description: fdesNoteep,
+                    linkUrl: 'https://github.com/ndenicolais/Noteep',
+                  ),
+                  CardItem(
                     title: ftitQRation,
                     imageUrl: 'assets/images/projects/flutter/logo_qration.png',
                     description: fdesQRation,
