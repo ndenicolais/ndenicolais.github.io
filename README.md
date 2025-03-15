@@ -1,10 +1,10 @@
-# My Portfolio
-> <b>Author: Nicola De Nicolais</b>
+## 🔶 Authors
+- [@ndn21](https://github.com/ndenicolais)
 
 ## 📄 Description
 This is my personal portfolio to showcase my professional profile, skills, works, projects, and contact information. It is build with Flutter multi-platform.
 
-## 📎 Screenshots
+## 🎨 Screenshots
 Below are some previews of how my portfolio appears across different devices:
 
 ### 💻 Web
