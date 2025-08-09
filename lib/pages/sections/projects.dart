@@ -7,9 +7,10 @@ import 'package:myportfolio/utils/style.dart';
 import 'package:myportfolio/widgets/cards/compose_card.dart';
 import 'package:myportfolio/widgets/cards/flutter_card.dart';
 import 'package:myportfolio/widgets/cards/react_card.dart';
+import 'package:myportfolio/widgets/divider_title.dart';
 
-class MyProjects extends StatelessWidget {
-  const MyProjects({Key? key}) : super(key: key);
+class Projects extends StatelessWidget {
+  const Projects({super.key});
 
   static final GlobalKey componentKey = GlobalKey();
 
@@ -28,34 +29,13 @@ class MyProjects extends StatelessWidget {
           key: GlobalKeys.projectsSectionKey,
           child: Column(
             children: [
-              _buildHeader(context, styles),
-              _buildDivider(context, styles),
+              DividerTitle(text: projectsTitle, styles: styles),
               const SizedBox(height: 10),
               _buildProjectSection(context, styles),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context, StyleParams styles) {
-    return Text(
-      sProjects.toUpperCase(),
-      style: GoogleFonts.montserrat(
-        color: Theme.of(context).colorScheme.secondary,
-        fontSize: styles.largeSize,
-        fontWeight: FontWeight.w600,
-      ),
-    );
-  }
-
-  Widget _buildDivider(BuildContext context, StyleParams styles) {
-    return Divider(
-      thickness: 1,
-      indent: styles.dividerIndent,
-      endIndent: styles.dividerIndent,
-      color: Theme.of(context).colorScheme.secondary,
     );
   }
 
@@ -69,13 +49,15 @@ class MyProjects extends StatelessWidget {
         children: [
           _buildProjectTitle(context, styles, tGithub, dGithub),
           const SizedBox(height: 10),
-          _buildProjectCard(context, styles, pFlutter, const FlutterCards()),
+          _buildProjectCard(
+              context, styles, flutterTitle, const FlutterCards()),
           const SizedBox(height: 10),
-          _buildProjectCard(context, styles, pCompose, const ComposeCards()),
+          _buildProjectCard(
+              context, styles, composeTitle, const ComposeCards()),
           const SizedBox(height: 10),
-          _buildProjectCard(context, styles, pXML, const XmlCards()),
+          _buildProjectCard(context, styles, xmlTitle, const XmlCards()),
           const SizedBox(height: 10),
-          _buildProjectCard(context, styles, pReact, const ReactCards()),
+          _buildProjectCard(context, styles, reactTitle, const ReactCards()),
         ],
       ),
     );
@@ -90,7 +72,7 @@ class MyProjects extends StatelessWidget {
           title,
           style: GoogleFonts.montserrat(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: styles.mediumSize,
+            fontSize: styles.isMobile ? styles.fontSmall : styles.fontMedium,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -99,7 +81,7 @@ class MyProjects extends StatelessWidget {
           description,
           style: GoogleFonts.montserrat(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: styles.smallSize,
+            fontSize: styles.isMobile ? styles.fontSmall : styles.fontMedium,
           ),
         ),
       ],
@@ -115,7 +97,7 @@ class MyProjects extends StatelessWidget {
           title,
           style: GoogleFonts.montserrat(
             color: Theme.of(context).colorScheme.tertiary,
-            fontSize: styles.mediumSize,
+            fontSize: styles.isMobile ? styles.fontSmall : styles.fontMedium,
             fontWeight: FontWeight.w600,
           ),
         ),
