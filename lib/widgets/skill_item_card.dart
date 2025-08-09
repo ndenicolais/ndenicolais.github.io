@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myportfolio/utils/style.dart';
 
-class SkillItem extends StatelessWidget {
-  const SkillItem({
-    Key? key,
+class SkillItemCard extends StatelessWidget {
+  const SkillItemCard({
+    super.key,
     required this.title,
     required this.image,
-  }) : super(key: key);
+  });
 
   final String title;
   final ImageProvider image;
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    final styles = Style.getStyleParams(screenWidth);
+
     return Column(
       children: [
         Image(
           image: image,
-          width: 140,
-          height: 40,
+          width: styles.isMobile ? styles.iconSmall : styles.iconMedium,
           fit: BoxFit.contain,
         ),
+        const SizedBox(height: 8),
         SizedBox(
-          width: 140,
+          width: styles.containerMicro,
           child: Text(
             title,
             style: GoogleFonts.montserrat(
               color: Theme.of(context).colorScheme.secondary,
-              fontSize: 20,
+              fontSize: styles.isMobile ? styles.fontSmall : styles.fontMedium,
             ),
             textAlign: TextAlign.center,
           ),
