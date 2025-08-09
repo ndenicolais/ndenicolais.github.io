@@ -29,7 +29,7 @@ class Education extends StatelessWidget {
             DividerTitle(text: educationTitle, styles: styles),
             const SizedBox(height: 10),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.18),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.12),
                 child: styles.isMobile
                     ? Column(
                         children: [

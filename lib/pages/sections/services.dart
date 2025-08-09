@@ -27,9 +27,14 @@ class Services extends StatelessWidget {
           children: [
             DividerTitle(text: servicesTitle, styles: styles),
             const SizedBox(height: 10),
-            styles.isMobile
-                ? _buildMobileLayout(context, styles)
-                : _buildDesktopLayout(context, styles),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.12,
+              ),
+              child: styles.isMobile
+                  ? _buildMobileLayout(context, styles)
+                  : _buildDesktopLayout(context, styles),
+            ),
           ],
         ),
       ),
@@ -37,21 +42,14 @@ class Services extends StatelessWidget {
   }
 
   Widget _buildMobileLayout(BuildContext context, StyleParams styles) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [_buildServiceItems(context, styles)],
-        ),
-      ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [_buildServiceItems(context, styles)],
     );
   }
 
   Widget _buildDesktopLayout(BuildContext context, StyleParams styles) {
-    return Column(
-      children: [_buildServiceItems(context, styles)],
-    );
+    return _buildServiceItems(context, styles);
   }
 }
 
