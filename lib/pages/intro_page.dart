@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myportfolio/pages/home_page.dart';
-import 'package:myportfolio/widgets/intro_logo.dart';
+import 'package:myportfolio/utils/style.dart';
 
 class IntroPage extends StatefulWidget {
-  const IntroPage({Key? key}) : super(key: key);
+  const IntroPage({super.key});
 
   @override
   IntroPageState createState() => IntroPageState();
@@ -17,42 +17,27 @@ class IntroPageState extends State<IntroPage> {
   }
 
   navigateToHomePage() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(milliseconds: 400));
     if (mounted) {
       Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
-      );
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
+    final styles = Style.getStyleParams(screenWidth);
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IntroLogo(
-              width: _getLogoSize(screenWidth),
-              height: _getLogoSize(screenWidth),
-            ),
-          ],
+        child: Image.asset(
+          'assets/images/logo.png',
+          width: styles.isMobile ? styles.imageMicro : styles.imageMedium,
+          height: styles.isMobile ? styles.imageMicro : styles.imageMedium,
         ),
       ),
     );
-  }
-
-  double _getLogoSize(double screenWidth) {
-    if (screenWidth < 600) {
-      return 120;
-    } else if (screenWidth < 1200) {
-      return 140;
-    } else {
-      return 180;
-    }
   }
 }
