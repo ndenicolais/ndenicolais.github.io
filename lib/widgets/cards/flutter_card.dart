@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:myportfolio/utils/strings.dart';
-import 'package:myportfolio/widgets/card_item.dart';
+import 'package:myportfolio/data/projects_list.dart';
+import 'package:myportfolio/widgets/project_item_card.dart';
 
-class FlutterCards extends StatefulWidget {
+class FlutterCards extends StatelessWidget {
   const FlutterCards({super.key});
 
   @override
-  FlutterCardsState createState() => FlutterCardsState();
-}
-
-class FlutterCardsState extends State<FlutterCards> {
-  final scrollController = ScrollController();
-
-  Map<String, bool?> cardHoverMap = {};
-
-  @override
   Widget build(BuildContext context) {
+    final scrollController = ScrollController();
+
     return SizedBox(
-      height: 260,
+      height: 280,
       child: RawScrollbar(
         controller: scrollController,
         thumbVisibility: true,
@@ -32,43 +25,15 @@ class FlutterCardsState extends State<FlutterCards> {
           scrollDirection: Axis.horizontal,
           child: Column(
             children: [
+              const SizedBox(height: 20),
               Row(
-                children: [
-                  CardItem(
-                    title: ftitNoteep,
-                    imageUrl: 'assets/images/projects/flutter/logo_noteep.png',
-                    description: fdesNoteep,
-                    linkUrl: 'https://github.com/ndenicolais/Noteep',
-                  ),
-                  CardItem(
-                    title: ftitQRation,
-                    imageUrl: 'assets/images/projects/flutter/logo_qration.png',
-                    description: fdesQRation,
-                    linkUrl: 'https://github.com/ndenicolais/QRation',
-                  ),
-                  CardItem(
-                    title: ftitCouplers,
-                    imageUrl:
-                        'assets/images/projects/flutter/logo_couplers.png',
-                    description: fdesCouplers,
-                    linkUrl: 'https://github.com/ndenicolais/Couplers',
-                  ),
-                  CardItem(
-                    title: ftitShox,
-                    imageUrl: 'assets/images/projects/flutter/logo_shox.png',
-                    description: fdesShox,
-                    linkUrl: 'https://github.com/ndenicolais/Shox',
-                  ),
-                  CardItem(
-                    title: ftitPortfolio,
-                    imageUrl: 'assets/images/logo.png',
-                    description: fdesPortfolio,
-                    linkUrl:
-                        'https://github.com/ndenicolais/ndenicolais.github.io',
-                  ),
-                ],
+                children: projects
+                    .map((p) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: ProjectItemCard(project: p),
+                        ))
+                    .toList(),
               ),
-              const SizedBox(height: 8),
             ],
           ),
         ),

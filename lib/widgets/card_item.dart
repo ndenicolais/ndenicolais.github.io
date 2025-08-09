@@ -69,13 +69,14 @@ class CardItem extends StatelessWidget {
                   title,
                   style: GoogleFonts.montserrat(
                     color: Theme.of(context).colorScheme.secondary,
-                    fontSize: 20,
+                    fontSize: 16,
                   ),
                 ),
+                const SizedBox(height: 8),
                 Image.asset(
                   imageUrl,
-                  width: 120,
-                  height: 120,
+                  width: 80,
+                  height: 80,
                   fit: BoxFit.contain,
                 ),
                 Row(

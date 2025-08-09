@@ -17,7 +17,7 @@ class ReactCardsState extends State<ReactCards> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260,
+      height: 220,
       child: RawScrollbar(
         controller: scrollController,
         thumbVisibility: true,
