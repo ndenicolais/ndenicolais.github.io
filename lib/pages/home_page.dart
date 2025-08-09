@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myportfolio/pages/sections/my_bio.dart';
-import 'package:myportfolio/pages/sections/my_projects.dart';
-import 'package:myportfolio/pages/sections/my_skills.dart';
-import 'package:myportfolio/pages/sections/my_top.dart';
-import 'package:myportfolio/pages/sections/my_works.dart';
+import 'package:myportfolio/pages/sections/about_me.dart';
+import 'package:myportfolio/pages/sections/contacts.dart';
+import 'package:myportfolio/pages/sections/education.dart';
+import 'package:myportfolio/pages/sections/projects.dart';
+import 'package:myportfolio/pages/sections/skillset.dart';
+import 'package:myportfolio/pages/sections/experiences.dart';
+import 'package:myportfolio/pages/sections/services.dart';
 import 'package:myportfolio/widgets/drawer.dart';
 import 'package:myportfolio/widgets/footer.dart';
 import 'package:myportfolio/widgets/top_bar.dart';
@@ -38,9 +40,7 @@ class HomePageState extends State<HomePage> {
         children: [
           Scaffold(
             backgroundColor: Theme.of(context).colorScheme.surface,
-            drawer: MyDrawer(
-              onScrollToSection: scrollToSection,
-            ),
+            drawer: MyDrawer(onScrollToSection: scrollToSection),
             body: Focus(
               autofocus: true,
               onKeyEvent: (FocusNode node, KeyEvent event) {
@@ -65,22 +65,18 @@ class HomePageState extends State<HomePage> {
               child: CustomScrollView(
                 controller: _scrollController,
                 slivers: [
-                  MyTopBar(
-                    onScrollToSection: scrollToSection,
-                  ),
+                  TopBar(onScrollToSection: scrollToSection),
                   const SliverToBoxAdapter(
                     child: Column(
+                      spacing: 20,
                       children: [
-                        MyTop(),
-                        SizedBox(height: 40),
-                        MyBio(),
-                        SizedBox(height: 40),
-                        MySkills(),
-                        SizedBox(height: 40),
-                        MyWorks(),
-                        SizedBox(height: 40),
-                        MyProjects(),
-                        SizedBox(height: 40),
+                        AboutMe(),
+                        Services(),
+                        Skillset(),
+                        Experiences(),
+                        Projects(),
+                        Education(),
+                        Contacts(),
                         MyFooter(),
                       ],
                     ),
