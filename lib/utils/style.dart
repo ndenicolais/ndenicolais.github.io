@@ -103,7 +103,7 @@ class Style {
     double imageMedium = 220;
     double imageLarge = 380;
     double imageMega = 420;
-    double dividerSmall = 100;
+    double dividerSmall = 40;
     double dividerMedium = 220;
     double dividerLarge = 200;
 
