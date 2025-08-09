@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
+import 'package:myportfolio/theme/theme_controller.dart';
 import 'package:myportfolio/utils/strings.dart';
-import 'package:provider/provider.dart';
-import 'package:myportfolio/theme/theme_notifier.dart';
 import 'package:myportfolio/utils/globals.dart';
+import 'package:myportfolio/utils/style.dart';
 
-class MyTopBar extends StatefulWidget {
+class TopBar extends StatefulWidget {
   final Function(GlobalKey) onScrollToSection;
 
-  const MyTopBar({Key? key, required this.onScrollToSection}) : super(key: key);
+  const TopBar({super.key, required this.onScrollToSection});
 
   @override
-  MyTopBarState createState() => MyTopBarState();
+  TopBarState createState() => TopBarState();
 }
 
-class MyTopBarState extends State<MyTopBar> {
+class TopBarState extends State<TopBar> {
   bool isDarkMode = false;
+  final List<bool> _isHovering = List<bool>.filled(6, false);
 
   @override
   Widget build(BuildContext context) {
-    isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    double screenWidth = MediaQuery.of(context).size.width;
+    final styles = Style.getStyleParams(screenWidth);
 
     return SliverAppBar(
       automaticallyImplyLeading: false,
@@ -28,17 +31,16 @@ class MyTopBarState extends State<MyTopBar> {
       flexibleSpace: FlexibleSpaceBar(
         title: Builder(
           builder: (context) {
-            final bool isMobile = MediaQuery.of(context).size.width < 800;
-            return isMobile
-                ? _buildMobileTopBar(context)
-                : _buildDesktopTopBar(context);
+            return styles.isMobile
+                ? _buildMobileTopBar(context, styles)
+                : _buildDesktopTopBar(context, styles);
           },
         ),
       ),
     );
   }
 
-  Widget _buildMobileTopBar(BuildContext context) {
+  Widget _buildMobileTopBar(BuildContext context, StyleParams styles) {
     return Row(
       children: [
         IconButton(
@@ -52,34 +54,52 @@ class MyTopBarState extends State<MyTopBar> {
         ),
         Expanded(
           child: Text(
-            tDrawer,
-            style: _titleStyle(context, 18),
+            topDrawer,
+            style: GoogleFonts.montserrat(
+              color: Theme.of(context).colorScheme.secondary,
+              fontSize: styles.fontMedium,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildDesktopTopBar(BuildContext context) {
+  Widget _buildDesktopTopBar(BuildContext context, StyleParams styles) {
+    final navItems = [
+      [topAboutMe, GlobalKeys.aboutMeSectionKey],
+      [topServices, GlobalKeys.servicesSectionKey],
+      [topSkillset, GlobalKeys.skillsSectionKey],
+      [topExperiences, GlobalKeys.experiencesSectionKey],
+      [topProjects, GlobalKeys.projectsSectionKey],
+      [topEducation, GlobalKeys.educationSectionKey],
+    ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            tTitle,
-            style: _titleStyle(context, 20),
+            topTitle,
+            style: GoogleFonts.montserrat(
+              color: Theme.of(context).colorScheme.secondary,
+              fontSize: styles.fontMedium,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Row(
             children: [
-              _buildNavButton(tTop, GlobalKeys.topSectionKey, context),
-              _buildNavButton(tAbout, GlobalKeys.bioSectionKey, context),
-              _buildNavButton(tSkills, GlobalKeys.skillsSectionKey, context),
-              _buildNavButton(tWorks, GlobalKeys.worksSectionKey, context),
-              _buildNavButton(
-                  tProjects, GlobalKeys.projectsSectionKey, context),
-              const SizedBox(width: 16),
-              _buildThemeSwitcher(context),
+              for (int i = 0; i < navItems.length; i++)
+                _buildNavTextButton(
+                  navItems[i][0] as String,
+                  navItems[i][1] as GlobalKey,
+                  context,
+                  i,
+                  styles,
+                ),
+              const SizedBox(width: 12),
+              _buildThemeSwitcher(context, styles),
             ],
           ),
         ],
@@ -87,81 +107,78 @@ class MyTopBarState extends State<MyTopBar> {
     );
   }
 
-  Widget _buildNavButton(String label, GlobalKey key, BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: ElevatedButton(
-        onPressed: () => widget.onScrollToSection(key),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Theme.of(context).colorScheme.onPrimary,
-          side: BorderSide(
-            color: Theme.of(context).colorScheme.secondary,
-            width: 1,
+  Widget _buildNavTextButton(String label, GlobalKey key, BuildContext context,
+      int index, StyleParams styles) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _isHovering[index] = true),
+      onExit: (_) => setState(() => _isHovering[index] = false),
+      child: GestureDetector(
+        onTap: () => widget.onScrollToSection(key),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Text(
+            label,
+            style: GoogleFonts.montserrat(
+              color: _isHovering[index]
+                  ? colorScheme.tertiary
+                  : colorScheme.secondary,
+              fontSize: styles.fontSmall,
+              fontWeight: FontWeight.w600,
+              decoration: _isHovering[index]
+                  ? TextDecoration.underline
+                  : TextDecoration.none,
+            ),
           ),
-        ),
-        child: Text(
-          label,
-          style: _buttonStyle(context),
         ),
       ),
     );
   }
 
-  Widget _buildThemeSwitcher(BuildContext context) {
+  Widget _buildThemeSwitcher(BuildContext context, StyleParams styles) {
     return Row(
       children: [
         Icon(
           MingCuteIcons.mgc_sun_fill,
-          size: 24,
+          size: styles.iconSmall,
           color: isDarkMode
               ? Colors.grey
               : Theme.of(context).colorScheme.secondary,
         ),
-        Switch(
-          value: isDarkMode,
-          activeColor: Theme.of(context).colorScheme.secondary,
-          activeTrackColor:
-              Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-          inactiveTrackColor: Theme.of(context).colorScheme.secondary,
-          thumbColor: WidgetStateColor.resolveWith(
-            (Set<WidgetState> states) {
-              if (states.contains(WidgetState.selected)) {
-                return Theme.of(context).colorScheme.secondary;
-              }
-              return Theme.of(context).colorScheme.primary;
-            },
-          ),
-          onChanged: (bool value) {
-            setState(() {
-              isDarkMode = value;
-              Provider.of<ThemeNotifier>(context, listen: false).switchTheme();
-            });
+        Obx(
+          () {
+            final themeController = Get.find<ThemeController>();
+            return Switch(
+              value: themeController.isDark,
+              onChanged: (value) {
+                themeController.switchTheme();
+              },
+              activeColor: Theme.of(context).colorScheme.secondary,
+              activeTrackColor: Theme.of(context)
+                  .colorScheme
+                  .secondary
+                  .withValues(alpha: 0.5),
+              inactiveTrackColor: Theme.of(context).colorScheme.secondary,
+              thumbColor: WidgetStateColor.resolveWith(
+                (Set<WidgetState> states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return Theme.of(context).colorScheme.secondary;
+                  }
+                  return Theme.of(context).colorScheme.primary;
+                },
+              ),
+            );
           },
         ),
         Icon(
           MingCuteIcons.mgc_moon_fill,
-          size: 24,
+          size: styles.iconSmall,
           color: isDarkMode
               ? Theme.of(context).colorScheme.secondary
               : Colors.grey,
         ),
       ],
-    );
-  }
-
-  TextStyle _titleStyle(BuildContext context, double fontSize) {
-    return GoogleFonts.montserrat(
-      color: Theme.of(context).colorScheme.secondary,
-      fontSize: fontSize,
-      fontWeight: FontWeight.w600,
-    );
-  }
-
-  TextStyle _buttonStyle(BuildContext context) {
-    return GoogleFonts.montserrat(
-      color: Theme.of(context).colorScheme.secondary,
-      fontSize: 14,
-      fontWeight: FontWeight.w600,
     );
   }
 }
