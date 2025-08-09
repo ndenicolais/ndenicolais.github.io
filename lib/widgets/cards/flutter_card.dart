@@ -25,7 +25,7 @@ class FlutterCards extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Row(
                 children: projects
                     .map((p) => Padding(

@@ -16,7 +16,7 @@ class ComposeCardsState extends State<ComposeCards> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 220,
+      height: 240,
       child: RawScrollbar(
         controller: scrollController,
         thumbVisibility: true,
@@ -31,6 +31,7 @@ class ComposeCardsState extends State<ComposeCards> {
           scrollDirection: Axis.horizontal,
           child: Column(
             children: [
+              const SizedBox(height: 10),
               Row(
                 children: [
                   CardItem(
