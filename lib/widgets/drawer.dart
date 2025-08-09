@@ -28,7 +28,7 @@ class MyDrawer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(height: 10),
+            const SizedBox(height: 40),
             Image.asset(
               'assets/images/logo.png',
               width: 140,
