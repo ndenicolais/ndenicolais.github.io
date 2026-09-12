@@ -43,6 +43,8 @@ export interface Project {
   githubUrl?: string;
   demoUrl?: string;
   image?: string;
+  images?: string[];
+  logo?: string;
   comingSoon?: boolean;
   wip?: boolean;
 }
@@ -65,7 +67,8 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Firebase", "Figma"],
     category: "flutter",
     githubUrl: "https://github.com/ndenicolais/Shox",
-    image: "/images/preview_shox.webp",
+    image: "/images/shox_preview.png",
+    logo: "/images/shox_logo.png",
   },
   {
     slug: "qration",
@@ -77,19 +80,8 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Mobile Scanner", "Figma"],
     category: "flutter",
     githubUrl: "https://github.com/ndenicolais/QRation",
-    image: "/images/preview_qration.webp",
-  },
-  {
-    slug: "noteep",
-    title: "Noteep",
-    description: {
-      it: "Un notebook digitale di attività. Crea, organizza e gestisci facilmente note e liste di cose da fare.",
-      en: "A digital notebook of tasks. Create, organize and manage your notes and to-do lists with ease.",
-    },
-    tech: ["Flutter", "Dart", "Supabase", "Figma"],
-    category: "flutter",
-    githubUrl: "https://github.com/ndenicolais/Noteep",
-    image: "/images/preview_noteep.webp",
+    image: "/images/qration_preview.png",
+    logo: "/images/qration_logo.png",
   },
   {
     slug: "my-portfolio",
@@ -102,7 +94,20 @@ export const projects: Project[] = [
     category: "react",
     githubUrl: "https://github.com/ndenicolais/ndenicolais.github.io",
     demoUrl: "https://ndenicolais.github.io/",
-    image: "/images/myportfolio_new_mobile.png",
+    image: "/images/myportfolio_preview.png",
+    logo: "/images/logo.png",
+  },
+  {
+    slug: "noteep",
+    title: "Noteep",
+    description: {
+      it: "Un notebook digitale di attività. Crea, organizza e gestisci facilmente note e liste di cose da fare.",
+      en: "A digital notebook of tasks. Create, organize and manage your notes and to-do lists with ease.",
+    },
+    tech: ["Flutter", "Dart", "Supabase", "Figma"],
+    category: "flutter",
+    githubUrl: "https://github.com/ndenicolais/Noteep",
+    image: "/images/preview_noteep.webp",
   },
   {
     slug: "scannercode",
@@ -180,13 +185,13 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    role: { it: "Flutter Developer", en: "Flutter Developer" },
+    role: { it: "Software Developer", en: "Software Developer" },
     company: "Giga Servizi Srl",
     location: "Villa di Briano (Caserta)",
     period: "03/2025 — Presente",
     description: {
-      it: "Lavoro nel dipartimento IT di Giga Servizi Srl come parte del team di sviluppo per una piattaforma CMS, dedicato al lato frontend. Progetto e implemento componenti UI, garantisco interfacce responsive e accessibili su web, desktop e mobile, integro REST API e mantengo la coerenza dei dati. Collaboro strettamente con il team backend e contribuisco alle decisioni UX, alla gestione dello stato e alle revisioni del codice.",
-      en: "I work in the IT department of Giga Servizi Srl as part of the development team for a CMS platform, dedicated to the frontend side. I design and implement UI components, ensure responsive and accessible interfaces across web, desktop and mobile targets, integrate REST APIs and maintain data consistency. I collaborate closely with the backend team and contribute to UX decisions, state management, and code review processes.",
+      it: "Lavoro nel dipartimento IT come Frontend & Cross-Platform Developer su molteplici progetti software aziendali, occupandomi sia dello sviluppo di piattaforme CMS avanzate sia della realizzazione di applicazioni web e mobile. Le mie attività principali includono: sviluppo frontend multi-progetto per una suite di prodotti applicativi, incluse piattaforme CMS ed ecosistemi enterprise per Web, Desktop e Mobile; progettazione e implementazione di interfacce web responsive, performanti e accessibili mediante React, Next.js, Vite e Tailwind CSS; realizzazione di moduli cross-platform in Flutter e integrazione con database MySQL ed endpoint REST API per la sincronizzazione fluida e coerente dei dati; collaborazione con i team backend e di design per l'architettura UX/UI, la gestione dello stato applicativo e il processo di code review.",
+      en: "I work in the IT department as a Frontend & Cross-Platform Developer across multiple enterprise software projects, contributing to both advanced CMS platforms and web and mobile applications. My main responsibilities include multi-project frontend development for a suite of products, including CMS platforms and enterprise ecosystems for Web, Desktop and Mobile; designing and implementing responsive, performant and accessible web interfaces with React, Next.js, Vite and Tailwind CSS; building cross-platform modules with Flutter and integrating MySQL databases and REST API endpoints for smooth and consistent data synchronization; collaborating with backend and design teams on UX/UI architecture, application state management and code reviews.",
     },
     tags: ["Flutter", "Dart", "React", "REST API", "GitHub"],
   },

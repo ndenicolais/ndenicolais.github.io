@@ -35,8 +35,8 @@ export default function Projects() {
               setPage(1);
             }}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${filter === f.key
-                ? "border-accent bg-accent text-on-accent"
-                : "border-border text-text-2 hover:border-accent hover:text-accent"
+              ? "border-accent bg-accent text-on-accent"
+              : "border-border text-text-2 hover:border-accent hover:text-accent"
               }`}
           >
             {f.label[lang]}
@@ -65,8 +65,21 @@ export default function Projects() {
                 </div>
               ) : (
                 <>
-                  <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-surface">
-                    {project.image ? (
+                  <div className="relative flex aspect-video items-center justify-center gap-3 overflow-hidden bg-surface px-4 py-3">
+                    {project.images?.length ? (
+                      <>
+                        {project.images.map((image) => (
+                          <div key={image} className="relative h-full min-w-0 flex-1 overflow-hidden rounded-lg">
+                            <Image
+                              src={image}
+                              alt={`${project.title} preview`}
+                              fill
+                              className="object-contain transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                        ))}
+                      </>
+                    ) : project.image ? (
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -78,7 +91,16 @@ export default function Projects() {
                     )}
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
+                      {project.logo && (
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          width={36}
+                          height={36}
+                          className="h-9 w-9 rounded-lg object-contain"
+                        />
+                      )}
                       <h3 className="text-lg font-semibold text-heading">{project.title}</h3>
                       {project.wip && (
                         <span className="rounded-full bg-accent-l px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
