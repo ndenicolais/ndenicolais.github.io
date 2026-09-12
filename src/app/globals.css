@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --c-bg: #fffdf9;
+  --c-card: #f5f5f5;
+  --c-surface: #ede9e3;
+  --c-heading: #1a1a1a;
+  --c-text: #2d2d2d;
+  --c-text-2: #555555;
+  --c-text-3: #666666;
+  --c-border: #e2ddd6;
+  --c-accent: #e7bc91;
+  --c-accent-h: #d4a87e;
+  --c-accent-l: rgba(231, 188, 145, 0.18);
+  --c-accent-o: rgba(231, 188, 145, 0.3);
+  --c-on-accent: #2d2d2d;
+  --c-shadow: rgba(100, 75, 40, 0.1);
+  --c-navbar: rgba(255, 253, 249, 0.92);
+}
+
+:root.dark {
+  --c-bg: #0d0d0d;
+  --c-card: #181818;
+  --c-surface: #121212;
+  --c-heading: #ffffff;
+  --c-text: #e8e8e8;
+  --c-text-2: #c0c0c0;
+  --c-text-3: #828282;
+  --c-border: #2a2a2a;
+  --c-accent: #a98467;
+  --c-accent-h: #8b6c52;
+  --c-accent-l: rgba(169, 132, 103, 0.2);
+  --c-accent-o: rgba(169, 132, 103, 0.28);
+  --c-on-accent: #1a1a1a;
+  --c-shadow: rgba(0, 0, 0, 0.5);
+  --c-navbar: rgba(13, 13, 13, 0.92);
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-card: var(--c-card);
+  --color-surface: var(--c-surface);
+  --color-heading: var(--c-heading);
+  --color-text: var(--c-text);
+  --color-text-2: var(--c-text-2);
+  --color-text-3: var(--c-text-3);
+  --color-border: var(--c-border);
+  --color-accent: var(--c-accent);
+  --color-accent-h: var(--c-accent-h);
+  --color-accent-l: var(--c-accent-l);
+  --color-on-accent: var(--c-on-accent);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--c-accent-o);
+  color: var(--c-on-accent);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-accent);
+  border-radius: 999px;
+}
+
+/* Custom cursor: only enabled on fine-pointer devices without reduced motion */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

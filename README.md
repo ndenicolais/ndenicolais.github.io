@@ -1,17 +1,37 @@
-## 🔶 Authors
-- [@ndn21](https://github.com/ndenicolais)
+# Nicola De Nicolais — Portfolio
 
-## 📄 Description
-This is my personal portfolio to showcase my professional profile, skills, works, projects, and contact information. It is build with Flutter multi-platform.
+Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mobile, Software & Web. Sviluppo app mobile cross-platform con Flutter & Dart, app Android native con Kotlin e applicazioni web con React.
 
-## 🎨 Screenshots
-Below are some previews of how my portfolio appears across different devices:
+🔗 **Live**: [ndenicolais.github.io](https://ndenicolais.github.io)
 
-### 💻 Web
-<img src="images/myportfolio_screen_large.png" alt="Web screen" style="max-width: 100%; height: auto;">
+## Features
 
-### 📘 Tablet
-<img src="images/myportfolio_screen_medium.png" alt="Tablet screen" style="width: 300px; height: auto;">
+- 🌐 Contenuti bilingue IT/EN
+- 🌗 Tema chiaro/scuro
+- 🎨 Sezione Skills con icone per tecnologia
+- 🗂️ Progetti filtrabili per categoria (Flutter, Kotlin, React)
+- 🖱️ Cursore custom e background particellare interattivo (rispetta `prefers-reduced-motion`)
+- ✉️ Form di contatto (EmailJS, con fallback `mailto:`)
+- 🔍 SEO: sitemap, robots.txt, Open Graph image generata dinamicamente
 
-### 📱 Phone
-<img src="images/myportfolio_screen_small.png" alt="Phone screen" style="width: 200px; height: auto;">
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack) + React 19 + TypeScript
+- Tailwind CSS v4
+- Framer Motion / GSAP per le animazioni
+- lucide-react, react-icons (Simple Icons)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Apri [http://localhost:3000](http://localhost:3000) per vedere il risultato in locale.
+
+Per la checklist completa di setup e i task ancora aperti, vedi [SETUP.md](./SETUP.md).
+
+## Licenza
+
+Codice e contenuti a scopo personale/portfolio. © Nicola De Nicolais.
