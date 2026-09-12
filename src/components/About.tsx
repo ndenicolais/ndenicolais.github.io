@@ -34,8 +34,8 @@ export default function About() {
           className="mx-auto h-40 w-40 overflow-hidden rounded-2xl border border-border bg-card md:mx-0 md:h-full md:w-full"
         >
           <Image
-            src="/images/logo.png"
-            alt={personalInfo.name}
+            src="/images/me.png"
+            alt={`Foto di ${personalInfo.name}`}
             width={220}
             height={220}
             className="h-full w-full object-cover"

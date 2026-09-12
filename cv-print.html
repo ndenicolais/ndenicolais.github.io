@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nicola De Nicolais - Software Developer</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        :root {
+            --ink: #30303d;
+            --muted: #5f606b;
+            --accent: #dfb07b;
+            --line: #ecd2b5;
+            --paper: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #eee;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10.2pt;
+            line-height: 1.34;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: var(--paper);
+            padding: 14mm 13mm 12mm;
+        }
+
+        header {
+            margin: -14mm -13mm 8mm;
+            padding: 9mm 13mm 7mm;
+            background: #edc193;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 31pt;
+            letter-spacing: .5px;
+            line-height: 1;
+            color: var(--ink);
+        }
+
+        .headline {
+            margin-top: 4px;
+            font-size: 15pt;
+            font-weight: 700;
+        }
+
+        .contact {
+            margin-top: 9px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            font-size: 9pt;
+        }
+
+        .contact a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .initials {
+            width: 28mm;
+            height: 28mm;
+            border: 3px solid var(--ink);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 17pt;
+            font-weight: 700;
+        }
+
+        section {
+            margin-top: 8mm;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0 0 4mm;
+            font-size: 15pt;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        .section-title::after {
+            content: '';
+            height: 2px;
+            flex: 1;
+            background: var(--line);
+            margin-top: 4px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .experience {
+            margin: 0 0 5mm;
+            break-inside: avoid;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .role {
+            font-size: 12pt;
+            font-weight: 700;
+        }
+
+        .company {
+            color: var(--muted);
+            font-size: 11pt;
+            font-weight: 700;
+        }
+
+        .meta {
+            text-align: right;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        ul {
+            margin: 2mm 0 0 5mm;
+            padding-left: 4mm;
+        }
+
+        li {
+            margin: 1mm 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.3mm 8mm;
+        }
+
+        .project {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            border-bottom: 1px solid #f1e5d8;
+            padding-bottom: 1.4mm;
+        }
+
+        .project strong {
+            white-space: nowrap;
+        }
+
+        .project a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 35mm 1fr;
+            gap: 1.7mm 4mm;
+        }
+
+        .skills strong {
+            color: var(--ink);
+        }
+
+        footer {
+            margin: 10mm -13mm -12mm;
+            padding: 5mm 13mm;
+            background: #edc193;
+            font-size: 8.5pt;
+            color: var(--ink);
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .page {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <header>
+            <div>
+                <h1>NICOLA DE NICOLAIS</h1>
+                <div class="headline">MOBILE, SOFTWARE &amp; WEB DEVELOPER</div>
+                <div class="contact">
+                    <span>+39 388 860 5458</span>
+                    <a href="mailto:n.denicolais@outlook.it">n.denicolais@outlook.it</a>
+                    <a href="https://github.com/ndenicolais">github.com/ndenicolais</a>
+                    <a href="https://it.linkedin.com/in/nicoladenicolais">linkedin.com/in/nicoladenicolais</a>
+                </div>
+            </div>
+            <div class="initials">NDN</div>
+        </header>
+
+        <section>
+            <h2 class="section-title">ABOUT <span>ME</span></h2>
+            <p>Sono uno sviluppatore Mobile, Software &amp; Web con esperienza nello sviluppo di applicazioni
+                cross-platform, native Android e web. Ho iniziato il mio percorso nel mondo blockchain, lavorando con
+                React.js, React Router e tecnologie PWA. Successivamente mi sono dedicato allo sviluppo Android con
+                Kotlin, layout XML e Jetpack Compose, fino ad approdare a Flutter &amp; Dart per la realizzazione di
+                applicazioni mobile e mobile/web. Attualmente sviluppo applicazioni mobile con Flutter e applicazioni
+                web con React, Next.js, Vite e Tailwind CSS, occupandomi di interfacce responsive e accessibili,
+                integrazione REST API e collaborazione con team di sviluppo.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">ESPERIENZE <span>PROFESSIONALI</span></h2>
+            <article class="experience">
+                <div class="row">
+                    <div>
+                        <div class="role">Flutter Developer</div>
+                        <div class="company">Giga Servizi Srl</div>
+                    </div>
+                    <div class="meta">03/2025 - Presente<br>Villa di Briano (Caserta)</div>
+                </div>
+                <p>Lavoro nel dipartimento IT come parte del team di sviluppo di una piattaforma CMS, con focus sul
+                    frontend.</p>
+                <ul>
+                    <li>Progettazione e implementazione di componenti UI responsive e accessibili per web, desktop e
+                        mobile.</li>
+                    <li>Integrazione di REST API e gestione della coerenza dei dati.</li>
+                    <li>Collaborazione con il team backend e contributo alle decisioni UX, alla gestione dello stato e
+                        alle code review.</li>
+                </ul>
+            </article>
+            <article class="experience">
+                <div class="row">
+                    <div>
+                        <div class="role">Ricercatore &amp; Software Engineer</div>
+                        <div class="company">Arethusa Srl</div>
+                    </div>
+                    <div class="meta">03/2022 - 12/2023<br>Casoria (Napoli)</div>
+                </div>
+                <p>Ho partecipato alla realizzazione di tre progetti di ricerca finanziati dalla Regione Campania e dal
+                    MISE: DIGGERly, ReASSET e CADS.</p>
+                <ul>
+                    <li>Sviluppo di applicazioni Android con Kotlin, layout XML e Jetpack Compose, oltre ad applicazioni
+                        Flutter con Dart.</li>
+                    <li>Integrazione della tecnologia blockchain nel progetto ReASSET.</li>
+                    <li>Analisi dei requisiti, progettazione di soluzioni tecniche, documentazione e collaborazione con
+                        team di sviluppo e progettazione.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2 class="section-title">PROGETTI <span>PERSONALI</span></h2>
+            <div class="project-grid">
+                <div class="project"><strong>My Portfolio</strong><a
+                        href="https://github.com/ndenicolais/ndenicolais.github.io">github.com/ndenicolais/ndenicolais.github.io</a>
+                </div>
+                <div class="project"><strong>Shox</strong><a
+                        href="https://github.com/ndenicolais/Shox">github.com/ndenicolais/Shox</a></div>
+                <div class="project"><strong>QRation</strong><a
+                        href="https://github.com/ndenicolais/QRation">github.com/ndenicolais/QRation</a></div>
+                <div class="project"><strong>Noteep</strong><a
+                        href="https://github.com/ndenicolais/Noteep">github.com/ndenicolais/Noteep</a></div>
+                <div class="project"><strong>ScannerCode</strong><a
+                        href="https://github.com/ndenicolais/ScannerCode">github.com/ndenicolais/ScannerCode</a></div>
+                <div class="project"><strong>SpeechAndText</strong><a
+                        href="https://github.com/ndenicolais/SpeechAndText">github.com/ndenicolais/SpeechAndText</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">TECHNICAL <span>SKILLSET</span></h2>
+            <div class="skills">
+                <strong>Linguaggi</strong>
+                <div>Dart, Kotlin, JavaScript, TypeScript, HTML, CSS</div>
+                <strong>Framework e librerie</strong>
+                <div>Flutter, Jetpack Compose, React.js, Next.js, Vite, Node.js, Tailwind CSS</div>
+                <strong>Database</strong>
+                <div>Firebase, Supabase, MongoDB, MySQL</div>
+                <strong>IDE</strong>
+                <div>Visual Studio Code, Android Studio</div>
+                <strong>Tools</strong>
+                <div>Git, GitHub, Figma, Canva, Notion</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">ISTRUZIONE <span>E FORMAZIONE</span></h2>
+            <div class="row">
+                <div><strong>Laurea triennale in Ingegneria Informatica</strong><br>Università degli Studi Guglielmo
+                    Marconi, Roma</div>
+                <div class="meta">2017 - 2021</div>
+            </div>
+            <div class="row" style="margin-top: 2mm">
+                <div><strong>Diploma Scientifico</strong><br>Liceo Scientifico Statale G. Rummo, Benevento</div>
+                <div class="meta">2006 - 2010</div>
+            </div>
+            <div class="row" style="margin-top: 2mm">
+                <div><strong>Certificazioni linguistiche B2 in inglese</strong><br>Trinity Hall College, Dublin;
+                    Goldsmiths College, London</div>
+                <div class="meta">2007 - 2008</div>
+            </div>
+        </section>
+
+        <footer>Autorizzo il trattamento dei dati personali contenuti nel mio CV ex art. 13 del decreto legislativo
+            196/2003 e art. 13 del regolamento UE 2016/679.</footer>
+    </main>
+</body>
+
+</html>

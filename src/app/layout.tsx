@@ -14,11 +14,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ndenicolais.github.io"),
-  title: "Nicola De Nicolais — Mobile, Software & Web Developer",
+  title: "Nicola De Nicolais - Portfolio",
   description:
     "Sviluppatore mobile, software e web: app cross-platform con Flutter & Dart, Android nativo con Kotlin e applicazioni web con React. Portfolio, progetti ed esperienze di Nicola De Nicolais.",
   openGraph: {
-    title: "Nicola De Nicolais — Mobile, Software & Web Developer",
+    title: "Nicola De Nicolais - Portfolio",
     description:
       "Sviluppatore mobile, software e web: app cross-platform con Flutter & Dart, Android nativo con Kotlin e applicazioni web con React.",
   },

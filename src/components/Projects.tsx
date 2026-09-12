@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Sparkles, Code2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Sparkles, Code2 } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import SectionTitle from "./SectionTitle";
 import { useLanguage } from "@/context/LanguageContext";
@@ -11,9 +11,16 @@ import { projects, projectFilters, ui, ProjectCategory } from "@/lib/data";
 
 export default function Projects() {
   const { lang } = useLanguage();
-  const [filter, setFilter] = useState<"all" | ProjectCategory>("flutter");
+  const [filter, setFilter] = useState<"all" | ProjectCategory>("all");
+  const [page, setPage] = useState(1);
+  const projectsPerPage = 4;
 
-  const visible = projects.filter((p) => filter === "all" || p.category === filter);
+  const filteredProjects = projects.filter((p) => filter === "all" || p.category === filter);
+  const pageCount = Math.ceil(filteredProjects.length / projectsPerPage);
+  const visible =
+    filter === "all"
+      ? filteredProjects.slice((page - 1) * projectsPerPage, page * projectsPerPage)
+      : filteredProjects;
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
@@ -23,12 +30,14 @@ export default function Projects() {
         {projectFilters.map((f) => (
           <button
             key={f.key}
-            onClick={() => setFilter(f.key)}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
-              filter === f.key
+            onClick={() => {
+              setFilter(f.key);
+              setPage(1);
+            }}
+            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${filter === f.key
                 ? "border-accent bg-accent text-on-accent"
                 : "border-border text-text-2 hover:border-accent hover:text-accent"
-            }`}
+              }`}
           >
             {f.label[lang]}
           </button>
@@ -121,6 +130,32 @@ export default function Projects() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {filter === "all" && pageCount > 1 && (
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <button
+            type="button"
+            onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
+            disabled={page === 1}
+            aria-label="Pagina precedente"
+            className="rounded-full border border-border p-2 text-text-2 transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <span className="text-sm text-text-2" aria-live="polite">
+            {page} / {pageCount}
+          </span>
+          <button
+            type="button"
+            onClick={() => setPage((currentPage) => Math.min(pageCount, currentPage + 1))}
+            disabled={page === pageCount}
+            aria-label="Pagina successiva"
+            className="rounded-full border border-border p-2 text-text-2 transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      )}
     </section>
   );
 }

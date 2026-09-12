@@ -11,24 +11,24 @@ export const personalInfo = {
     en: "Mobile, Software & Web Developer",
   } as Localized,
   tagline: {
-    it: "Sviluppo app mobile cross-platform con Flutter & Dart, app Android native con Kotlin e applicazioni web con React.",
-    en: "I build cross-platform mobile apps with Flutter & Dart, native Android with Kotlin, and web apps with React.",
+    it: "Sviluppo app mobile cross-platform con Flutter & Dart, app Android native con Kotlin e applicazioni web con React e Next.js.",
+    en: "I build cross-platform mobile apps with Flutter & Dart, native Android with Kotlin, and web apps with React and Next.js.",
   } as Localized,
   location: "Marcianise, Italia",
   bio: {
-    it: "Ho iniziato il mio percorso lavorativo nel mondo **blockchain**, muovendo i primi passi da developer con **React.js** e **React Router**, per poi dedicarmi alle **PWA**. Da lì è nato un progetto Android che mi ha portato ad attraversare diversi approcci, dai layout **XML** ad Android nativo con **Kotlin** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart** per lo sviluppo definitivo. Da quell'esperienza ho continuato a creare in autonomia app mobile e poi mobile/web con **Flutter**, fino ad arrivare al ruolo attuale, dove sviluppo in parallelo app mobile e web con **Flutter** e applicazioni **React, Vite & Tailwind CSS**.",
-    en: "I started my career in the **blockchain** world, taking my first steps as a developer with **React.js** and **React Router** before moving on to **PWAs**. From there came an Android project that led me through several approaches, from **XML** layouts to native Android with **Kotlin** and **Jetpack Compose**, eventually landing on **Flutter & Dart** for the final build. That experience pushed me to keep building on my own, first mobile apps and then mobile/web apps with **Flutter**, up to my current role, where I develop mobile and web apps with **Flutter** alongside **React, Vite & Tailwind CSS** applications in parallel.",
+    it: "Ho iniziato il mio percorso lavorativo nel mondo **blockchain**, muovendo i primi passi da developer con **React.js** e **React Router**, per poi dedicarmi alle **PWA**. Da lì è nato un progetto Android che mi ha portato ad attraversare diversi approcci, dai layout **XML** ad Android nativo con **Kotlin** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart** per lo sviluppo definitivo. Da quell'esperienza ho continuato a creare in autonomia app mobile e poi mobile/web con **Flutter**, fino ad arrivare al ruolo attuale, dove sviluppo in parallelo app mobile e web con **Flutter** e applicazioni web con **React, Next.js, Vite & Tailwind CSS**.",
+    en: "I started my career in the **blockchain** world, taking my first steps as a developer with **React.js** and **React Router** before moving on to **PWAs**. From there came an Android project that led me through several approaches, from **XML** layouts to native Android with **Kotlin** and **Jetpack Compose**, eventually landing on **Flutter & Dart** for the final build. That experience pushed me to keep building on my own, first mobile apps and then mobile/web apps with **Flutter**, up to my current role, where I develop mobile and web apps with **Flutter** alongside web applications built with **React, Next.js, Vite & Tailwind CSS**.",
   } as Localized,
   email: "n.denicolais@outlook.it",
   github: "https://github.com/ndenicolais",
   linkedin: "https://it.linkedin.com/in/nicoladenicolais",
-  cvUrl: "/cv.pdf",
+  cvUrl: "/cv.pdf" as string | undefined,
 };
 
 export const stats: { value: string; label: Localized }[] = [
   { value: "4+", label: { it: "Anni di esperienza", en: "Years of Experience" } },
   { value: "28+", label: { it: "Progetti Open Source", en: "Open Source Projects" } },
-  { value: "17+", label: { it: "Tecnologie", en: "Technologies" } },
+  { value: "24+", label: { it: "Tecnologie", en: "Technologies" } },
   { value: "2", label: { it: "Aziende", en: "Companies" } },
 ];
 
@@ -50,8 +50,8 @@ export interface Project {
 export const projectFilters: { key: "all" | ProjectCategory; label: Localized }[] = [
   { key: "all", label: { it: "Tutti", en: "All" } },
   { key: "flutter", label: { it: "Flutter", en: "Flutter" } },
-  { key: "kotlin", label: { it: "Kotlin", en: "Kotlin" } },
   { key: "react", label: { it: "React", en: "React" } },
+  { key: "kotlin", label: { it: "Kotlin", en: "Kotlin" } },
 ];
 
 export const projects: Project[] = [
@@ -157,7 +157,7 @@ export const skillCategories: SkillCategory[] = [
   { name: { it: "Mobile", en: "Mobile" }, skills: ["Flutter", "Dart", "Kotlin", "Jetpack Compose"] },
   {
     name: { it: "Frontend", en: "Frontend" },
-    skills: ["React.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite.js"],
+    skills: ["Next.js", "React.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite.js"],
   },
   {
     name: { it: "Backend & Database", en: "Backend & Database" },

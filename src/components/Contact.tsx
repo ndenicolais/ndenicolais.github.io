@@ -24,8 +24,11 @@ export default function Contact() {
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
       const data = new FormData(form);
-      const subject = encodeURIComponent(`Portfolio contact from ${data.get("name")}`);
-      const body = encodeURIComponent(String(data.get("message") ?? ""));
+      const name = String(data.get("name") ?? "");
+      const email = String(data.get("email") ?? "");
+      const message = String(data.get("message") ?? "");
+      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+      const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`);
       window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
       return;
     }
@@ -78,13 +81,15 @@ export default function Contact() {
             >
               <LinkedinIcon size={18} /> LinkedIn
             </a>
-            <a
-              href={personalInfo.cvUrl}
-              download
-              className="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent-l"
-            >
-              <Download size={16} /> {ui.downloadCv[lang]}
-            </a>
+            {personalInfo.cvUrl && (
+              <a
+                href={personalInfo.cvUrl}
+                download="Nicola_De_Nicolais_CV.pdf"
+                className="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors hover:bg-accent-l"
+              >
+                <Download size={16} /> {ui.downloadCv[lang]}
+              </a>
+            )}
           </div>
         </motion.div>
 
