@@ -10,6 +10,7 @@ Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mo
 - 🌗 Tema chiaro/scuro
 - 🎨 Sezione Skills con icone per tecnologia
 - 🗂️ Progetti filtrabili per categoria (Flutter, Kotlin, React)
+- 📄 CV PDF scaricabile dalla sezione Contatti
 - 🖱️ Cursore custom e background particellare interattivo (rispetta `prefers-reduced-motion`)
 - ✉️ Form di contatto (EmailJS, con fallback `mailto:`)
 - 🔍 SEO: sitemap, robots.txt, Open Graph image generata dinamicamente
@@ -24,7 +25,7 @@ Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mo
 ## Getting Started
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
