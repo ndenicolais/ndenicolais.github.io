@@ -42,6 +42,7 @@ export interface Project {
   category: ProjectCategory;
   githubUrl?: string;
   demoUrl?: string;
+  pageUrl?: string;
   image?: string;
   images?: string[];
   logo?: string;
@@ -67,6 +68,7 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Firebase", "Figma"],
     category: "flutter",
     githubUrl: "https://github.com/ndenicolais/Shox",
+    pageUrl: "/shox/",
     image: "/images/shox_preview.png",
     logo: "/images/shox_logo.png",
   },
@@ -298,6 +300,7 @@ export const ui = {
   projects: {
     viewGithub: { it: "Codice", en: "Code" },
     viewDemo: { it: "Demo", en: "Live demo" },
+    viewPage: { it: "Pagina app", en: "App page" },
     comingSoon: { it: "In arrivo", en: "Coming soon" },
     wip: { it: "In corso", en: "In progress" },
   },

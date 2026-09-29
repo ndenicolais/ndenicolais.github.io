@@ -55,6 +55,7 @@ yarn-error.log*
 next-env.d.ts
 
 # private local documentation
-*.md
-!README.md
-!LICENSE.md
+CLAUDE.md
+DOCUMENTATION.md
+SETUP.md
+TASKS.md

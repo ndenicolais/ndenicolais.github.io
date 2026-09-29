@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink, Sparkles, Code2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Sparkles, Code2, Smartphone } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import SectionTitle from "./SectionTitle";
 import { useLanguage } from "@/context/LanguageContext";
@@ -124,6 +124,14 @@ export default function Projects() {
                     </div>
 
                     <div className="mt-5 flex items-center gap-4">
+                      {project.pageUrl && (
+                        <a
+                          href={project.pageUrl}
+                          className="flex items-center gap-1.5 text-sm text-text-2 transition-colors hover:text-accent"
+                        >
+                          <Smartphone size={15} /> {ui.projects.viewPage[lang]}
+                        </a>
+                      )}
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}

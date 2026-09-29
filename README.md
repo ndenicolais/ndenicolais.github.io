@@ -14,6 +14,7 @@ Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mo
 - 🖱️ Cursore custom e background particellare interattivo (rispetta `prefers-reduced-motion`)
 - ✉️ Form di contatto (EmailJS, con fallback `mailto:`)
 - 🔍 SEO: sitemap, robots.txt, Open Graph image generata dinamicamente
+- 📱 Pagine app dedicate: [Shox](https://ndenicolais.github.io/shox/) con relativa [privacy policy](https://ndenicolais.github.io/shox/privacy/) (usate anche per il branding OAuth Google)
 
 ## Stack
 
