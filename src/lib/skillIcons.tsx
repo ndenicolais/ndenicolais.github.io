@@ -22,6 +22,11 @@ import {
   SiGithub,
   SiAndroidstudio,
   SiNotion,
+  SiPhp,
+  SiLaravel,
+  SiRabbitmq,
+  SiDocker,
+  SiGithubactions,
 } from "react-icons/si";
 import { Code2, Palette } from "lucide-react";
 
@@ -43,7 +48,10 @@ export const skillIcons: Record<string, SkillIcon> = {
   CSS: { Icon: SiCss, color: "#663399" },
   "Tailwind CSS": { Icon: SiTailwindcss, color: "#06B6D4" },
   "Vite.js": { Icon: SiVite, color: "#646CFF" },
+  PHP: { Icon: SiPhp, color: "#777BB4" },
+  Laravel: { Icon: SiLaravel, color: "#FF2D20" },
   "Node.js": { Icon: SiNodedotjs, color: "#5FA04E" },
+  RabbitMQ: { Icon: SiRabbitmq, color: "#FF6600" },
   Firebase: { Icon: SiFirebase, color: "#FFCA28" },
   Supabase: { Icon: SiSupabase, color: "#3ECF8E" },
   MongoDB: { Icon: SiMongodb, color: "#47A248" },
@@ -55,4 +63,6 @@ export const skillIcons: Record<string, SkillIcon> = {
   Notion: { Icon: SiNotion, color: "#000000" },
   Git: { Icon: SiGit, color: "#F05032" },
   GitHub: { Icon: SiGithub, color: "#888888" },
+  "GitHub Actions": { Icon: SiGithubactions, color: "#2088FF" },
+  Docker: { Icon: SiDocker, color: "#2496ED" },
 };

@@ -16,8 +16,8 @@ export const personalInfo = {
   } as Localized,
   location: "Marcianise, Italia",
   bio: {
-    it: "Ho iniziato il mio percorso lavorativo nel mondo **blockchain**, muovendo i primi passi da developer con **React.js** e **React Router**, per poi dedicarmi alle **PWA**. Da lì è nato un progetto Android che mi ha portato ad attraversare diversi approcci, dai layout **XML** ad Android nativo con **Kotlin** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart** per lo sviluppo definitivo. Da quell'esperienza ho continuato a creare in autonomia app mobile e poi mobile/web con **Flutter**, fino ad arrivare al ruolo attuale, dove sviluppo in parallelo app mobile e web con **Flutter** e applicazioni web con **React, Next.js, Vite & Tailwind CSS**.",
-    en: "I started my career in the **blockchain** world, taking my first steps as a developer with **React.js** and **React Router** before moving on to **PWAs**. From there came an Android project that led me through several approaches, from **XML** layouts to native Android with **Kotlin** and **Jetpack Compose**, eventually landing on **Flutter & Dart** for the final build. That experience pushed me to keep building on my own, first mobile apps and then mobile/web apps with **Flutter**, up to my current role, where I develop mobile and web apps with **Flutter** alongside web applications built with **React, Next.js, Vite & Tailwind CSS**.",
+    it: "Ho iniziato il mio percorso lavorativo nel mondo **blockchain**, muovendo i primi passi da developer con **React.js** e **React Router**, per poi dedicarmi alle **PWA**. Da lì è nato un progetto Android che mi ha portato ad attraversare diversi approcci, dai layout **XML** ad Android nativo con **Kotlin** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart** per lo sviluppo definitivo. Da quell'esperienza ho continuato a creare in autonomia app mobile e poi mobile/web con **Flutter**, fino all'esperienza in Giga Servizi, dove ho sviluppato app mobile e web con **Flutter** e applicazioni web con **React, Vite & Tailwind CSS**, estendendo il mio lavoro anche al backend con **PHP & Laravel**.",
+    en: "I started my career in the **blockchain** world, taking my first steps as a developer with **React.js** and **React Router** before moving on to **PWAs**. From there came an Android project that led me through several approaches, from **XML** layouts to native Android with **Kotlin** and **Jetpack Compose**, eventually landing on **Flutter & Dart** for the final build. That experience pushed me to keep building on my own, first mobile apps and then mobile/web apps with **Flutter**, up to my time at Giga Servizi, where I built mobile and web apps with **Flutter** and web applications with **React, Vite & Tailwind CSS**, also extending my work to the backend with **PHP & Laravel**.",
   } as Localized,
   email: "n.denicolais@outlook.it",
   github: "https://github.com/ndenicolais",
@@ -28,7 +28,7 @@ export const personalInfo = {
 export const stats: { value: string; label: Localized }[] = [
   { value: "4+", label: { it: "Anni di esperienza", en: "Years of Experience" } },
   { value: "28+", label: { it: "Progetti Open Source", en: "Open Source Projects" } },
-  { value: "24+", label: { it: "Tecnologie", en: "Technologies" } },
+  { value: "29+", label: { it: "Tecnologie", en: "Technologies" } },
   { value: "2", label: { it: "Aziende", en: "Companies" } },
 ];
 
@@ -168,11 +168,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: { it: "Backend & Database", en: "Backend & Database" },
-    skills: ["Node.js", "Firebase", "Supabase", "MongoDB", "MySQL"],
+    skills: ["PHP", "Laravel", "Node.js", "RabbitMQ", "Firebase", "Supabase", "MongoDB", "MySQL"],
   },
   {
     name: { it: "Tools & Design", en: "Tools & Design" },
-    skills: ["VS Code", "Android Studio", "Figma", "Canva", "Notion", "Git", "GitHub"],
+    skills: ["VS Code", "Android Studio", "Figma", "Canva", "Notion", "Git", "GitHub", "GitHub Actions", "Docker"],
   },
 ];
 
@@ -190,17 +190,17 @@ export const experiences: Experience[] = [
     role: { it: "Software Developer", en: "Software Developer" },
     company: "Giga Servizi Srl",
     location: "Villa di Briano (Caserta)",
-    period: "03/2025 — Presente",
+    period: "03/2025 — 09/2026",
     description: {
-      it: "Lavoro nel dipartimento IT come Frontend & Cross-Platform Developer su molteplici progetti software aziendali, occupandomi sia dello sviluppo di piattaforme CMS avanzate sia della realizzazione di applicazioni web e mobile. Le mie attività principali includono: sviluppo frontend multi-progetto per una suite di prodotti applicativi, incluse piattaforme CMS ed ecosistemi enterprise per Web, Desktop e Mobile; progettazione e implementazione di interfacce web responsive, performanti e accessibili mediante React, Next.js, Vite e Tailwind CSS; realizzazione di moduli cross-platform in Flutter e integrazione con database MySQL ed endpoint REST API per la sincronizzazione fluida e coerente dei dati; collaborazione con i team backend e di design per l'architettura UX/UI, la gestione dello stato applicativo e il processo di code review.",
-      en: "I work in the IT department as a Frontend & Cross-Platform Developer across multiple enterprise software projects, contributing to both advanced CMS platforms and web and mobile applications. My main responsibilities include multi-project frontend development for a suite of products, including CMS platforms and enterprise ecosystems for Web, Desktop and Mobile; designing and implementing responsive, performant and accessible web interfaces with React, Next.js, Vite and Tailwind CSS; building cross-platform modules with Flutter and integrating MySQL databases and REST API endpoints for smooth and consistent data synchronization; collaborating with backend and design teams on UX/UI architecture, application state management and code reviews.",
+      it: "Ho lavorato nel dipartimento IT come principale sviluppatore del frontend Flutter multipiattaforma (Web, Android, iOS) di WEB-ATTIVO / GigaCMS, un gestionale a microservizi per associazioni di categoria ed enti bilaterali, con oltre 2.500 commit. Ho realizzato una libreria di componenti condivisi, il restyling completo con temi dinamici per dominio, un Frontend Builder per schermate generate da configurazione JSON e i moduli di dominio integrati con i microservizi tramite API REST e autenticazione JWT. Ho poi esteso il lavoro al backend, progettando e sviluppando da zero in Laravel un microservizio di generazione documentale: PDF da template versionati, messaggistica RabbitMQ, verifica pubblica tramite QR code e PIN, API OpenAPI e pipeline CI/CD con GitHub Actions e Docker. In parallelo ho sviluppato CantieriPro, un gestionale per cantieri edili in React, Vite e Tailwind CSS con diagrammi di Gantt, calcolo dei costi per WBS e import di computi metrici da Excel e PDF.",
+      en: "I worked in the IT department as the lead developer of the cross-platform Flutter frontend (Web, Android, iOS) of WEB-ATTIVO / GigaCMS, a microservice-based management platform for trade associations and bilateral bodies, with over 2,500 commits. I built a shared component library, a full redesign with per-domain dynamic themes, a Frontend Builder for screens generated from JSON configuration, and the domain modules integrated with the microservices through REST APIs and JWT authentication. I then extended my work to the backend, designing and building from scratch a Laravel document-generation microservice: PDFs from versioned templates, RabbitMQ messaging, public verification via QR code and PIN, OpenAPI docs and CI/CD pipelines with GitHub Actions and Docker. In parallel I developed CantieriPro, a construction site management app in React, Vite and Tailwind CSS featuring Gantt charts, WBS cost calculation and bill-of-quantities import from Excel and PDF.",
     },
-    tags: ["Flutter", "Dart", "React", "REST API", "GitHub"],
+    tags: ["Flutter", "Dart", "Laravel", "PHP", "React", "RabbitMQ", "Docker", "GitHub Actions"],
   },
   {
     role: { it: "Ricercatore & Software Engineer", en: "Researcher & Software Engineer" },
     company: "Arethusa Srl",
-    location: "Caserta (Napoli)",
+    location: "Casoria (Napoli)",
     period: "03/2022 — 12/2023",
     description: {
       it: "Ho lavorato nel dipartimento Ricerca, Sviluppo & Innovazione di Arethusa Srl su tre progetti finanziati dalla Regione Campania e dal MISE: ReASSET, DIGGERly e CADS. In DIGGERly e CADS ho sviluppato applicazioni Android utilizzando Kotlin (layout XML e Jetpack Compose) e Flutter. Nel progetto ReASSET mi sono dedicato all'integrazione della tecnologia blockchain, contribuendo a progettare e implementare soluzioni innovative basate su questa architettura.",
