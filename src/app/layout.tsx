@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ndenicolais.github.io"),
   title: "Nicola De Nicolais - Portfolio",
   description:
-    "Sviluppatore mobile, software e web: app cross-platform con Flutter & Dart, Android nativo con Kotlin e applicazioni web con React. Portfolio, progetti ed esperienze di Nicola De Nicolais.",
+    "Frontend & Mobile developer: web and mobile apps with Flutter and web applications with React, Vite and Tailwind CSS. Portfolio, projects and experience of Nicola De Nicolais.",
   openGraph: {
     title: "Nicola De Nicolais - Portfolio",
     description:
-      "Sviluppatore mobile, software e web: app cross-platform con Flutter & Dart, Android nativo con Kotlin e applicazioni web con React.",
+      "Frontend & Mobile developer: web and mobile apps with Flutter and web applications with React, Vite and Tailwind CSS.",
   },
   icons: {
     icon: "/logo.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-bg text-text">
         <ThemeProvider>
           <LanguageProvider>

@@ -4,6 +4,9 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
 
 export type Lang = "it" | "en";
 
+// Only explicit choices are stored; the previous "lang" key was written on every visit.
+const storageKey = "lang-choice";
+
 interface LanguageContextValue {
   lang: Lang;
   toggleLang: () => void;
@@ -12,25 +15,22 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("it");
-  const [mounted, setMounted] = useState(false);
+  const [lang, setLang] = useState<Lang>("en");
 
   useEffect(() => {
-    const stored = localStorage.getItem("lang") as Lang | null;
-    if (stored) {
+    const stored = localStorage.getItem(storageKey);
+    if (stored === "it" || stored === "en") {
       // Hydration must start from the server-safe default, then restore the persisted language.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLang(stored);
     }
-    setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    localStorage.setItem("lang", lang);
-  }, [lang, mounted]);
-
-  const toggleLang = () => setLang((l) => (l === "it" ? "en" : "it"));
+  const toggleLang = () => {
+    const next = lang === "it" ? "en" : "it";
+    setLang(next);
+    localStorage.setItem(storageKey, next);
+  };
 
   return (
     <LanguageContext.Provider value={{ lang, toggleLang }}>

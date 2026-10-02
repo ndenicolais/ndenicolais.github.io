@@ -167,7 +167,7 @@ export default function Projects() {
             type="button"
             onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
             disabled={page === 1}
-            aria-label="Pagina precedente"
+            aria-label="Previous page"
             className="rounded-full border border-border p-2 text-text-2 transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
           >
             <ChevronLeft size={18} />
@@ -179,7 +179,7 @@ export default function Projects() {
             type="button"
             onClick={() => setPage((currentPage) => Math.min(pageCount, currentPage + 1))}
             disabled={page === pageCount}
-            aria-label="Pagina successiva"
+            aria-label="Next page"
             className="rounded-full border border-border p-2 text-text-2 transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
           >
             <ChevronRight size={18} />
