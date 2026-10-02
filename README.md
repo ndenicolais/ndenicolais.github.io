@@ -1,6 +1,6 @@
 # Nicola De Nicolais — Portfolio
 
-Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mobile, Software & Web. Sviluppo app mobile cross-platform con Flutter & Dart, app Android native con Kotlin e applicazioni web con React.
+Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Frontend & Mobile. Realizzo app web e mobile in Flutter e applicazioni web con React, Vite e Tailwind CSS.
 
 🔗 **Live**: [ndenicolais.github.io](https://ndenicolais.github.io)
 
@@ -14,7 +14,7 @@ Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Mo
 - 🖱️ Cursore custom e background particellare interattivo (rispetta `prefers-reduced-motion`)
 - ✉️ Form di contatto (EmailJS, con fallback `mailto:`)
 - 🔍 SEO: sitemap, robots.txt, Open Graph image generata dinamicamente
-- 📱 Pagine app dedicate: [Shox](https://ndenicolais.github.io/shox/) con relativa [privacy policy](https://ndenicolais.github.io/shox/privacy/) (usate anche per il branding OAuth Google)
+- 📱 Pagine app dedicate con privacy policy, usate anche per il branding OAuth Google: [Shox](https://ndenicolais.github.io/shox/) ([privacy](https://ndenicolais.github.io/shox/privacy/)) e [QRation](https://ndenicolais.github.io/qration/) ([privacy](https://ndenicolais.github.io/qration/privacy/))
 
 ## Stack
 

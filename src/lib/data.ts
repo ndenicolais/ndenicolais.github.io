@@ -1,3 +1,5 @@
+import { qrationApp, shoxApp } from "./apps";
+
 export interface Localized<T = string> {
   it: T;
   en: T;
@@ -7,8 +9,8 @@ export const personalInfo = {
   name: "Nicola De Nicolais",
   initials: "NDN",
   role: {
-    it: "Sviluppatore Mobile, Software & Web",
-    en: "Mobile, Software & Web Developer",
+    it: "Sviluppatore Frontend & Mobile",
+    en: "Frontend & Mobile Developer",
   } as Localized,
   tagline: {
     it: "Sviluppo app mobile cross-platform con Flutter & Dart, app Android native con Kotlin e applicazioni web con React e Next.js.",
@@ -16,8 +18,8 @@ export const personalInfo = {
   } as Localized,
   location: "Marcianise, Italia",
   bio: {
-    it: "Ho iniziato il mio percorso lavorativo nel mondo **blockchain**, muovendo i primi passi da developer con **React.js** e **React Router**, per poi dedicarmi alle **PWA**. Da lì è nato un progetto Android che mi ha portato ad attraversare diversi approcci, dai layout **XML** ad Android nativo con **Kotlin** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart** per lo sviluppo definitivo. Da quell'esperienza ho continuato a creare in autonomia app mobile e poi mobile/web con **Flutter**, fino all'esperienza in Giga Servizi, dove ho sviluppato app mobile e web con **Flutter** e applicazioni web con **React, Vite & Tailwind CSS**, estendendo il mio lavoro anche al backend con **PHP & Laravel**.",
-    en: "I started my career in the **blockchain** world, taking my first steps as a developer with **React.js** and **React Router** before moving on to **PWAs**. From there came an Android project that led me through several approaches, from **XML** layouts to native Android with **Kotlin** and **Jetpack Compose**, eventually landing on **Flutter & Dart** for the final build. That experience pushed me to keep building on my own, first mobile apps and then mobile/web apps with **Flutter**, up to my time at Giga Servizi, where I built mobile and web apps with **Flutter** and web applications with **React, Vite & Tailwind CSS**, also extending my work to the backend with **PHP & Laravel**.",
+    it: "Sviluppatore **Frontend & Mobile**: realizzo app web e mobile in **Flutter** e applicazioni web con **React**, **Vite** e **Tailwind CSS**, curando interfacce responsive e accessibili, architetture a componenti e integrazione di **API REST**. Ho iniziato il mio percorso nel mondo **blockchain**, lavorando con **React.js**, **React Router** e tecnologie **PWA**. Successivamente mi sono dedicato allo sviluppo Android con **Kotlin**, layout **XML** e **Jetpack Compose**, fino ad approdare a **Flutter & Dart**. Ho sviluppato app web e mobile per gestionali aziendali basati su **microservizi** e ho maturato anche esperienza lato backend con **PHP** e **Laravel**, che mi permette di dialogare in modo efficace con i team server-side.",
+    en: "**Frontend & Mobile** developer: I build web and mobile apps with **Flutter** and web applications with **React**, **Vite** and **Tailwind CSS**, focusing on responsive, accessible interfaces, component-based architectures and **REST API** integration. I started my journey in the **blockchain** world, working with **React.js**, **React Router** and **PWA** technologies. I then moved on to Android development with **Kotlin**, **XML** layouts and **Jetpack Compose**, eventually landing on **Flutter & Dart**. I have built web and mobile apps for business management platforms based on **microservices**, and I have also gained backend experience with **PHP** and **Laravel**, which lets me work effectively with server-side teams.",
   } as Localized,
   email: "n.denicolais@outlook.it",
   github: "https://github.com/ndenicolais",
@@ -69,7 +71,7 @@ export const projects: Project[] = [
     category: "flutter",
     githubUrl: "https://github.com/ndenicolais/Shox",
     pageUrl: "/shox/",
-    image: "/images/shox_preview.png",
+    image: shoxApp.preview,
     logo: "/images/shox_logo.png",
   },
   {
@@ -82,7 +84,8 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Mobile Scanner", "Figma"],
     category: "flutter",
     githubUrl: "https://github.com/ndenicolais/QRation",
-    image: "/images/qration_preview.png",
+    pageUrl: "/qration/",
+    image: qrationApp.preview,
     logo: "/images/qration_logo.png",
   },
   {
@@ -182,6 +185,7 @@ export interface Experience {
   location: string;
   period: string;
   description: Localized;
+  highlights?: Localized<string[]>;
   tags: string[];
 }
 
@@ -192,8 +196,26 @@ export const experiences: Experience[] = [
     location: "Villa di Briano (Caserta)",
     period: "03/2025 — 09/2026",
     description: {
-      it: "Ho lavorato nel dipartimento IT come principale sviluppatore del frontend Flutter multipiattaforma (Web, Android, iOS) di WEB-ATTIVO / GigaCMS, un gestionale a microservizi per associazioni di categoria ed enti bilaterali, con oltre 2.500 commit. Ho realizzato una libreria di componenti condivisi, il restyling completo con temi dinamici per dominio, un Frontend Builder per schermate generate da configurazione JSON e i moduli di dominio integrati con i microservizi tramite API REST e autenticazione JWT. Ho poi esteso il lavoro al backend, progettando e sviluppando da zero in Laravel un microservizio di generazione documentale: PDF da template versionati, messaggistica RabbitMQ, verifica pubblica tramite QR code e PIN, API OpenAPI e pipeline CI/CD con GitHub Actions e Docker. In parallelo ho sviluppato CantieriPro, un gestionale per cantieri edili in React, Vite e Tailwind CSS con diagrammi di Gantt, calcolo dei costi per WBS e import di computi metrici da Excel e PDF.",
-      en: "I worked in the IT department as the lead developer of the cross-platform Flutter frontend (Web, Android, iOS) of WEB-ATTIVO / GigaCMS, a microservice-based management platform for trade associations and bilateral bodies, with over 2,500 commits. I built a shared component library, a full redesign with per-domain dynamic themes, a Frontend Builder for screens generated from JSON configuration, and the domain modules integrated with the microservices through REST APIs and JWT authentication. I then extended my work to the backend, designing and building from scratch a Laravel document-generation microservice: PDFs from versioned templates, RabbitMQ messaging, public verification via QR code and PIN, OpenAPI docs and CI/CD pipelines with GitHub Actions and Docker. In parallel I developed CantieriPro, a construction site management app in React, Vite and Tailwind CSS featuring Gantt charts, WBS cost calculation and bill-of-quantities import from Excel and PDF.",
+      it: "Ho lavorato nel dipartimento IT alla realizzazione di applicazioni mobile e web per piattaforme gestionali aziendali, con focus su interfacce Flutter e React e integrazione con architetture a microservizi.",
+      en: "I worked in the IT department building mobile and web applications for business management platforms, focusing on Flutter and React interfaces and integration with microservice architectures.",
+    },
+    highlights: {
+      it: [
+        "Sviluppo in Flutter dell'app web e mobile (Android, iOS) di un gestionale a microservizi per associazioni di categoria ed enti bilaterali.",
+        "Realizzazione di una libreria di componenti condivisi, restyling completo con temi dinamici per dominio e Frontend Builder per schermate generate da configurazione JSON (UI server-driven).",
+        "Integrazione dei moduli con i microservizi tramite API REST, autenticazione JWT con refresh token, notifiche push Firebase e localizzazione IT/EN.",
+        "Sviluppo di un gestionale per cantieri edili in React, Vite, Tailwind CSS e shadcn/ui, con diagrammi di Gantt, calcolo costi per WBS e import di computi metrici da Excel e PDF.",
+        "Contributo al backend: progettazione e sviluppo di un microservizio Laravel per la generazione di documenti PDF da template, con messaggistica RabbitMQ e verifica tramite QR code.",
+        "Pipeline CI/CD con GitHub Actions (build web e APK, deploy multi-ambiente) e ambiente di sviluppo con Docker.",
+      ],
+      en: [
+        "Developed in Flutter the web and mobile app (Android, iOS) of a microservice-based management platform for trade associations and bilateral bodies.",
+        "Built a shared component library, a full redesign with per-domain dynamic themes and a Frontend Builder for screens generated from JSON configuration (server-driven UI).",
+        "Integrated the modules with the microservices through REST APIs, JWT authentication with refresh tokens, Firebase push notifications and IT/EN localization.",
+        "Developed a construction site management app in React, Vite, Tailwind CSS and shadcn/ui, with Gantt charts, WBS cost calculation and bill-of-quantities import from Excel and PDF.",
+        "Backend contribution: designed and built a Laravel microservice that generates PDF documents from templates, with RabbitMQ messaging and QR code verification.",
+        "CI/CD pipelines with GitHub Actions (web and APK builds, multi-environment deployments) and a Docker-based development environment.",
+      ],
     },
     tags: ["Flutter", "Dart", "Laravel", "PHP", "React", "RabbitMQ", "Docker", "GitHub Actions"],
   },

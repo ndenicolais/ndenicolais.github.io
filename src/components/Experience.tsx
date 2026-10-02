@@ -29,6 +29,13 @@ export default function Experience() {
             <p className="text-sm font-semibold text-accent">{exp.company}</p>
             <p className="font-mono text-xs text-text-3">{exp.location}</p>
             <p className="mt-3 text-sm leading-relaxed text-text-2">{exp.description[lang]}</p>
+            {exp.highlights && (
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-text-2 marker:text-accent">
+                {exp.highlights[lang].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )}
             <div className="mt-3 flex flex-wrap gap-2">
               {exp.tags.map((tag) => (
                 <span

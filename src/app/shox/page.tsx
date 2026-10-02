@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import SubpageHeader from "@/components/SubpageHeader";
-import ShoxHome from "@/components/ShoxHome";
+import AppHome from "@/components/AppHome";
 import Footer from "@/components/Footer";
-import { shoxApp, shoxUi } from "@/lib/shox";
+import { appUi, shoxApp } from "@/lib/apps";
 
 export const metadata: Metadata = {
   title: "Shox — Your digital shoe wardrobe",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function ShoxPage() {
   return (
     <>
-      <SubpageHeader backHref="/" backLabel={shoxUi.back} />
-      <ShoxHome />
+      <SubpageHeader backHref="/" backLabel={appUi.back} />
+      <AppHome app={shoxApp} />
       <Footer />
     </>
   );

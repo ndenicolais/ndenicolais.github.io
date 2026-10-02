@@ -2,18 +2,21 @@
 
 import { ArrowLeft, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage, type Lang } from "@/context/LanguageContext";
 import type { Localized } from "@/lib/data";
 
 interface SubpageHeaderProps {
   backHref: string;
   backLabel: Localized;
   showLang?: boolean;
+  /** Fixed language for pages that must not follow the site toggle. */
+  lang?: Lang;
 }
 
-export default function SubpageHeader({ backHref, backLabel, showLang = true }: SubpageHeaderProps) {
+export default function SubpageHeader({ backHref, backLabel, showLang = true, lang: fixedLang }: SubpageHeaderProps) {
   const { theme, toggleTheme } = useTheme();
-  const { lang, toggleLang } = useLanguage();
+  const { lang: siteLang, toggleLang } = useLanguage();
+  const lang = fixedLang ?? siteLang;
 
   return (
     <header
@@ -29,7 +32,7 @@ export default function SubpageHeader({ backHref, backLabel, showLang = true }: 
         </a>
 
         <div className="flex items-center gap-3">
-          {showLang && (
+          {showLang && !fixedLang && (
             <button
               onClick={toggleLang}
               aria-label="Toggle language"
