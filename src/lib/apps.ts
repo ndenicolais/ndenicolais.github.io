@@ -13,10 +13,11 @@ export interface AppPage {
   description: Localized;
   features: { title: Localized; text: Localized }[];
   platform: Localized;
-  /** Google account data statement shown next to the download button, followed by the privacy URL. */
-  googleDataNotice?: string;
+  /** Data statement shown under the download button, followed by the full privacy URL. */
+  privacyNotice?: string;
   screenshots: { src: string; caption?: string }[];
-  downloadUrl: string;
+  /** Omitted while the app is not public yet: the page shows "Coming soon on Google Play". */
+  downloadUrl?: string;
   sourceUrl: string;
   privacyUrl: string;
   contactEmail: string;
@@ -132,7 +133,7 @@ export const qrationApp: AppPage = {
     it: "Android 7.0+ (64-bit, arm64), con Google Play services. Accesso con Google o email. Distribuita come APK su GitHub Releases, non sul Play Store.",
     en: "Android 7.0+ (64-bit, arm64), with Google Play services. Sign in with Google or email. Distributed as an APK on GitHub Releases, not on the Play Store.",
   },
-  googleDataNotice:
+  privacyNotice:
     "When you sign in with Google, QRation receives your Google account name, email address and profile photo. They are used only to sign you in and to sync your codes across sessions; they are never shared, sold or used for advertising. See the full privacy policy:",
   screenshots: [
     { src: "/images/qration/home.png", caption: "Create" },
@@ -148,9 +149,75 @@ export const qrationApp: AppPage = {
   credits: "© 2026 Nicola De Nicolais — Source-available, non-commercial license",
 };
 
+export const fivelinkApp: AppPage = {
+  slug: "fivelink",
+  name: "Fivelink",
+  logo: "/images/fivelink_logo.png",
+  preview: "/images/fivelink/preview.png",
+  icons: { icon: "/images/fivelink/favicon_32.png", apple: "/images/fivelink/icon_192.png" },
+  lang: "en",
+  tagline: {
+    it: "Un rompicapo numerico al giorno per Android",
+    en: "A daily number puzzle for Android",
+  },
+  description: {
+    it: "Ogni giorno ricevi un numero di partenza, un obiettivo e 5 tessere operazione. Mettile nell'ordine giusto per trasformare la partenza nell'obiettivo: hai 6 tentativi, e ognuno mostra tutti i valori intermedi, fino al risultato o al punto in cui la catena si spezza. Un rompicapo nuovo ogni giorno a mezzanotte, uguale per tutti, interamente offline.",
+    en: "Every day you get a start number, a target and 5 operation tiles. Put the tiles in the right order to turn the start number into the target: you have 6 attempts, and each one shows every intermediate value, up to the result or the step where the chain breaks. A new puzzle every day at midnight, the same for everyone, entirely offline.",
+  },
+  features: [
+    {
+      title: { it: "Rompicapo del giorno", en: "Daily puzzle" },
+      text: {
+        it: "Un rompicapo nuovo ogni giorno a mezzanotte, uguale per tutti, con una sola soluzione.",
+        en: "A new puzzle every day at midnight, the same for everyone, with exactly one solution.",
+      },
+    },
+    {
+      title: { it: "Catena di indizi", en: "Chain of clues" },
+      text: {
+        it: "Ogni tentativo mostra tutti i valori intermedi, così puoi ragionare fino all'ordine giusto.",
+        en: "Every attempt reveals each intermediate value, so you can reason your way to the right order.",
+      },
+    },
+    {
+      title: { it: "Statistiche e condivisione", en: "Stats and sharing" },
+      text: {
+        it: "Serie di vittorie, distribuzione dei tentativi e un risultato da condividere senza spoiler.",
+        en: "Win streaks, attempt distribution and a spoiler-free result to share.",
+      },
+    },
+    {
+      title: { it: "Privata e offline", en: "Private and offline" },
+      text: {
+        it: "Nessun account, nessuna pubblicità, nessuna analisi, nessun permesso: i tuoi progressi restano sul telefono.",
+        en: "No account, no ads, no analytics, no permissions: your progress stays on your phone.",
+      },
+    },
+  ],
+  platform: {
+    it: "Android 7.0+ (arm64, ARMv7, x86_64). Nessun account, nessuna connessione Internet necessaria. Tema chiaro e scuro, italiano e inglese. Distribuita su Google Play.",
+    en: "Android 7.0+ (arm64, ARMv7, x86_64). No account, no internet connection needed. Light and dark theme, English and Italian. Distributed on Google Play.",
+  },
+  privacyNotice:
+    "Fivelink collects no personal data: no account, no ads, no analytics and no permissions. Your games, statistics and settings stay on your device. See the full privacy policy:",
+  screenshots: [
+    { src: "/images/fivelink/game.png", caption: "Game" },
+    { src: "/images/fivelink/win.png", caption: "Solved" },
+    { src: "/images/fivelink/help.png", caption: "How to play" },
+    { src: "/images/fivelink/stats.png", caption: "Statistics" },
+    { src: "/images/fivelink/settings.png", caption: "Settings" },
+  ],
+  // Closed testing: set to https://play.google.com/store/apps/details?id=com.ndn21.fivelink once published.
+  sourceUrl: "https://github.com/ndenicolais/Fivelink",
+  privacyUrl: `${siteUrl}/fivelink/privacy/`,
+  contactEmail,
+  credits: "© 2026 Nicola De Nicolais — All rights reserved. Source-available, non-commercial license.",
+};
+
 export const appUi = {
   back: { it: "Portfolio", en: "Portfolio" } as Localized,
   download: { it: "Scarica l'ultima versione", en: "Download latest release" } as Localized,
+  comingSoon: { it: "Presto su Google Play", en: "Coming soon on Google Play" } as Localized,
   source: { it: "Codice sorgente", en: "Source code" } as Localized,
   features: { it: "Funzioni", en: "Features" } as Localized,
   screenshots: { it: "Schermate", en: "Screenshots" } as Localized,

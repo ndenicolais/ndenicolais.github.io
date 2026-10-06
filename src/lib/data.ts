@@ -1,4 +1,4 @@
-import { qrationApp, shoxApp } from "./apps";
+import { fivelinkApp, qrationApp, shoxApp } from "./apps";
 
 export interface Localized<T = string> {
   it: T;
@@ -60,6 +60,20 @@ export const projectFilters: { key: "all" | ProjectCategory; label: Localized }[
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "fivelink",
+    title: "Fivelink",
+    description: {
+      it: "Un rompicapo numerico al giorno: metti in ordine 5 tessere operazione per trasformare il numero di partenza nell'obiettivo, in 6 tentativi. Interamente offline.",
+      en: "A daily number puzzle: order 5 operation tiles to turn the start number into the target, in 6 attempts. Entirely offline.",
+    },
+    tech: ["Flutter", "Dart", "Shared Preferences", "Figma"],
+    category: "flutter",
+    githubUrl: "https://github.com/ndenicolais/Fivelink",
+    pageUrl: "/fivelink/",
+    image: fivelinkApp.preview,
+    logo: "/images/fivelink_logo.png",
+  },
   {
     slug: "shox",
     title: "Shox",

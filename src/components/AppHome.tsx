@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Mail, ShieldCheck, Smartphone } from "lucide-react";
+import { Clock, Download, Mail, ShieldCheck, Smartphone } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import { useLanguage } from "@/context/LanguageContext";
 import { appUi, type AppPage } from "@/lib/apps";
@@ -27,14 +27,20 @@ export default function AppHome({ app }: { app: AppPage }) {
           <p className="mt-6 max-w-xl leading-relaxed text-text-2">{app.description[lang]}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={app.downloadUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-105"
-            >
-              <Download size={16} /> {appUi.download[lang]}
-            </a>
+            {app.downloadUrl ? (
+              <a
+                href={app.downloadUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-105"
+              >
+                <Download size={16} /> {appUi.download[lang]}
+              </a>
+            ) : (
+              <span className="flex items-center gap-2 rounded-full border border-dashed border-accent px-6 py-3 text-sm font-semibold text-accent">
+                <Clock size={16} /> {appUi.comingSoon[lang]}
+              </span>
+            )}
             <a
               href={app.sourceUrl}
               target="_blank"
@@ -45,11 +51,11 @@ export default function AppHome({ app }: { app: AppPage }) {
             </a>
           </div>
 
-          {app.googleDataNotice && (
+          {app.privacyNotice && (
             <p className="mt-6 flex max-w-xl gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-text-2">
               <ShieldCheck size={18} className="mt-0.5 shrink-0 text-accent" />
               <span>
-                {app.googleDataNotice}{" "}
+                {app.privacyNotice}{" "}
                 <a href={app.privacyUrl} className="break-all text-accent underline-offset-4 hover:underline">
                   {app.privacyUrl}
                 </a>

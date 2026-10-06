@@ -14,7 +14,7 @@ Portfolio personale, bilingue (IT/EN), di Nicola De Nicolais — sviluppatore Fr
 - 🖱️ Cursore custom e background particellare interattivo (rispetta `prefers-reduced-motion`)
 - ✉️ Form di contatto (EmailJS, con fallback `mailto:`)
 - 🔍 SEO: sitemap, robots.txt, Open Graph image generata dinamicamente
-- 📱 Pagine app dedicate con privacy policy, usate anche per il branding OAuth Google: [Shox](https://ndenicolais.github.io/shox/) ([privacy](https://ndenicolais.github.io/shox/privacy/)) e [QRation](https://ndenicolais.github.io/qration/) ([privacy](https://ndenicolais.github.io/qration/privacy/))
+- 📱 Pagine app dedicate con privacy policy, usate per il branding OAuth Google e per Google Play Console: [Shox](https://ndenicolais.github.io/shox/) ([privacy](https://ndenicolais.github.io/shox/privacy/)), [QRation](https://ndenicolais.github.io/qration/) ([privacy](https://ndenicolais.github.io/qration/privacy/)) e [Fivelink](https://ndenicolais.github.io/fivelink/) ([privacy](https://ndenicolais.github.io/fivelink/privacy/))
 
 ## Stack
 
