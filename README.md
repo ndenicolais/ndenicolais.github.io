@@ -112,14 +112,15 @@ npm run dev
 
 ## Documentation
 
-For the architecture, the app pages and the deployment, see [DOCUMENTATION.md](DOCUMENTATION.md). The full setup checklist and open tasks are in [SETUP.md](SETUP.md).
+For the architecture, the app pages and the deployment, see [DOCUMENTATION.md](DOCUMENTATION.md).
 
 ---
 
 ## License
 
 Copyright © 2026 Nicola De Nicolais.
-Released under the **MIT** license — see [LICENSE.md](LICENSE.md) for details.
+Source code is released under the **MIT** license — see [LICENSE.md](LICENSE.md) for details.
+Personal content (texts, CV, photos, logos and other assets) is all rights reserved and may not be reused without permission.
 
 <div align="center">
 
