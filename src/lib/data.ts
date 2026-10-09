@@ -24,7 +24,7 @@ export const personalInfo = {
   email: "n.denicolais@outlook.it",
   github: "https://github.com/ndenicolais",
   linkedin: "https://it.linkedin.com/in/nicoladenicolais",
-  cvUrl: "/cv.pdf" as string | undefined,
+  cvUrl: "/Nicola_De_Nicolais_CV.pdf" as string | undefined,
 };
 
 export const stats: { value: string; label: Localized }[] = [
