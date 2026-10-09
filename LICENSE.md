@@ -19,3 +19,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+The MIT license above applies to the source code only.
+Personal content — including texts, CV, photos, logos, images and other
+assets under /public and the personal data in src/lib/data.ts — is
+© 2026 Nicola De Nicolais, all rights reserved, and may not be reused
+without permission.
