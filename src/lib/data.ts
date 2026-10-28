@@ -1,4 +1,4 @@
-import { fivelinkApp, qrationApp, shoxApp } from "./apps";
+import { fivelinkApp, noteepApp, qrationApp, shoxApp } from "./apps";
 
 export interface Localized<T = string> {
   it: T;
@@ -61,6 +61,20 @@ export const projectFilters: { key: "all" | ProjectCategory; label: Localized }[
 
 export const projects: Project[] = [
   {
+    slug: "noteep",
+    title: "Noteep",
+    description: {
+      it: "Note, liste di controllo, attività ed eventi del calendario sincronizzati sul tuo account, con promemoria, note vocali, widget e backup.",
+      en: "Notes, checklists, tasks and calendar events synced to your account, with reminders, voice notes, widgets and backups.",
+    },
+    tech: ["Flutter", "Dart", "Firebase", "Figma"],
+    category: "flutter",
+    githubUrl: "https://github.com/ndenicolais/Noteep",
+    pageUrl: "/noteep/",
+    image: noteepApp.preview,
+    logo: "/images/noteep_logo.png",
+  },
+  {
     slug: "fivelink",
     title: "Fivelink",
     description: {
@@ -73,20 +87,6 @@ export const projects: Project[] = [
     pageUrl: "/fivelink/",
     image: fivelinkApp.preview,
     logo: "/images/fivelink_logo.png",
-  },
-  {
-    slug: "shox",
-    title: "Shox",
-    description: {
-      it: "Un'app guardaroba per scarpe per catalogare, organizzare e tracciare la tua collezione di calzature con un'interfaccia pulita e intuitiva.",
-      en: "A shoes wardrobe app to catalog, organize and track your footwear collection with a clean and intuitive interface.",
-    },
-    tech: ["Flutter", "Dart", "Firebase", "Figma"],
-    category: "flutter",
-    githubUrl: "https://github.com/ndenicolais/Shox",
-    pageUrl: "/shox/",
-    image: shoxApp.preview,
-    logo: "/images/shox_logo.png",
   },
   {
     slug: "qration",
@@ -103,6 +103,20 @@ export const projects: Project[] = [
     logo: "/images/qration_logo.png",
   },
   {
+    slug: "shox",
+    title: "Shox",
+    description: {
+      it: "Un'app guardaroba per scarpe per catalogare, organizzare e tracciare la tua collezione di calzature con un'interfaccia pulita e intuitiva.",
+      en: "A shoes wardrobe app to catalog, organize and track your footwear collection with a clean and intuitive interface.",
+    },
+    tech: ["Flutter", "Dart", "Firebase", "Figma"],
+    category: "flutter",
+    githubUrl: "https://github.com/ndenicolais/Shox",
+    pageUrl: "/shox/",
+    image: shoxApp.preview,
+    logo: "/images/shox_logo.png",
+  },
+  {
     slug: "my-portfolio",
     title: "My Portfolio",
     description: {
@@ -115,18 +129,6 @@ export const projects: Project[] = [
     demoUrl: "https://ndenicolais.github.io/",
     image: "/images/myportfolio_preview.png",
     logo: "/images/logo.png",
-  },
-  {
-    slug: "noteep",
-    title: "Noteep",
-    description: {
-      it: "Un notebook digitale di attività. Crea, organizza e gestisci facilmente note e liste di cose da fare.",
-      en: "A digital notebook of tasks. Create, organize and manage your notes and to-do lists with ease.",
-    },
-    tech: ["Flutter", "Dart", "Supabase", "Figma"],
-    category: "flutter",
-    githubUrl: "https://github.com/ndenicolais/Noteep",
-    image: "/images/preview_noteep.webp",
   },
   {
     slug: "scannercode",

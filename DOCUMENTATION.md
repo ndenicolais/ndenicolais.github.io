@@ -22,12 +22,13 @@ Each published app gets a public homepage and privacy policy on this domain: app
 | Shox | `/shox/`, `/shox/privacy/` | `shoxApp` in `src/lib/apps.ts`, `src/content/shox-privacy.md` | `public/images/shox/` |
 | QRation | `/qration/`, `/qration/privacy/` | `qrationApp` in `src/lib/apps.ts`, `src/content/qration-privacy.md` | `public/images/qration/` |
 | Fivelink | `/fivelink/`, `/fivelink/privacy/` | `fivelinkApp` in `src/lib/apps.ts`, `src/content/fivelink-privacy.md` | `public/images/fivelink/` |
+| Noteep | `/noteep/`, `/noteep/privacy/` | `noteepApp` in `src/lib/apps.ts`, `src/content/noteep-privacy.md` | `public/images/noteep/` |
 
 To add an app: add an `AppPage` entry in `src/lib/apps.ts`, copy its `PRIVACY.md` to `src/content/<slug>-privacy.md`, create `src/app/<slug>/page.tsx` and `src/app/<slug>/privacy/page.tsx` like the existing ones, add both URLs to `src/app/sitemap.ts` and set `pageUrl` on the project in `src/lib/data.ts`.
 
-- `lang: "en"` fixes the page language and hides the toggle (QRation and Fivelink: Google requires an English homepage, so the static HTML must be in English).
+- `lang: "en"` fixes the page language and hides the toggle (QRation, Fivelink and Noteep: Google requires an English homepage, so the static HTML must be in English).
 - `preview` is also used as the image of the project card in `src/lib/data.ts`, so the homepage and the app page always show the same preview (1600×900 PNG, resized from the app repository's 2400×1350 original).
-- `privacyNotice` shows a data statement (e.g. the Google account data used by QRation) followed by the full privacy URL.
+- `privacyNotice` shows a data statement (e.g. the Google account data used by QRation and Noteep) followed by the full privacy URL.
 - `downloadUrl` is optional: without it the page shows "Coming soon on Google Play" instead of the download button (Fivelink, while in closed testing).
 - `src/content/<slug>-privacy.md` is a verbatim copy of `PRIVACY.md` from the app repository: when that file changes, copy it here again and redeploy.
 - The Search Console verification file (`googleXXXXXXXX.html`) belongs in `public/` and must never be removed.

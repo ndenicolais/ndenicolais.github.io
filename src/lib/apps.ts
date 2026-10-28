@@ -214,6 +214,71 @@ export const fivelinkApp: AppPage = {
   credits: "© 2026 Nicola De Nicolais — All rights reserved. Source-available, non-commercial license.",
 };
 
+export const noteepApp: AppPage = {
+  slug: "noteep",
+  name: "Noteep",
+  logo: "/images/noteep_logo.png",
+  preview: "/images/noteep/preview.png",
+  icons: { icon: "/images/noteep/favicon_32.png", apple: "/images/noteep/icon_192.png" },
+  lang: "en",
+  tagline: {
+    it: "Note, attività e promemoria in un unico posto",
+    en: "Notes, tasks and reminders in one place",
+  },
+  description: {
+    it: "Noteep raccoglie note, liste di controllo, attività ed eventi del calendario, sincronizzati sul tuo account e disponibili su ogni dispositivo. Aggiunge promemoria, etichette, note vocali, widget per la schermata Home, backup ed esportazione in PDF, in italiano e in inglese, con tema chiaro e scuro.",
+    en: "Noteep brings together notes, checklists, tasks and calendar events, synced to your account and available on every device. It adds reminders, labels, voice notes, Home screen widgets, backups and export to PDF, in Italian and English, with a light and a dark theme.",
+  },
+  features: [
+    {
+      title: { it: "Note", en: "Notes" },
+      text: {
+        it: "Testo formattato, liste di controllo e note vocali.",
+        en: "Formatted text, checklists and voice notes.",
+      },
+    },
+    {
+      title: { it: "Attività e calendario", en: "Tasks and calendar" },
+      text: {
+        it: "Pianifica attività ed eventi giorno per giorno.",
+        en: "Plan your to-dos and events day by day.",
+      },
+    },
+    {
+      title: { it: "Promemoria", en: "Reminders" },
+      text: {
+        it: "Notifiche puntuali e un widget per la schermata Home.",
+        en: "Timely notifications and a Home screen widget.",
+      },
+    },
+    {
+      title: { it: "Sincronizzazione e backup", en: "Sync and backup" },
+      text: {
+        it: "Dati sul tuo account, backup ed esportazione in PDF, TXT, JSON, CSV e HTML.",
+        en: "Data on your account, backups and export to PDF, TXT, JSON, CSV and HTML.",
+      },
+    },
+  ],
+  platform: {
+    it: "Android 7.0+ (64-bit, arm64), con Google Play services e una connessione Internet per accesso e sincronizzazione. Accesso con un account Google o con email e password. Distribuita come APK su GitHub Releases, non sul Play Store.",
+    en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store.",
+  },
+  privacyNotice:
+    "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never shared, sold or used for advertising. See the full privacy policy:",
+  screenshots: [
+    { src: "/images/noteep/home.png", caption: "Home" },
+    { src: "/images/noteep/editor.png", caption: "Note editor" },
+    { src: "/images/noteep/tasks.png", caption: "Tasks" },
+    { src: "/images/noteep/calendar.png", caption: "Calendar" },
+    { src: "/images/noteep/stats.png", caption: "Statistics" },
+  ],
+  downloadUrl: "https://github.com/ndenicolais/Noteep/releases/latest",
+  sourceUrl: "https://github.com/ndenicolais/Noteep",
+  privacyUrl: `${siteUrl}/noteep/privacy/`,
+  contactEmail,
+  credits: "© 2026 Nicola De Nicolais — Source-available, non-commercial license (all rights reserved; see LICENSE in the repo).",
+};
+
 export const appUi = {
   back: { it: "Portfolio", en: "Portfolio" } as Localized,
   download: { it: "Scarica l'ultima versione", en: "Download latest release" } as Localized,
