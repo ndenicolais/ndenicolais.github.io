@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { useLanguage } from "@/context/LanguageContext";
 import { Award, GraduationCap } from "lucide-react";
-import { experiences, education, certifications, ui } from "@/lib/data";
+import { experiences, education, certifications, ui, localize } from "@/lib/data";
 
 export default function Experience() {
   const { lang } = useLanguage();
@@ -16,7 +16,7 @@ export default function Experience() {
       <div className="relative border-l border-border pl-8">
         {experiences.map((exp, i) => (
           <motion.div
-            key={`${exp.company}-${exp.period}`}
+            key={`${localize(exp.company, "en")}-${exp.period}`}
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -26,8 +26,8 @@ export default function Experience() {
             <span className="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
             <p className="font-mono text-xs text-text-3">{exp.period}</p>
             <h3 className="mt-1 text-lg font-semibold text-heading">{exp.role[lang]}</h3>
-            <p className="text-sm font-semibold text-accent">{exp.company}</p>
-            <p className="font-mono text-xs text-text-3">{exp.location}</p>
+            <p className="text-sm font-semibold text-accent">{localize(exp.company, lang)}</p>
+            <p className="font-mono text-xs text-text-3">{localize(exp.location, lang)}</p>
             <p className="mt-3 text-sm leading-relaxed text-text-2">{exp.description[lang]}</p>
             {exp.highlights && (
               <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-text-2 marker:text-accent">
@@ -39,10 +39,10 @@ export default function Experience() {
             <div className="mt-3 flex flex-wrap gap-2">
               {exp.tags.map((tag) => (
                 <span
-                  key={tag}
+                  key={localize(tag, "en")}
                   className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-3"
                 >
-                  {tag}
+                  {localize(tag, lang)}
                 </span>
               ))}
             </div>

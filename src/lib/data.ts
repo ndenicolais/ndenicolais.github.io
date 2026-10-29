@@ -5,6 +5,12 @@ export interface Localized<T = string> {
   en: T;
 }
 
+/** Plain strings are language-neutral (names, technologies); objects carry a translation. */
+export type MaybeLocalized = string | Localized;
+
+export const localize = (value: MaybeLocalized, lang: keyof Localized): string =>
+  typeof value === "string" ? value : value[lang];
+
 export const personalInfo = {
   name: "Nicola De Nicolais",
   initials: "NDN",
@@ -197,12 +203,12 @@ export const skillCategories: SkillCategory[] = [
 
 export interface Experience {
   role: Localized;
-  company: string;
-  location: string;
+  company: MaybeLocalized;
+  location: MaybeLocalized;
   period: string;
   description: Localized;
   highlights?: Localized<string[]>;
-  tags: string[];
+  tags: MaybeLocalized[];
 }
 
 export const experiences: Experience[] = [
@@ -248,14 +254,17 @@ export const experiences: Experience[] = [
   },
   {
     role: { it: "Lavori vari & primi passi nella programmazione", en: "Varied jobs & first steps into coding" },
-    company: "Varie",
-    location: "Vari",
+    company: { it: "Varie", en: "Various" },
+    location: { it: "Vari", en: "Various" },
     period: "2010 — 2017",
     description: {
       it: "In questi anni ho svolto diverse esperienze lavorative, per poi avvicinarmi da autodidatta al mondo della programmazione, gettando le basi per il percorso intrapreso negli anni successivi.",
       en: "During these years I worked in a variety of jobs, before starting to approach programming as a self-taught learner, laying the foundations for the path I would take in the following years.",
     },
-    tags: ["Autodidatta", "Grafico"],
+    tags: [
+      { it: "Autodidatta", en: "Self-taught" },
+      { it: "Grafico", en: "Graphic Design" },
+    ],
   },
 ];
 
