@@ -14,7 +14,7 @@ Also hosts the public homepage and privacy policy of my published apps.
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![License](https://img.shields.io/badge/license-MIT-E7BC91?style=flat-square)](LICENSE.md)
 
-[**🌐 Visit the website**](https://ndenicolais.github.io) · [Features](#features) · [Documentation](DOCUMENTATION.md) · [Setup](SETUP.md)
+[**🌐 Visit the website**](https://ndenicolais.github.io) · [Features](#features) · [Documentation](DOCUMENTATION.md) · [Setup](#build-from-source)
 
 <br>
 
