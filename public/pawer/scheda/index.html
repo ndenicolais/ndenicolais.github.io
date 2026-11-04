@@ -138,10 +138,13 @@
   footer .links { font-size: 15px; line-height: 1.7; }
   .download { display: flex; align-items: center; gap: 16px; background: var(--bg); border-radius: 16px; padding: 12px 14px; margin-bottom: 14px; }
   .download .btn { display: inline-block; background: var(--primary); color: var(--on-primary); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 10px 18px 8px; }
-  .download p { font-size: 14px; margin-top: 6px; }
+  .download .qr-main { font-size: 15px; font-weight: 600; color: var(--fg); }
+  .download .url { display: block; font-size: 14px; font-weight: 700; color: var(--primary); margin-top: 2px; word-break: break-all; }
+  .download .btn { margin-top: 10px; }
+  .qr figcaption .url { font-weight: 700; color: var(--primary); }
   .download img { width: 96px; height: 96px; display: block; flex-shrink: 0; }
   .qr { background: var(--surface); border-radius: 14px; padding: 10px 10px 6px; text-align: center; }
-  .qr img { width: 104px; height: 104px; display: block; }
+  .qr img { width: 104px; height: 104px; display: block; margin: 0 auto; }
   .qr figcaption { color: var(--fg); font-size: 12px; font-weight: 600; margin-top: 4px; }
   .note a { color: var(--primary); font-weight: 600; }
 
@@ -191,8 +194,9 @@
     .qr img { width: 78px; height: 78px; }
     .download { padding: 6px 10px; margin-bottom: 8px; gap: 12px; }
     .download img { width: 64px; height: 64px; }
-    .download p { font-size: 12px; margin-top: 4px; }
-    .download .btn { padding: 6px 14px 4px; font-size: 12.5px; }
+    .download .qr-main { font-size: 12.5px; }
+    .download .url { font-size: 12px; }
+    .screen-only { display: none !important; }
     .note { line-height: 1.4; }
     .memory p + p { margin-top: 4px; }
     .page-break .label, .page-break ~ section .label { margin-bottom: 6px; }
@@ -231,7 +235,7 @@
     <div>
       <h2>Pawer è una scommessa</h2>
       <p>Un animale per strada lo vedono in tanti, ma spesso nessuno sa a chi dirlo. Pawer vuole cambiare questo: <strong>chi lo incontra lo segnala, chi lo rivede lo aggiorna</strong>, e chi può aiutare sa dove andare.</p>
-      <p>Funziona solo se la usiamo in tanti. Per questo la stiamo facendo provare prima ad amici e parenti: <strong>installala, usala e dicci cosa migliorare.</strong></p>
+      <p>Funziona solo se la usiamo in tanti. Pawer è in fase di test: <strong>provala e dicci cosa migliorare.</strong></p>
     </div>
   </section>
 
@@ -293,8 +297,9 @@
         <div class="download">
           <img src="img/qr_apk.svg" alt="QR code per scaricare l'APK di Pawer">
           <div>
-            <a class="btn" href="https://ndenicolais.github.io/pawer/Pawer.apk">Scarica l'APK · v1.0.0</a>
-            <p>Oppure inquadra il QR code con il telefono.</p>
+            <p class="qr-main">Inquadra e scarica</p>
+            <a class="url" href="https://ndenicolais.github.io/pawer/Pawer.apk">ndenicolais.github.io/pawer/Pawer.apk</a>
+            <a class="btn screen-only" href="https://ndenicolais.github.io/pawer/Pawer.apk">Scarica l'APK · v1.0.0</a>
           </div>
         </div>
         <ol>
@@ -338,14 +343,14 @@
     </div>
     <div class="links">
       Pagina: <a href="https://ndenicolais.github.io/pawer/">ndenicolais.github.io/pawer</a><br>
-      Web app: <a href="https://pawerapp.web.app">pawerapp.web.app</a><br>
+      Sito web: <a href="https://pawerapp.web.app">pawerapp.web.app</a><br>
       Privacy: <a href="https://ndenicolais.github.io/pawer/privacy/">ndenicolais.github.io/pawer/privacy</a><br>
       Idee e problemi: <a href="mailto:ndn21dev@gmail.com?subject=Pawer">ndn21dev@gmail.com</a><br>
       Sviluppata da Nicola De Nicolais
     </div>
     <figure class="qr">
       <img src="img/qr_pawerapp.svg" alt="QR code per pawerapp.web.app">
-      <figcaption>Apri Pawer sul web</figcaption>
+      <figcaption><span class="url">pawerapp.web.app</span></figcaption>
     </figure>
   </footer>
 
