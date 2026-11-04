@@ -233,7 +233,7 @@ export default function AppHome({ app }: { app: AppPage }) {
         </div>
       </section>
 
-      <p className="mt-16 text-center text-sm text-text-3">{app.credits}</p>
+      {app.credits && <p className="mt-16 text-center text-sm text-text-3">{app.credits}</p>}
     </main>
   );
 }

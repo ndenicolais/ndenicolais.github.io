@@ -43,7 +43,8 @@ export interface AppPage {
   links?: { label: string; href: string }[];
   privacyUrl: string;
   contactEmail: string;
-  credits: string;
+  /** License line under the page; omit it when the code is not public (the site footer covers the rest). */
+  credits?: string;
 }
 
 /** Strings in the optional fields above are plain text in the page's fixed `lang`. */
@@ -408,8 +409,7 @@ export const pawerApp: AppPage = {
   // No sourceUrl: the app repository is private.
   privacyUrl: `${siteUrl}/pawer/privacy/`,
   contactEmail,
-  credits:
-    "Codice dell'app: PolyForm Noncommercial License 1.0.0 (consultabile, uso non commerciale consentito). Testi e immagini di questo sito: tutti i diritti riservati.",
+  // No credits: the code is private, the site footer's "Tutti i diritti riservati" is enough.
 };
 
 export const appUi = {
