@@ -1,17 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { Clock, Download, Mail, ShieldCheck, Smartphone } from "lucide-react";
+import { Clock, Download, Link2, Mail, ShieldCheck, Smartphone } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
+import { InlineContent } from "./MarkdownContent";
 import { useLanguage } from "@/context/LanguageContext";
-import { appUi, type AppPage } from "@/lib/apps";
+import { appUi, siteUrl, type AppPage } from "@/lib/apps";
+import { parseInline } from "@/lib/markdown";
 
 export default function AppHome({ app }: { app: AppPage }) {
   const { lang: siteLang } = useLanguage();
   const lang = app.lang ?? siteLang;
+  // Files hosted on this site (e.g. an APK) download in place; store and release pages open in a new tab.
+  const externalDownload = app.downloadUrl ? !app.downloadUrl.startsWith("/") : false;
+  const downloadFullUrl = app.downloadUrl?.startsWith("/") ? `${siteUrl}${app.downloadUrl}` : app.downloadUrl;
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+    <main lang={app.lang} className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
       <section className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <Image
@@ -30,26 +35,46 @@ export default function AppHome({ app }: { app: AppPage }) {
             {app.downloadUrl ? (
               <a
                 href={app.downloadUrl}
-                target="_blank"
-                rel="noreferrer"
+                {...(externalDownload && { target: "_blank", rel: "noreferrer" })}
                 className="flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-105"
               >
-                <Download size={16} /> {appUi.download[lang]}
+                <Download size={16} /> {app.downloadLabel ?? appUi.download[lang]}
               </a>
             ) : (
               <span className="flex items-center gap-2 rounded-full border border-dashed border-accent px-6 py-3 text-sm font-semibold text-accent">
                 <Clock size={16} /> {appUi.comingSoon[lang]}
               </span>
             )}
-            <a
-              href={app.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-text-2 transition-colors hover:border-accent hover:text-accent"
-            >
-              <GithubIcon size={16} /> {appUi.source[lang]}
-            </a>
+            {app.sourceUrl && (
+              <a
+                href={app.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-text-2 transition-colors hover:border-accent hover:text-accent"
+              >
+                <GithubIcon size={16} /> {appUi.source[lang]}
+              </a>
+            )}
           </div>
+
+          {app.downloadUrl && app.downloadQr && (
+            <div className="mt-6 flex max-w-xl items-center gap-4 rounded-2xl border border-border bg-card p-4">
+              {/* Light, padded backdrop keeps the dark modules scannable in dark mode too. */}
+              <a href={app.downloadUrl} className="shrink-0 rounded-xl bg-[#FFF9F3] p-2.5">
+                <Image
+                  src={app.downloadQr.src}
+                  alt={`QR code: ${downloadFullUrl}`}
+                  width={112}
+                  height={112}
+                  className="h-28 w-28"
+                />
+              </a>
+              <p className="text-sm leading-relaxed text-text-2">
+                {app.downloadQr.caption}
+                <span className="mt-1 block break-all text-text-3">{downloadFullUrl}</span>
+              </p>
+            </div>
+          )}
 
           {app.privacyNotice && (
             <p className="mt-6 flex max-w-xl gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-text-2">
@@ -68,6 +93,53 @@ export default function AppHome({ app }: { app: AppPage }) {
           <Image src={app.preview} alt={`${app.name} preview`} fill priority className="object-cover" />
         </div>
       </section>
+
+      {app.install && (
+        <section className="mt-24">
+          <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{app.install.title}</h2>
+          <div className="mt-4 h-px w-16 bg-accent" />
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {app.install.guides.map((guide) => (
+              <div key={guide.platform} className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-heading">
+                  <Smartphone size={18} className="text-accent" /> {guide.platform}
+                  {guide.badge && (
+                    <span className="rounded-full border border-accent px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-accent">
+                      {guide.badge}
+                    </span>
+                  )}
+                </h3>
+                {guide.steps.length > 1 ? (
+                  <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-text-2 marker:text-accent">
+                    {guide.steps.map((step) => (
+                      <li key={step}>
+                        <InlineContent content={parseInline(step)} />
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="mt-3 text-sm leading-relaxed text-text-2">
+                    <InlineContent content={parseInline(guide.steps[0])} />
+                  </p>
+                )}
+                {guide.note && (
+                  <p className="mt-4 rounded-xl border border-border p-3 text-sm leading-relaxed text-text-3">
+                    <InlineContent content={parseInline(guide.note)} />
+                  </p>
+                )}
+                {guide.qr && (
+                  <a href={guide.qr.href} className="mt-4 flex w-fit items-center gap-4 text-sm text-text-2 hover:text-accent">
+                    <span className="shrink-0 rounded-xl bg-[#FFF9F3] p-2.5">
+                      <Image src={guide.qr.src} alt={`QR code: ${guide.qr.href}`} width={96} height={96} className="h-24 w-24" />
+                    </span>
+                    {guide.qr.caption}
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mt-24">
         <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{appUi.features[lang]}</h2>
@@ -101,6 +173,32 @@ export default function AppHome({ app }: { app: AppPage }) {
         </div>
       </section>
 
+      {app.stories && (
+        <section className={`mt-24 grid gap-6 ${app.stories.length > 1 ? "lg:grid-cols-2" : ""}`}>
+          {app.stories.map((story) => (
+            <article
+              key={story.title}
+              className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center"
+            >
+              <div className="flex-1">
+                <h2 className="text-xl font-bold tracking-tight text-heading">{story.title}</h2>
+                <div className="mt-3 h-px w-12 bg-accent" />
+                <p className="mt-4 text-sm leading-relaxed text-text-2">{story.text}</p>
+              </div>
+              {story.image && (
+                <Image
+                  src={story.image.src}
+                  alt={story.title}
+                  width={story.image.width}
+                  height={story.image.height}
+                  className="mx-auto h-auto w-36 shrink-0 sm:w-40"
+                />
+              )}
+            </article>
+          ))}
+        </section>
+      )}
+
       <section className="mt-24 grid gap-6 sm:grid-cols-2">
         <div className="rounded-2xl border border-border bg-card p-6">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-heading">
@@ -116,6 +214,13 @@ export default function AppHome({ app }: { app: AppPage }) {
                 <ShieldCheck size={15} /> {appUi.privacy[lang]}
               </a>
             </li>
+            {app.links?.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="flex items-center gap-2 text-text-2 hover:text-accent">
+                  <Link2 size={15} /> {link.label}
+                </a>
+              </li>
+            ))}
             <li>
               <a
                 href={`mailto:${app.contactEmail}`}

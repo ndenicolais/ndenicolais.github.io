@@ -16,15 +16,38 @@ export interface AppPage {
   /** Data statement shown under the download button, followed by the full privacy URL. */
   privacyNotice?: string;
   screenshots: { src: string; caption?: string }[];
-  /** Omitted while the app is not public yet: the page shows "Coming soon on Google Play". */
+  /** Omitted while the app is not public yet: the page shows "Coming soon on Google Play". A path starting with "/" is a file on this site. */
   downloadUrl?: string;
-  sourceUrl: string;
+  /** Replaces the default download button label (e.g. to show the APK version). */
+  downloadLabel?: string;
+  /** QR code pointing to `downloadUrl`, shown next to the download button. */
+  downloadQr?: { src: string; caption: string };
+  /** Omitted for private repositories: the page hides the "Source code" button. */
+  sourceUrl?: string;
+  /** Installation guide shown under the hero; steps and notes accept inline Markdown (**bold**). */
+  install?: {
+    title: string;
+    guides: {
+      platform: string;
+      /** Small label next to the steps (e.g. "In prova"). */
+      badge?: string;
+      steps: string[];
+      note?: string;
+      /** QR code shown under the steps; `href` is where it points. */
+      qr?: { src: string; href: string; caption: string };
+    }[];
+  };
+  /** Extra text sections shown after the screenshots, optionally with an illustration. */
+  stories?: { title: string; text: string; image?: { src: string; width: number; height: number } }[];
+  /** Extra entries of the "Links" card, after the privacy policy. */
+  links?: { label: string; href: string }[];
   privacyUrl: string;
   contactEmail: string;
   credits: string;
 }
 
-const siteUrl = "https://ndenicolais.github.io";
+/** Strings in the optional fields above are plain text in the page's fixed `lang`. */
+export const siteUrl = "https://ndenicolais.github.io";
 const contactEmail = "ndn21dev@gmail.com";
 
 export const shoxApp: AppPage = {
@@ -279,6 +302,115 @@ export const noteepApp: AppPage = {
   credits: "© 2026 Nicola De Nicolais — Source-available, non-commercial license (all rights reserved; see LICENSE in the repo).",
 };
 
+export const pawerApp: AppPage = {
+  slug: "pawer",
+  name: "Pawer",
+  logo: "/images/pawer_logo.png",
+  preview: "/images/pawer/preview.png",
+  icons: { icon: "/images/pawer/favicon_32.png", apple: "/images/pawer/icon_192.png" },
+  // Pawer exists only in Italian, so its homepage is Italian-only.
+  lang: "it",
+  tagline: {
+    it: "Ogni zampa merita un futuro migliore",
+    en: "Every paw deserves a better future",
+  },
+  description: {
+    it: "Pawer aiuta a segnalare cani e gatti randagi o in difficoltà, così da farli soccorrere e adottare. Chi ne incontra uno può segnalarlo in pochi passaggi, con foto, descrizione e posizione: la segnalazione compare sulla mappa e chiunque lo riveda può aggiungere un avvistamento, così da seguirne gli spostamenti. Accanto alle segnalazioni trovi i rifugi e i numeri utili della tua regione, per sapere subito a chi rivolgerti.",
+    en: "Pawer helps report stray or distressed dogs and cats so they can be rescued and adopted. Anyone who meets one can report it in a few steps, with photos, a description and the location: the report appears on the map and anyone who sees the animal again can add a sighting to follow its movements. Next to the reports you find the shelters and useful numbers of your region, so you know right away who to contact.",
+  },
+  features: [
+    {
+      title: { it: "Segnala un animale", en: "Report an animal" },
+      text: {
+        it: "Foto, colori, condizioni e posizione in pochi passaggi.",
+        en: "Photos, colors, condition and location in a few steps.",
+      },
+    },
+    {
+      title: { it: "Mappa", en: "Map" },
+      text: {
+        it: "Le segnalazioni aperte e la navigazione fino al punto.",
+        en: "Open reports and directions to the spot.",
+      },
+    },
+    {
+      title: { it: "Avvistamenti", en: "Sightings" },
+      text: {
+        it: "La cronologia delle posizioni, aggiornata da tutta la community.",
+        en: "The location history, updated by the whole community.",
+      },
+    },
+    {
+      title: { it: "Strutture", en: "Shelters" },
+      text: {
+        it: "Rifugi e numeri utili per regione, con chiamata diretta.",
+        en: "Shelters and useful numbers by region, with direct calling.",
+      },
+    },
+  ],
+  platform: {
+    it: "Android 7.0 o successivo (64 bit, arm64). Accesso con account Google oppure email e password. Distribuita come APK da questa pagina, non sul Play Store. Disponibile anche come web app su https://pawerapp.web.app, installabile su iPhone (iOS 16.4 o successivo) da Safari.",
+    en: "Android 7.0 or later (64-bit, arm64). Sign in with a Google account or with email and password. Distributed as an APK from this page, not on the Play Store. Also available as a web app at https://pawerapp.web.app, installable on iPhone (iOS 16.4 or later) from Safari.",
+  },
+  privacyNotice:
+    "Se accedi con Google, Pawer riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Nome ed email servono solo per l'accesso e per mostrarti come autore delle tue segnalazioni; la foto non viene usata né mostrata. Non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
+  screenshots: [
+    { src: "/images/pawer/home.png", caption: "Home" },
+    { src: "/images/pawer/reports.png", caption: "Segnalazioni" },
+    { src: "/images/pawer/details.png", caption: "Dettaglio segnalazione" },
+    { src: "/images/pawer/new_report.png", caption: "Nuova segnalazione" },
+    { src: "/images/pawer/shelters.png", caption: "Strutture" },
+  ],
+  // Fixed file name without version: links and printed QR codes stay valid across updates.
+  // Relative so it also works on the dev server; the page shows (and the QR encodes) the full URL.
+  downloadUrl: "/pawer/Pawer.apk",
+  downloadLabel: "Scarica l'APK · v1.0.0",
+  downloadQr: {
+    src: "/images/pawer/qr_apk.svg",
+    caption: "Inquadra il QR code con il telefono per scaricare l'APK.",
+  },
+  install: {
+    title: "Come installarla",
+    guides: [
+      {
+        platform: "Android",
+        steps: [
+          "Scarica l'APK sul telefono e aprilo.",
+          "Se il telefono lo chiede, consenti **\"Installa app sconosciute\"** per l'app da cui lo stai aprendo (browser, WhatsApp, File…).",
+          "Tocca **Installa**, poi apri Pawer e registrati con la tua email o con Google.",
+        ],
+        note: "Durante l'installazione Android potrebbe avvisarti che l'app non è sicura: lo segnala per tutte le app installate fuori dal Play Store, dove Pawer per ora non c'è. Pawer usa solo i dati descritti nell'informativa privacy. Fotocamera, posizione e notifiche vengono chieste solo quando servono.",
+      },
+      {
+        platform: "iPhone",
+        badge: "In prova",
+        steps: [
+          "Apri [pawerapp.web.app](https://pawerapp.web.app) con Safari, o inquadra il QR code qui sotto.",
+          "Tocca **Condividi** → **Aggiungi alla schermata Home**.",
+          "Apri Pawer dall'icona come una normale app.",
+        ],
+        note: "Funziona anche dal browser del computer, allo stesso indirizzo.",
+        qr: { src: "/images/pawer/qr_webapp.svg", href: "https://pawerapp.web.app", caption: "Apri Pawer sul web" },
+      },
+    ],
+  },
+  stories: [
+    {
+      title: "In memoria di Orsetto",
+      text: "Pawer è nata per Orsetto, un pelosetto marrone e bianco trovato per strada. Era la bontà e la purezza fatte cane, di una fedeltà immensa fin dal primo momento. Anche se per poco, ha reso migliore la vita di tutta la sua famiglia. Questa app è il modo di ricambiare tutto quello che ha dato: aiutare altri cani e gatti come lui a trovare qualcuno che si prenda cura di loro.",
+      image: { src: "/images/pawer/orsetto.png", width: 540, height: 600 },
+    },
+  ],
+  links: [
+    { label: "Sito web", href: "https://pawerapp.web.app" },
+    { label: "Scheda app", href: "/pawer/scheda/Pawer_scheda.pdf" },
+  ],
+  // No sourceUrl: the app repository is private.
+  privacyUrl: `${siteUrl}/pawer/privacy/`,
+  contactEmail,
+  credits: "© 2026 Nicola De Nicolais — PolyForm Noncommercial License 1.0.0 (codice consultabile, uso non commerciale).",
+};
+
 export const appUi = {
   back: { it: "Portfolio", en: "Portfolio" } as Localized,
   download: { it: "Scarica l'ultima versione", en: "Download latest release" } as Localized,
@@ -288,7 +420,7 @@ export const appUi = {
   screenshots: { it: "Schermate", en: "Screenshots" } as Localized,
   platform: { it: "Piattaforma", en: "Platform" } as Localized,
   links: { it: "Link", en: "Links" } as Localized,
-  privacy: { it: "Privacy policy", en: "Privacy policy" } as Localized,
+  privacy: { it: "Informativa privacy", en: "Privacy policy" } as Localized,
   contact: { it: "Contatti", en: "Contact" } as Localized,
   backToApp: (name: string): Localized => ({ it: `Torna a ${name}`, en: `Back to ${name}` }),
 };

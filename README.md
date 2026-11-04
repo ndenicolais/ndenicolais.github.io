@@ -50,6 +50,7 @@ Each published app has a public homepage and privacy policy on this domain, used
 | <img src="public/images/qration_logo.png" width="20" alt=""> **QRation** | [ndenicolais.github.io/qration](https://ndenicolais.github.io/qration/) | [Privacy](https://ndenicolais.github.io/qration/privacy/) |
 | <img src="public/images/fivelink_logo.png" width="20" alt=""> **Fivelink** | [ndenicolais.github.io/fivelink](https://ndenicolais.github.io/fivelink/) | [Privacy](https://ndenicolais.github.io/fivelink/privacy/) |
 | <img src="public/images/noteep_logo.png" width="20" alt=""> **Noteep** | [ndenicolais.github.io/noteep](https://ndenicolais.github.io/noteep/) | [Privacy](https://ndenicolais.github.io/noteep/privacy/) |
+| <img src="public/images/pawer_logo.png" width="20" alt=""> **Pawer** | [ndenicolais.github.io/pawer](https://ndenicolais.github.io/pawer/) | [Privacy](https://ndenicolais.github.io/pawer/privacy/) |
 
 ---
 
@@ -75,12 +76,13 @@ src/
 │   ├── shox/                  # Shox homepage + privacy policy
 │   ├── qration/               # QRation homepage + privacy policy
 │   ├── fivelink/              # Fivelink homepage + privacy policy
-│   └── noteep/                # Noteep homepage + privacy policy
+│   ├── noteep/                # Noteep homepage + privacy policy
+│   └── pawer/                 # Pawer homepage + privacy policy
 ├── components/                # Page sections and interactive UI
 ├── content/                   # Privacy policies in Markdown (<slug>-privacy.md)
 ├── context/                   # Theme and language providers
 └── lib/                       # Portfolio content (data.ts), app pages (apps.ts), Markdown parser
-public/                        # Logo, images, CV
+public/                        # Logo, images, CV, Pawer APK and info sheet (public/pawer/)
 ```
 
 </details>

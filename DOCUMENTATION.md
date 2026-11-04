@@ -25,13 +25,17 @@ Each published app gets a public homepage and privacy policy on this domain: app
 | QRation | `/qration/`, `/qration/privacy/` | `qrationApp` in `src/lib/apps.ts`, `src/content/qration-privacy.md` | `public/images/qration/` |
 | Fivelink | `/fivelink/`, `/fivelink/privacy/` | `fivelinkApp` in `src/lib/apps.ts`, `src/content/fivelink-privacy.md` | `public/images/fivelink/` |
 | Noteep | `/noteep/`, `/noteep/privacy/` | `noteepApp` in `src/lib/apps.ts`, `src/content/noteep-privacy.md` | `public/images/noteep/` |
+| Pawer | `/pawer/`, `/pawer/privacy/`, `/pawer/scheda/` | `pawerApp` in `src/lib/apps.ts`, `src/content/pawer-privacy.md` | `public/images/pawer/`, `public/pawer/` |
 
 To add an app: add an `AppPage` entry in `src/lib/apps.ts`, copy its `PRIVACY.md` to `src/content/<slug>-privacy.md`, create `src/app/<slug>/page.tsx` and `src/app/<slug>/privacy/page.tsx` like the existing ones, add both URLs to `src/app/sitemap.ts` and set `pageUrl` on the project in `src/lib/data.ts`.
 
-- `lang: "en"` fixes the page language and hides the toggle (QRation, Fivelink and Noteep: Google requires an English homepage, so the static HTML must be in English).
+- `lang: "en"` fixes the page language and hides the toggle (QRation, Fivelink and Noteep: Google requires an English homepage, so the static HTML must be in English). Pawer uses `lang: "it"` on purpose because the app exists only in Italian; add an English version if Google's branding verification objects.
 - `preview` is also used as the image of the project card in `src/lib/data.ts`, so the homepage and the app page always show the same preview (1600×900 PNG, resized from the app repository's 2400×1350 original).
 - `privacyNotice` shows a data statement (e.g. the Google account data used by QRation and Noteep) followed by the full privacy URL.
-- `downloadUrl` is optional: without it the page shows "Coming soon on Google Play" instead of the download button (Fivelink, while in closed testing).
+- `downloadUrl` is optional: without it the page shows "Coming soon on Google Play" instead of the download button (Fivelink, while in closed testing). A path on this site (Pawer's `/pawer/Pawer.apk`, relative so it also works on the dev server) downloads in place and is shown as a full URL; other URLs open in a new tab. `downloadLabel` overrides the button text and `downloadQr` shows a QR code to the same URL.
+- `sourceUrl` is optional: omit it for private repositories (Pawer) to hide the "Source code" button.
+- `install`, `stories` and `links` add an installation guide, text sections with an optional illustration and extra entries in the Links card (used by Pawer). Their strings are plain text in the page's fixed `lang`; install steps accept inline Markdown.
+- Pawer's APK is `public/pawer/Pawer.apk`, with a fixed name so the links and printed QR codes stay valid: replace the file for each new version and update `downloadLabel`. `public/pawer/scheda/` is a standalone static page, published as is, and the only copy of it: `Pawer_scheda.pdf` is printed from its `index.html` with Chrome (A4, no margins, background graphics on; 2 pages).
 - `src/content/<slug>-privacy.md` is a verbatim copy of `PRIVACY.md` from the app repository: when that file changes, copy it here again and redeploy.
 - The Search Console verification file (`googleXXXXXXXX.html`) belongs in `public/` and must never be removed.
 

@@ -1,6 +1,6 @@
 import type { Block, Inline } from "@/lib/markdown";
 
-function InlineContent({ content }: { content: Inline[] }) {
+export function InlineContent({ content }: { content: Inline[] }) {
   return (
     <>
       {content.map((node, i) => {

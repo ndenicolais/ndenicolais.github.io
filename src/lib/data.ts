@@ -1,4 +1,4 @@
-import { fivelinkApp, noteepApp, qrationApp, shoxApp } from "./apps";
+import { fivelinkApp, noteepApp, pawerApp, qrationApp, shoxApp } from "./apps";
 
 export interface Localized<T = string> {
   it: T;
@@ -66,6 +66,20 @@ export const projectFilters: { key: "all" | ProjectCategory; label: Localized }[
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "pawer",
+    title: "Pawer",
+    description: {
+      it: "Segnala cani e gatti randagi o in difficoltà con foto e posizione, segui i loro avvistamenti sulla mappa e trova i rifugi e i numeri utili della tua regione.",
+      en: "Report stray or distressed dogs and cats with photos and location, follow their sightings on the map and find the shelters and useful numbers of your region.",
+    },
+    tech: ["React Native", "Expo", "TypeScript", "Firebase"],
+    category: "react",
+    // No githubUrl: the repository is private.
+    pageUrl: "/pawer/",
+    image: pawerApp.preview,
+    logo: "/images/pawer_logo.png",
+  },
   {
     slug: "noteep",
     title: "Noteep",
