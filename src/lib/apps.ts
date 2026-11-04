@@ -353,7 +353,7 @@ export const pawerApp: AppPage = {
     en: "Android 7.0 or later (64-bit, arm64). Sign in with a Google account or with email and password. Distributed as an APK from this page, not on the Play Store. Also available as a web app at https://pawerapp.web.app, installable on iPhone (iOS 16.4 or later) from Safari.",
   },
   privacyNotice:
-    "Se accedi con Google, Pawer riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Nome ed email servono solo per l'accesso e per mostrarti come autore delle tue segnalazioni; la foto non viene usata né mostrata. Non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
+    "Se accedi con Google, Pawer riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. L'email serve solo per l'accesso e non è visibile agli altri utenti, a meno che tu non attivi Impostazioni → Privacy → Mostra la mia email. Il nome viene mostrato agli altri utenti come autore delle tue segnalazioni. La foto non viene usata né mostrata. Questi dati non vengono mai venduti, ceduti a terzi o usati per pubblicità. Informativa privacy completa:",
   screenshots: [
     { src: "/images/pawer/home.png", caption: "Home" },
     { src: "/images/pawer/reports.png", caption: "Segnalazioni" },
@@ -408,7 +408,8 @@ export const pawerApp: AppPage = {
   // No sourceUrl: the app repository is private.
   privacyUrl: `${siteUrl}/pawer/privacy/`,
   contactEmail,
-  credits: "© 2026 Nicola De Nicolais — PolyForm Noncommercial License 1.0.0 (codice consultabile, uso non commerciale).",
+  credits:
+    "Codice dell'app: PolyForm Noncommercial License 1.0.0 (consultabile, uso non commerciale consentito). Testi e immagini di questo sito: tutti i diritti riservati.",
 };
 
 export const appUi = {
