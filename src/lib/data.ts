@@ -441,5 +441,13 @@ export const ui = {
     rights: { it: "Tutti i diritti riservati.", en: "All rights reserved." },
     madeWith: { it: "Progettato e sviluppato da", en: "Designed and built by" },
   },
+  notFound: {
+    title: { it: "Pagina non trovata", en: "Page not found" },
+    description: {
+      it: "La pagina che cerchi non esiste, è stata spostata o non è ancora disponibile.",
+      en: "The page you're looking for doesn't exist, has been moved or isn't available yet.",
+    },
+    home: { it: "Torna alla home", en: "Back to home" },
+  },
   downloadCv: { it: "Scarica CV", en: "Download CV" },
 };

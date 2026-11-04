@@ -15,6 +15,8 @@ Technical reference for the portfolio website. Requirements and setup are in the
 
 The favicon, Apple icon and Open Graph image come from `public/logo.png` (referenced in `src/app/layout.tsx`) and `src/app/opengraph-image.tsx`. Do not add `src/app/favicon.ico`: Next.js would use it instead of the custom logo.
 
+The 404 page is `src/app/not-found.tsx` (content in `src/components/NotFoundContent.tsx`, texts in `ui.notFound` in `src/lib/data.ts`). The static export writes it to `out/404.html`, which GitHub Pages serves automatically for any unknown URL.
+
 ## App pages
 
 Each published app gets a public homepage and privacy policy on this domain: apps with "Sign in with Google" need them for the Google OAuth consent screen (authorized domain `ndenicolais.github.io`, verified in Search Console), apps on Google Play use them as the store privacy policy URL. Both pages are rendered by shared components: `AppHome` (homepage) and `AppPrivacy` (privacy policy).
