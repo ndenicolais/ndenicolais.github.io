@@ -55,6 +55,8 @@ export const shoxApp: AppPage = {
   name: "Shox",
   logo: "/images/shox_logo.png",
   preview: "/images/shox/preview.png",
+  icons: { icon: "/images/shox/favicon_32.png", apple: "/images/shox/icon_192.png" },
+  lang: "en",
   tagline: {
     it: "Il tuo guardaroba di scarpe digitale",
     en: "Your digital shoe wardrobe",
@@ -97,9 +99,17 @@ export const shoxApp: AppPage = {
     it: "Android 7.0+ (64-bit), con Google Play services. Accesso con Google o email.",
     en: "Android 7.0+ (64-bit), with Google Play services. Sign in with Google or email.",
   },
-  screenshots: ["home", "details", "form", "database", "dashboard"].map((name) => ({
-    src: `/images/shox/${name}.png`,
-  })),
+  privacyNotice: {
+    it: "Se accedi con Google, Shox riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere la tua collezione sincronizzata sul tuo account; non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
+    en: "When you sign in with Google, Shox receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your collection synced to your account; they are never shared, sold or used for advertising. See the full privacy policy:",
+  },
+  screenshots: [
+    { src: "/images/shox/home.png", caption: { it: "La tua collezione", en: "Your collection" } },
+    { src: "/images/shox/details.png", caption: { it: "Dettagli scarpa", en: "Shoe details" } },
+    { src: "/images/shox/form.png", caption: { it: "Aggiungi scarpa", en: "Add a shoe" } },
+    { src: "/images/shox/database.png", caption: { it: "Statistiche", en: "Statistics" } },
+    { src: "/images/shox/dashboard.png", caption: { it: "Impostazioni", en: "Settings" } },
+  ],
   downloadUrl: "https://github.com/ndenicolais/Shox/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/Shox",
   privacyUrl: `${siteUrl}/shox/privacy/`,

@@ -7,7 +7,7 @@ import { appUi, shoxApp } from "@/lib/apps";
 export const metadata: Metadata = {
   title: "Shox — Your digital shoe wardrobe",
   description: shoxApp.description.en,
-  icons: { icon: shoxApp.logo, apple: shoxApp.logo },
+  icons: shoxApp.icons,
   openGraph: {
     title: "Shox — Your digital shoe wardrobe",
     description: shoxApp.description.en,
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 export default function ShoxPage() {
   return (
     <>
-      <SubpageHeader backHref="/" backLabel={appUi.back} />
+      <SubpageHeader backHref="/" backLabel={appUi.back} lang={shoxApp.lang} />
       <AppHome app={shoxApp} />
-      <Footer />
+      <Footer lang={shoxApp.lang} />
     </>
   );
 }
