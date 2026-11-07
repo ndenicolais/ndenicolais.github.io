@@ -6,7 +6,7 @@
 
 ## Italiano
 
-**Ultimo aggiornamento: 29 settembre 2026**
+**Ultimo aggiornamento: 23 ottobre 2026**
 
 Questa informativa spiega quali dati tratta Shox, perché e come puoi gestirli. Shox non mostra pubblicità, non usa strumenti di analisi e non vende né cede i tuoi dati.
 
@@ -48,7 +48,7 @@ Se questa informativa cambia, la nuova versione sarà disponibile nell'app e onl
 
 ## English
 
-**Last updated: September 29, 2026**
+**Last updated: October 23, 2026**
 
 This policy explains which data Shox processes, why, and how you can manage it. Shox shows no ads, uses no analytics tools and does not sell or share your data.
 
