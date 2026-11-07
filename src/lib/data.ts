@@ -417,6 +417,9 @@ export const ui = {
     hobbies: { it: "Hobby & interessi", en: "Hobbies & interests" },
     contact: { it: "Contatti", en: "Get in touch" },
   },
+  about: {
+    photoAlt: { it: "Foto di Nicola De Nicolais", en: "Photo of Nicola De Nicolais" },
+  },
   projects: {
     viewGithub: { it: "Codice", en: "Code" },
     viewDemo: { it: "Demo", en: "Live demo" },

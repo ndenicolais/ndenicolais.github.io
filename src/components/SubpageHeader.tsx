@@ -2,24 +2,27 @@
 
 import { ArrowLeft, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
-import { useLanguage, type Lang } from "@/context/LanguageContext";
+import { useLanguage, usePageLang, type Lang } from "@/context/LanguageContext";
 import type { Localized } from "@/lib/data";
 
 interface SubpageHeaderProps {
   backHref: string;
   backLabel: Localized;
   showLang?: boolean;
-  /** Fixed language for pages that must not follow the site toggle. */
+  /** Language of the page's static HTML, used until the visitor chooses one. */
   lang?: Lang;
 }
 
-export default function SubpageHeader({ backHref, backLabel, showLang = true, lang: fixedLang }: SubpageHeaderProps) {
+export default function SubpageHeader({ backHref, backLabel, showLang = true, lang: pageDefault }: SubpageHeaderProps) {
   const { theme, toggleTheme } = useTheme();
-  const { lang: siteLang, toggleLang } = useLanguage();
-  const lang = fixedLang ?? siteLang;
+  const { setLang } = useLanguage();
+  const lang = usePageLang(pageDefault);
+  // Toggle from the language on screen, which may be the page default rather than the site one.
+  const toggleLang = () => setLang(lang === "it" ? "en" : "it");
 
   return (
     <header
+      data-static-lang={pageDefault}
       className="sticky top-0 z-50 w-full border-b border-border backdrop-blur-md"
       style={{ background: "var(--c-navbar)" }}
     >
@@ -32,7 +35,7 @@ export default function SubpageHeader({ backHref, backLabel, showLang = true, la
         </a>
 
         <div className="flex items-center gap-3">
-          {showLang && !fixedLang && (
+          {showLang && (
             <button
               onClick={toggleLang}
               aria-label="Toggle language"

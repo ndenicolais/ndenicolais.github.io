@@ -4,19 +4,18 @@ import Image from "next/image";
 import { Clock, Download, Link2, Mail, ShieldCheck, Smartphone } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import { InlineContent } from "./MarkdownContent";
-import { useLanguage } from "@/context/LanguageContext";
+import { usePageLang } from "@/context/LanguageContext";
 import { appUi, siteUrl, type AppPage } from "@/lib/apps";
 import { parseInline } from "@/lib/markdown";
 
 export default function AppHome({ app }: { app: AppPage }) {
-  const { lang: siteLang } = useLanguage();
-  const lang = app.lang ?? siteLang;
+  const lang = usePageLang(app.lang);
   // Files hosted on this site (e.g. an APK) download in place; store and release pages open in a new tab.
   const externalDownload = app.downloadUrl ? !app.downloadUrl.startsWith("/") : false;
   const downloadFullUrl = app.downloadUrl?.startsWith("/") ? `${siteUrl}${app.downloadUrl}` : app.downloadUrl;
 
   return (
-    <main lang={app.lang} className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+    <main lang={lang} className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
       <section className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <Image
@@ -38,7 +37,7 @@ export default function AppHome({ app }: { app: AppPage }) {
                 {...(externalDownload && { target: "_blank", rel: "noreferrer" })}
                 className="flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-105"
               >
-                <Download size={16} /> {app.downloadLabel ?? appUi.download[lang]}
+                <Download size={16} /> {app.downloadLabel?.[lang] ?? appUi.download[lang]}
               </a>
             ) : (
               <span className="flex items-center gap-2 rounded-full border border-dashed border-accent px-6 py-3 text-sm font-semibold text-accent">
@@ -70,7 +69,7 @@ export default function AppHome({ app }: { app: AppPage }) {
                 />
               </a>
               <p className="text-sm leading-relaxed text-text-2">
-                {app.downloadQr.caption}
+                {app.downloadQr.caption[lang]}
                 <span className="mt-1 block break-all text-text-3">{downloadFullUrl}</span>
               </p>
             </div>
@@ -80,7 +79,7 @@ export default function AppHome({ app }: { app: AppPage }) {
             <p className="mt-6 flex max-w-xl gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-text-2">
               <ShieldCheck size={18} className="mt-0.5 shrink-0 text-accent" />
               <span>
-                {app.privacyNotice}{" "}
+                {app.privacyNotice[lang]}{" "}
                 <a href={app.privacyUrl} className="break-all text-accent underline-offset-4 hover:underline">
                   {app.privacyUrl}
                 </a>
@@ -96,7 +95,7 @@ export default function AppHome({ app }: { app: AppPage }) {
 
       {app.install && (
         <section className="mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{app.install.title}</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{app.install.title[lang]}</h2>
           <div className="mt-4 h-px w-16 bg-accent" />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {app.install.guides.map((guide) => (
@@ -105,13 +104,13 @@ export default function AppHome({ app }: { app: AppPage }) {
                   <Smartphone size={18} className="text-accent" /> {guide.platform}
                   {guide.badge && (
                     <span className="rounded-full border border-accent px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-accent">
-                      {guide.badge}
+                      {guide.badge[lang]}
                     </span>
                   )}
                 </h3>
-                {guide.steps.length > 1 ? (
+                {guide.steps[lang].length > 1 ? (
                   <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-text-2 marker:text-accent">
-                    {guide.steps.map((step) => (
+                    {guide.steps[lang].map((step) => (
                       <li key={step}>
                         <InlineContent content={parseInline(step)} />
                       </li>
@@ -119,12 +118,12 @@ export default function AppHome({ app }: { app: AppPage }) {
                   </ol>
                 ) : (
                   <p className="mt-3 text-sm leading-relaxed text-text-2">
-                    <InlineContent content={parseInline(guide.steps[0])} />
+                    <InlineContent content={parseInline(guide.steps[lang][0])} />
                   </p>
                 )}
                 {guide.note && (
                   <p className="mt-4 rounded-xl border border-border p-3 text-sm leading-relaxed text-text-3">
-                    <InlineContent content={parseInline(guide.note)} />
+                    <InlineContent content={parseInline(guide.note[lang])} />
                   </p>
                 )}
                 {guide.qr && (
@@ -132,7 +131,7 @@ export default function AppHome({ app }: { app: AppPage }) {
                     <span className="shrink-0 rounded-xl bg-[#FFF9F3] p-2.5">
                       <Image src={guide.qr.src} alt={`QR code: ${guide.qr.href}`} width={96} height={96} className="h-24 w-24" />
                     </span>
-                    {guide.qr.caption}
+                    {guide.qr.caption[lang]}
                   </a>
                 )}
               </div>
@@ -158,7 +157,9 @@ export default function AppHome({ app }: { app: AppPage }) {
         <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{appUi.screenshots[lang]}</h2>
         <div className="mt-4 h-px w-16 bg-accent" />
         <div className="mt-8 flex snap-x gap-4 overflow-x-auto pb-4">
-          {app.screenshots.map(({ src, caption }) => (
+          {app.screenshots.map(({ src, caption: captions }) => {
+            const caption = captions?.[lang];
+            return (
             <figure key={src} className="w-48 shrink-0 snap-start sm:w-56">
               <Image
                 src={src}
@@ -169,7 +170,8 @@ export default function AppHome({ app }: { app: AppPage }) {
               />
               {caption && <figcaption className="mt-2 text-center text-sm text-text-3">{caption}</figcaption>}
             </figure>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -177,18 +179,18 @@ export default function AppHome({ app }: { app: AppPage }) {
         <section className={`mt-24 grid gap-6 ${app.stories.length > 1 ? "lg:grid-cols-2" : ""}`}>
           {app.stories.map((story) => (
             <article
-              key={story.title}
+              key={story.title.en}
               className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center"
             >
               <div className="flex-1">
-                <h2 className="text-xl font-bold tracking-tight text-heading">{story.title}</h2>
+                <h2 className="text-xl font-bold tracking-tight text-heading">{story.title[lang]}</h2>
                 <div className="mt-3 h-px w-12 bg-accent" />
-                <p className="mt-4 text-sm leading-relaxed text-text-2">{story.text}</p>
+                <p className="mt-4 text-sm leading-relaxed text-text-2">{story.text[lang]}</p>
               </div>
               {story.image && (
                 <Image
                   src={story.image.src}
-                  alt={story.title}
+                  alt={story.title[lang]}
                   width={story.image.width}
                   height={story.image.height}
                   className="mx-auto h-auto w-36 shrink-0 sm:w-40"
@@ -217,7 +219,7 @@ export default function AppHome({ app }: { app: AppPage }) {
             {app.links?.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className="flex items-center gap-2 text-text-2 hover:text-accent">
-                  <Link2 size={15} /> {link.label}
+                  <Link2 size={15} /> {link.label[lang]}
                 </a>
               </li>
             ))}
@@ -233,7 +235,7 @@ export default function AppHome({ app }: { app: AppPage }) {
         </div>
       </section>
 
-      {app.credits && <p className="mt-16 text-center text-sm text-text-3">{app.credits}</p>}
+      {app.credits && <p className="mt-16 text-center text-sm text-text-3">{app.credits[lang]}</p>}
     </main>
   );
 }

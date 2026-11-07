@@ -106,3 +106,10 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Saved language differs from the page's static HTML (English unless a header marks it Italian):
+   hide the page until LanguageProvider has switched it, so the other language never flashes. */
+html[data-lang-choice="it"]:not([data-lang-ready]):not(:has([data-static-lang="it"])) body,
+html[data-lang-choice="en"]:not([data-lang-ready]):has([data-static-lang="it"]) body {
+  visibility: hidden;
+}

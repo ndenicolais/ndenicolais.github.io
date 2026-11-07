@@ -1,11 +1,11 @@
 "use client";
 
-import { useLanguage, type Lang } from "@/context/LanguageContext";
+import { usePageLang, type Lang } from "@/context/LanguageContext";
 import { personalInfo, ui } from "@/lib/data";
 
-export default function Footer({ lang: fixedLang }: { lang?: Lang }) {
-  const { lang: siteLang } = useLanguage();
-  const lang = fixedLang ?? siteLang;
+/** `lang` is the page's static-HTML language, used until the visitor chooses one. */
+export default function Footer({ lang: pageDefault }: { lang?: Lang }) {
+  const lang = usePageLang(pageDefault);
   const year = new Date().getFullYear();
 
   return (

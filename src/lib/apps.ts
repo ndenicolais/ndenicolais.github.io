@@ -7,47 +7,46 @@ export interface AppPage {
   logo: string;
   preview: string;
   icons?: { icon: string; apple: string };
-  /** Fixed page language: hides the language toggle and keeps the static HTML in this language. */
+  /** Language of the static HTML (what crawlers read); the page switches once the visitor picks a language. */
   lang?: Lang;
   tagline: Localized;
   description: Localized;
   features: { title: Localized; text: Localized }[];
   platform: Localized;
   /** Data statement shown under the download button, followed by the full privacy URL. */
-  privacyNotice?: string;
-  screenshots: { src: string; caption?: string }[];
+  privacyNotice?: Localized;
+  screenshots: { src: string; caption?: Localized }[];
   /** Omitted while the app is not public yet: the page shows "Coming soon on Google Play". A path starting with "/" is a file on this site. */
   downloadUrl?: string;
   /** Replaces the default download button label (e.g. to show the APK version). */
-  downloadLabel?: string;
+  downloadLabel?: Localized;
   /** QR code pointing to `downloadUrl`, shown next to the download button. */
-  downloadQr?: { src: string; caption: string };
+  downloadQr?: { src: string; caption: Localized };
   /** Omitted for private repositories: the page hides the "Source code" button. */
   sourceUrl?: string;
   /** Installation guide shown under the hero; steps and notes accept inline Markdown (**bold**). */
   install?: {
-    title: string;
+    title: Localized;
     guides: {
       platform: string;
       /** Small label next to the steps (e.g. "In prova"). */
-      badge?: string;
-      steps: string[];
-      note?: string;
+      badge?: Localized;
+      steps: Localized<string[]>;
+      note?: Localized;
       /** QR code shown under the steps; `href` is where it points. */
-      qr?: { src: string; href: string; caption: string };
+      qr?: { src: string; href: string; caption: Localized };
     }[];
   };
   /** Extra text sections shown after the screenshots, optionally with an illustration. */
-  stories?: { title: string; text: string; image?: { src: string; width: number; height: number } }[];
+  stories?: { title: Localized; text: Localized; image?: { src: string; width: number; height: number } }[];
   /** Extra entries of the "Links" card, after the privacy policy. */
-  links?: { label: string; href: string }[];
+  links?: { label: Localized; href: string }[];
   privacyUrl: string;
   contactEmail: string;
   /** License line under the page; omit it when the code is not public (the site footer covers the rest). */
-  credits?: string;
+  credits?: Localized;
 }
 
-/** Strings in the optional fields above are plain text in the page's fixed `lang`. */
 export const siteUrl = "https://ndenicolais.github.io";
 const contactEmail = "ndn21dev@gmail.com";
 
@@ -105,7 +104,7 @@ export const shoxApp: AppPage = {
   sourceUrl: "https://github.com/ndenicolais/Shox",
   privacyUrl: `${siteUrl}/shox/privacy/`,
   contactEmail,
-  credits: "© 2026 Nicola De Nicolais — MIT License",
+  credits: { it: "© 2026 Nicola De Nicolais — Licenza MIT", en: "© 2026 Nicola De Nicolais — MIT License" },
 };
 
 export const qrationApp: AppPage = {
@@ -157,20 +156,25 @@ export const qrationApp: AppPage = {
     it: "Android 7.0+ (64-bit, arm64), con Google Play services. Accesso con Google o email. Distribuita come APK su GitHub Releases, non sul Play Store.",
     en: "Android 7.0+ (64-bit, arm64), with Google Play services. Sign in with Google or email. Distributed as an APK on GitHub Releases, not on the Play Store.",
   },
-  privacyNotice:
-    "When you sign in with Google, QRation receives your Google account name, email address and profile photo. They are used only to sign you in and to sync your codes across sessions; they are never shared, sold or used for advertising. See the full privacy policy:",
+  privacyNotice: {
+    it: "Se accedi con Google, QRation riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per sincronizzare i tuoi codici tra le sessioni; non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
+    en: "When you sign in with Google, QRation receives your Google account name, email address and profile photo. They are used only to sign you in and to sync your codes across sessions; they are never shared, sold or used for advertising. See the full privacy policy:",
+  },
   screenshots: [
-    { src: "/images/qration/home.png", caption: "Create" },
-    { src: "/images/qration/create.png", caption: "QR editor" },
-    { src: "/images/qration/details.png", caption: "Code details" },
-    { src: "/images/qration/settings.png", caption: "Settings" },
-    { src: "/images/qration/database.png", caption: "Database" },
+    { src: "/images/qration/home.png", caption: { it: "Crea", en: "Create" } },
+    { src: "/images/qration/create.png", caption: { it: "Editor QR", en: "QR editor" } },
+    { src: "/images/qration/details.png", caption: { it: "Dettagli codice", en: "Code details" } },
+    { src: "/images/qration/settings.png", caption: { it: "Impostazioni", en: "Settings" } },
+    { src: "/images/qration/database.png", caption: { it: "Database", en: "Database" } },
   ],
   downloadUrl: "https://github.com/ndenicolais/QRation/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/QRation",
   privacyUrl: `${siteUrl}/qration/privacy/`,
   contactEmail,
-  credits: "© 2026 Nicola De Nicolais — Source-available, non-commercial license",
+  credits: {
+    it: "© 2026 Nicola De Nicolais — Licenza source-available, non commerciale",
+    en: "© 2026 Nicola De Nicolais — Source-available, non-commercial license",
+  },
 };
 
 export const fivelinkApp: AppPage = {
@@ -222,20 +226,25 @@ export const fivelinkApp: AppPage = {
     it: "Android 7.0+ (arm64, ARMv7, x86_64). Nessun account, nessuna connessione Internet necessaria. Tema chiaro e scuro, italiano e inglese. Distribuita su Google Play.",
     en: "Android 7.0+ (arm64, ARMv7, x86_64). No account, no internet connection needed. Light and dark theme, English and Italian. Distributed on Google Play.",
   },
-  privacyNotice:
-    "Fivelink collects no personal data: no account, no ads, no analytics and no permissions. Your games, statistics and settings stay on your device. See the full privacy policy:",
+  privacyNotice: {
+    it: "Fivelink non raccoglie dati personali: nessun account, nessuna pubblicità, nessuna analisi e nessun permesso. Partite, statistiche e impostazioni restano sul tuo dispositivo. Informativa privacy completa:",
+    en: "Fivelink collects no personal data: no account, no ads, no analytics and no permissions. Your games, statistics and settings stay on your device. See the full privacy policy:",
+  },
   screenshots: [
-    { src: "/images/fivelink/game.png", caption: "Game" },
-    { src: "/images/fivelink/win.png", caption: "Solved" },
-    { src: "/images/fivelink/help.png", caption: "How to play" },
-    { src: "/images/fivelink/stats.png", caption: "Statistics" },
-    { src: "/images/fivelink/settings.png", caption: "Settings" },
+    { src: "/images/fivelink/game.png", caption: { it: "Partita", en: "Game" } },
+    { src: "/images/fivelink/win.png", caption: { it: "Risolto", en: "Solved" } },
+    { src: "/images/fivelink/help.png", caption: { it: "Come si gioca", en: "How to play" } },
+    { src: "/images/fivelink/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
+    { src: "/images/fivelink/settings.png", caption: { it: "Impostazioni", en: "Settings" } },
   ],
   // Closed testing: set to https://play.google.com/store/apps/details?id=com.ndn21.fivelink once published.
   sourceUrl: "https://github.com/ndenicolais/Fivelink",
   privacyUrl: `${siteUrl}/fivelink/privacy/`,
   contactEmail,
-  credits: "© 2026 Nicola De Nicolais — All rights reserved. Source-available, non-commercial license.",
+  credits: {
+    it: "© 2026 Nicola De Nicolais — Tutti i diritti riservati. Licenza source-available, non commerciale.",
+    en: "© 2026 Nicola De Nicolais — All rights reserved. Source-available, non-commercial license.",
+  },
 };
 
 export const noteepApp: AppPage = {
@@ -287,20 +296,25 @@ export const noteepApp: AppPage = {
     it: "Android 7.0+ (64-bit, arm64), con Google Play services e una connessione Internet per accesso e sincronizzazione. Accesso con un account Google o con email e password. Distribuita come APK su GitHub Releases, non sul Play Store.",
     en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store.",
   },
-  privacyNotice:
-    "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never shared, sold or used for advertising. See the full privacy policy:",
+  privacyNotice: {
+    it: "Se accedi con Google, Noteep riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere note, attività ed eventi sincronizzati sul tuo account; non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
+    en: "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never shared, sold or used for advertising. See the full privacy policy:",
+  },
   screenshots: [
-    { src: "/images/noteep/home.png", caption: "Home" },
-    { src: "/images/noteep/editor.png", caption: "Note editor" },
-    { src: "/images/noteep/tasks.png", caption: "Tasks" },
-    { src: "/images/noteep/calendar.png", caption: "Calendar" },
-    { src: "/images/noteep/stats.png", caption: "Statistics" },
+    { src: "/images/noteep/home.png", caption: { it: "Home", en: "Home" } },
+    { src: "/images/noteep/editor.png", caption: { it: "Editor note", en: "Note editor" } },
+    { src: "/images/noteep/tasks.png", caption: { it: "Attività", en: "Tasks" } },
+    { src: "/images/noteep/calendar.png", caption: { it: "Calendario", en: "Calendar" } },
+    { src: "/images/noteep/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
   ],
   downloadUrl: "https://github.com/ndenicolais/Noteep/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/Noteep",
   privacyUrl: `${siteUrl}/noteep/privacy/`,
   contactEmail,
-  credits: "© 2026 Nicola De Nicolais — Source-available, non-commercial license (all rights reserved; see LICENSE in the repo).",
+  credits: {
+    it: "© 2026 Nicola De Nicolais — Licenza source-available, non commerciale (tutti i diritti riservati; vedi LICENSE nel repository).",
+    en: "© 2026 Nicola De Nicolais — Source-available, non-commercial license (all rights reserved; see LICENSE in the repo).",
+  },
 };
 
 export const pawerApp: AppPage = {
@@ -309,7 +323,7 @@ export const pawerApp: AppPage = {
   logo: "/images/pawer_logo.png",
   preview: "/images/pawer/preview.png",
   icons: { icon: "/images/pawer/favicon_32.png", apple: "/images/pawer/icon_192.png" },
-  // Pawer exists only in Italian, so its homepage is Italian-only.
+  // Pawer exists only in Italian, so its static homepage is Italian; visitors who chose English see the translation.
   lang: "it",
   tagline: {
     it: "Ogni zampa merita un futuro migliore",
@@ -353,58 +367,90 @@ export const pawerApp: AppPage = {
     it: "Android 7.0 o successivo (64 bit, arm64). Accesso con account Google oppure email e password. Distribuita come APK da questa pagina, non sul Play Store. Disponibile anche come web app su https://pawerapp.web.app, installabile su iPhone (iOS 16.4 o successivo) da Safari.",
     en: "Android 7.0 or later (64-bit, arm64). Sign in with a Google account or with email and password. Distributed as an APK from this page, not on the Play Store. Also available as a web app at https://pawerapp.web.app, installable on iPhone (iOS 16.4 or later) from Safari.",
   },
-  privacyNotice:
-    "Se accedi con Google, Pawer riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. L'email serve solo per l'accesso e non è visibile agli altri utenti, a meno che tu non attivi Impostazioni → Privacy → Mostra la mia email. Il nome viene mostrato agli altri utenti come autore delle tue segnalazioni. La foto non viene usata né mostrata. Questi dati non vengono mai venduti, ceduti a terzi o usati per pubblicità. Informativa privacy completa:",
+  privacyNotice: {
+    it: "Se accedi con Google, Pawer riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. L'email serve solo per l'accesso e non è visibile agli altri utenti, a meno che tu non attivi Impostazioni → Privacy → Mostra la mia email. Il nome viene mostrato agli altri utenti come autore delle tue segnalazioni. La foto non viene usata né mostrata. Questi dati non vengono mai venduti, ceduti a terzi o usati per pubblicità. Informativa privacy completa:",
+    en: "When you sign in with Google, Pawer receives your Google account name, email address and profile photo. The email is used only to sign you in and is not visible to other users unless you turn on Impostazioni → Privacy → Mostra la mia email (Settings → Privacy → Show my email). Your name is shown to other users as the author of your reports. The photo is neither used nor shown. This data is never sold, shared with third parties or used for advertising. See the full privacy policy:",
+  },
   screenshots: [
-    { src: "/images/pawer/home.png", caption: "Home" },
-    { src: "/images/pawer/reports.png", caption: "Segnalazioni" },
-    { src: "/images/pawer/details.png", caption: "Dettaglio segnalazione" },
-    { src: "/images/pawer/new_report.png", caption: "Nuova segnalazione" },
-    { src: "/images/pawer/shelters.png", caption: "Strutture" },
+    { src: "/images/pawer/home.png", caption: { it: "Home", en: "Home" } },
+    { src: "/images/pawer/reports.png", caption: { it: "Segnalazioni", en: "Reports" } },
+    { src: "/images/pawer/details.png", caption: { it: "Dettaglio segnalazione", en: "Report details" } },
+    { src: "/images/pawer/new_report.png", caption: { it: "Nuova segnalazione", en: "New report" } },
+    { src: "/images/pawer/shelters.png", caption: { it: "Strutture", en: "Shelters" } },
   ],
   // Fixed file name without version: links and printed QR codes stay valid across updates.
   // Relative so it also works on the dev server; the page shows (and the QR encodes) the full URL.
   downloadUrl: "/pawer/Pawer.apk",
-  downloadLabel: "Scarica l'APK · v1.0.0",
+  downloadLabel: { it: "Scarica l'APK · v1.0.0", en: "Download the APK · v1.0.0" },
   downloadQr: {
     src: "/images/pawer/qr_apk.svg",
-    caption: "Inquadra il QR code con il telefono per scaricare l'APK.",
+    caption: {
+      it: "Inquadra il QR code con il telefono per scaricare l'APK.",
+      en: "Scan the QR code with your phone to download the APK.",
+    },
   },
   install: {
-    title: "Come installarla",
+    title: { it: "Come installarla", en: "How to install it" },
     guides: [
       {
         platform: "Android",
-        steps: [
-          "Scarica l'APK sul telefono e aprilo.",
-          "Se il telefono lo chiede, consenti **\"Installa app sconosciute\"** per l'app da cui lo stai aprendo (browser, WhatsApp, File…).",
-          "Tocca **Installa**, poi apri Pawer e registrati con la tua email o con Google.",
-        ],
-        note: "Durante l'installazione Android potrebbe avvisarti che l'app non è sicura: lo segnala per tutte le app installate fuori dal Play Store, dove Pawer per ora non c'è. Pawer usa solo i dati descritti nell'informativa privacy. Fotocamera, posizione e notifiche vengono chieste solo quando servono.",
+        steps: {
+          it: [
+            "Scarica l'APK sul telefono e aprilo.",
+            "Se il telefono lo chiede, consenti **\"Installa app sconosciute\"** per l'app da cui lo stai aprendo (browser, WhatsApp, File…).",
+            "Tocca **Installa**, poi apri Pawer e registrati con la tua email o con Google.",
+          ],
+          en: [
+            "Download the APK on your phone and open it.",
+            "If your phone asks, allow **\"Install unknown apps\"** for the app you are opening it from (browser, WhatsApp, Files…).",
+            "Tap **Install**, then open Pawer and sign up with your email or with Google.",
+          ],
+        },
+        note: {
+          it: "Durante l'installazione Android potrebbe avvisarti che l'app non è sicura: lo segnala per tutte le app installate fuori dal Play Store, dove Pawer per ora non c'è. Pawer usa solo i dati descritti nell'informativa privacy. Fotocamera, posizione e notifiche vengono chieste solo quando servono.",
+          en: "During installation Android may warn you that the app is not safe: it does so for every app installed outside the Play Store, where Pawer is not available yet. Pawer uses only the data described in the privacy policy. Camera, location and notifications are requested only when needed.",
+        },
       },
       {
         platform: "iPhone",
-        badge: "In prova",
-        steps: [
-          "Apri [pawerapp.web.app](https://pawerapp.web.app) con Safari, o inquadra il QR code qui sotto.",
-          "Tocca **Condividi** → **Aggiungi alla schermata Home**.",
-          "Apri Pawer dall'icona come una normale app.",
-        ],
-        note: "Funziona anche dal browser del computer, allo stesso indirizzo.",
-        qr: { src: "/images/pawer/qr_webapp.svg", href: "https://pawerapp.web.app", caption: "Apri Pawer sul web" },
+        badge: { it: "In prova", en: "Beta" },
+        steps: {
+          it: [
+            "Apri [pawerapp.web.app](https://pawerapp.web.app) con Safari, o inquadra il QR code qui sotto.",
+            "Tocca **Condividi** → **Aggiungi alla schermata Home**.",
+            "Apri Pawer dall'icona come una normale app.",
+          ],
+          en: [
+            "Open [pawerapp.web.app](https://pawerapp.web.app) in Safari, or scan the QR code below.",
+            "Tap **Share** → **Add to Home Screen**.",
+            "Open Pawer from its icon like any other app.",
+          ],
+        },
+        note: {
+          it: "Funziona anche dal browser del computer, allo stesso indirizzo.",
+          en: "It also works in your computer's browser, at the same address.",
+        },
+        qr: {
+          src: "/images/pawer/qr_webapp.svg",
+          href: "https://pawerapp.web.app",
+          caption: { it: "Apri Pawer sul web", en: "Open Pawer on the web" },
+        },
       },
     ],
   },
   stories: [
     {
-      title: "In memoria di Orsetto",
-      text: "Pawer è nata per Orsetto, un pelosetto marrone e bianco trovato per strada. Era la bontà e la purezza fatte cane, di una fedeltà immensa fin dal primo momento. Anche se per poco, ha reso migliore la vita di tutta la sua famiglia. Questa app è il modo di ricambiare tutto quello che ha dato: aiutare altri cani e gatti come lui a trovare qualcuno che si prenda cura di loro.",
+      title: { it: "In memoria di Orsetto", en: "In memory of Orsetto" },
+      text: {
+        it: "Pawer è nata per Orsetto, un pelosetto marrone e bianco trovato per strada. Era la bontà e la purezza fatte cane, di una fedeltà immensa fin dal primo momento. Anche se per poco, ha reso migliore la vita di tutta la sua famiglia. Questa app è il modo di ricambiare tutto quello che ha dato: aiutare altri cani e gatti come lui a trovare qualcuno che si prenda cura di loro.",
+        en: "Pawer was born for Orsetto, a brown and white furball found on the street. He was kindness and purity in the shape of a dog, immensely loyal from the very first moment. Even if only for a short time, he made his whole family's life better. This app is a way to give back everything he gave: helping other dogs and cats like him find someone to take care of them.",
+      },
       image: { src: "/images/pawer/orsetto.png", width: 540, height: 600 },
     },
   ],
   links: [
-    { label: "Sito web", href: "https://pawerapp.web.app" },
-    { label: "Scheda app", href: "/pawer/scheda/Pawer_scheda.pdf" },
+    { label: { it: "Sito web", en: "Website" }, href: "https://pawerapp.web.app" },
+    { label: { it: "Scheda app", en: "App sheet (Italian)" }, href: "/pawer/scheda/Pawer_scheda.pdf" },
   ],
   // No sourceUrl: the app repository is private.
   privacyUrl: `${siteUrl}/pawer/privacy/`,

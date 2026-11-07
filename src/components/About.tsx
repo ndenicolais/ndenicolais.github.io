@@ -35,7 +35,7 @@ export default function About() {
         >
           <Image
             src="/images/me.png"
-            alt={`Foto di ${personalInfo.name}`}
+            alt={ui.about.photoAlt[lang]}
             width={220}
             height={220}
             className="h-full w-full object-cover"
