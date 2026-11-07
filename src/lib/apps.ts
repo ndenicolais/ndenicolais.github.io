@@ -90,8 +90,8 @@ export const shoxApp: AppPage = {
     {
       title: { it: "Conserva", en: "Keep" },
       text: {
-        it: "Backup e ripristino della collezione in JSON.",
-        en: "Back up and restore your collection as JSON.",
+        it: "Backup e ripristino della collezione, foto comprese, in un file ZIP.",
+        en: "Back up and restore your collection, photos included, as a ZIP file.",
       },
     },
   ],
@@ -110,6 +110,7 @@ export const shoxApp: AppPage = {
     { src: "/images/shox/database.png", caption: { it: "Statistiche", en: "Statistics" } },
     { src: "/images/shox/dashboard.png", caption: { it: "Impostazioni", en: "Settings" } },
   ],
+  links: [{ label: { it: "Scheda app", en: "App sheet (Italian)" }, href: "/shox/scheda/Shox_scheda.pdf" }],
   downloadUrl: "https://github.com/ndenicolais/Shox/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/Shox",
   privacyUrl: `${siteUrl}/shox/privacy/`,

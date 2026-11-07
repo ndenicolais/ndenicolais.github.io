@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: "https://ndenicolais.github.io/shox/scheda/",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: "https://ndenicolais.github.io/qration/",
       lastModified: new Date(),
       changeFrequency: "monthly",
