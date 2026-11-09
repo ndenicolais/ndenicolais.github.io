@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: "https://ndenicolais.github.io/qration/scheda/",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: "https://ndenicolais.github.io/fivelink/",
       lastModified: new Date(),
       changeFrequency: "monthly",

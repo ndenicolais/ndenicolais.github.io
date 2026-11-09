@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QRation — Scansiona, crea e conserva ogni QR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F3F0;
+    --surface: #FFFFFF;
+    --fg: #274060;
+    --muted: #4C6A8D;
+    --primary: #274060;
+    --accent: #B8935E;
+    --on-primary: #F5F3F0;
+    --on-primary-soft: #FAF8F5;
+    --on-primary-muted: #DDBB90;
+    --line: #E8E4DF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    font-size: 17px;
+  }
+  .sheet { max-width: 880px; margin: 0 auto; padding: 32px 24px 48px; }
+  h1, h2, h3 { font-weight: 700; line-height: 1.15; }
+  p { color: var(--muted); }
+  strong { color: var(--fg); }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 28px;
+    padding: 36px 36px 0 36px;
+    overflow: hidden;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 0 0 2px color-mix(in srgb, var(--on-primary) 35%, transparent); }
+  .brand span { font-size: 40px; font-weight: 700; letter-spacing: .5px; }
+  .hero h1 { font-size: 34px; margin-top: 22px; color: var(--on-primary); }
+  .hero .lead { color: var(--on-primary-soft); font-size: 19px; margin-top: 12px; max-width: 30ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 36px; }
+  .chip {
+    background: color-mix(in srgb, var(--on-primary) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--on-primary) 40%, transparent);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  /* The screenshot is taller than the hero: the hero's overflow cuts it at the bottom edge. */
+  .hero-art { align-self: end; height: 330px; display: flex; justify-content: center; }
+  .hero-art img {
+    width: 100%; max-width: 230px; height: auto; align-self: flex-start; display: block;
+    margin-top: 6px; border-radius: 24px; transform: rotate(4deg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+  }
+
+  /* Sections */
+  section { margin-top: 36px; }
+  .label {
+    font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--primary); margin-bottom: 10px;
+  }
+  section > h2 { font-size: 28px; margin-bottom: 14px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 22px;
+  }
+
+  /* Pitch */
+  .pitch { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+  .pitch .big {
+    width: 92px; height: 92px; border-radius: 24px; background: var(--bg);
+    display: grid; place-items: center;
+  }
+  .pitch .big img { width: 64px; }
+  .pitch h2 { font-size: 26px; margin-bottom: 8px; }
+  .pitch p + p { margin-top: 8px; }
+
+  /* Features */
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .feature h3 { font-size: 19px; margin: 12px 0 4px; }
+  .feature p { font-size: 16px; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 14px; background: var(--accent);
+    display: grid; place-items: center;
+  }
+  .icon svg { width: 26px; height: 26px; stroke: var(--on-primary); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: step; }
+  .card.step { position: relative; padding-top: 58px; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; top: 18px; left: 22px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--primary); color: var(--on-primary);
+    font-weight: 700; display: grid; place-items: center;
+  }
+  .step h3 { font-size: 18px; margin-bottom: 4px; }
+  .step p { font-size: 15.5px; }
+
+  /* Install */
+  .install { display: grid; grid-template-columns: 1.5fr 1fr; gap: 14px; }
+  .install.single { grid-template-columns: 1fr; }
+  .install h3 { font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .install h3 svg { width: 26px; height: 26px; flex-shrink: 0; }
+  .os-fill { fill: var(--primary); }
+  .install ol { padding-left: 22px; color: var(--muted); }
+  .install li { margin-bottom: 8px; padding-left: 4px; }
+  .install li::marker { color: var(--primary); font-weight: 700; }
+  .note { font-size: 14.5px; margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 12px; }
+  .note + .note { margin-top: 6px; border-top: 0; padding-top: 0; }
+  .note a { color: var(--primary); font-weight: 600; }
+  code, .mono { font-family: inherit; font-weight: 700; color: var(--fg); }
+  .download { display: flex; align-items: center; gap: 16px; background: var(--bg); border-radius: 16px; padding: 12px 14px; margin-bottom: 14px; }
+  .download img { width: 96px; height: 96px; display: block; flex-shrink: 0; }
+  .download .qr-main { font-size: 15px; font-weight: 600; color: var(--fg); }
+  .download .url { display: block; font-size: 14px; font-weight: 700; color: var(--primary); margin-top: 2px; word-break: break-all; }
+  .download .btn { display: inline-block; background: var(--primary); color: var(--on-primary); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 9px 18px; margin-top: 10px; }
+
+  /* Story (no illustration: one column) */
+  .story h2 { font-size: 24px; margin-bottom: 8px; }
+  .story p + p { margin-top: 8px; }
+
+  /* Footer */
+  footer {
+    margin-top: 36px; padding: 24px 28px; border-radius: 20px;
+    background: var(--primary); color: var(--on-primary);
+    display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 24px;
+  }
+  footer p { color: var(--on-primary-muted); font-size: 15px; }
+  footer .cta { font-size: 21px; font-weight: 700; color: var(--on-primary); }
+  footer a { color: var(--on-primary); font-weight: 600; }
+  footer .links { font-size: 15px; line-height: 1.7; }
+  .qr { background: var(--surface); border-radius: 14px; padding: 10px 10px 6px; text-align: center; }
+  .qr img { width: 104px; height: 104px; display: block; margin: 0 auto; }
+  .qr figcaption { color: var(--fg); font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .qr figcaption .url { font-weight: 700; color: var(--primary); }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .sheet { padding: 16px 14px 32px; }
+    .hero { grid-template-columns: 1fr; padding: 28px 24px 0; }
+    .hero h1 { font-size: 28px; }
+    .hero-art { height: 240px; }
+    .hero-art img { max-width: 200px; }
+    .chips { margin-bottom: 8px; }
+    .features, .steps, .install { grid-template-columns: 1fr; }
+    .pitch { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    footer { grid-template-columns: 1fr; justify-items: start; }
+  }
+
+  /* A4 print, two clean pages: no page margin, so the background covers the whole sheet; the 10 mm become inner padding. */
+  @page { size: A4; margin: 0; }
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { background: var(--bg); }
+    body { font-size: 13.5px; }
+    .sheet { max-width: none; padding: 10mm; }
+    .screen-only { display: none !important; }
+    .hero { padding: 26px 28px 0; border-radius: 20px; }
+    .hero h1 { font-size: 27px; }
+    .hero .lead { font-size: 15.5px; }
+    .hero-art { height: 250px; }
+    .hero-art img { max-width: 190px; }
+    section { margin-top: 22px; break-inside: avoid; }
+    section > h2 { font-size: 22px; }
+    .card { padding: 16px; }
+    .feature p, .step p { font-size: 13px; }
+    .card.step { padding-top: 46px; padding-bottom: 12px; }
+    .step::before { top: 12px; left: 16px; }
+    .page-break { break-before: page; margin-top: 0; padding-top: 10mm; }
+    .page-break ~ section { margin-top: 12px; }
+    .page-break ~ section > h2 { font-size: 19px; margin-bottom: 10px; }
+    .page-break .label, .page-break ~ section .label { margin-bottom: 6px; }
+    .install h3 { margin-bottom: 8px; }
+    .install .card { padding-bottom: 12px; }
+    .install li { font-size: 12.5px; margin-bottom: 5px; }
+    .note { margin-top: 8px; padding-top: 8px; font-size: 12.5px; line-height: 1.4; }
+    .download { padding: 6px 10px; margin-bottom: 8px; gap: 12px; }
+    .download img { width: 64px; height: 64px; }
+    .download .qr-main { font-size: 12.5px; }
+    .download .url { font-size: 12px; }
+    .story h2 { font-size: 20px; margin-bottom: 4px; }
+    .story p { font-size: 12.5px; }
+    .story p + p { margin-top: 4px; }
+    footer { margin-top: 14px; padding: 16px 22px; break-inside: avoid; }
+    footer .cta { font-size: 18px; }
+    footer p, footer .links { font-size: 13px; line-height: 1.5; }
+    .qr img { width: 78px; height: 78px; }
+    .qr figcaption { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="hero">
+    <div>
+      <div class="brand">
+        <img src="img/app_logo_icon.png" alt="Logo di QRation">
+        <span>QRation</span>
+      </div>
+      <h1>Scansiona, crea<br>e conserva ogni QR</h1>
+      <p class="lead">L'app per leggere, creare e tenere in ordine i tuoi codici QR e codici a barre.</p>
+      <div class="chips">
+        <span class="chip">Android</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="img/home.png" alt="Schermata di QRation con i tipi di codice QR da creare">
+    </div>
+  </header>
+
+  <section class="card pitch">
+    <div class="big"><img src="img/app_logo_light.png" alt=""></div>
+    <div>
+      <h2>Un QR per ogni occasione</h2>
+      <p>Wi-Fi di casa, biglietti da visita, link ai social, menu del ristorante: ognuno usa i codici QR a modo suo, e <strong>voglio capire come li usi tu</strong>.</p>
+      <p>Bastano un paio di codici per farti un'idea: <strong>provala e dimmi cosa migliorare.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Cosa fa</div>
+    <h2>Tutti i tuoi codici in un'app</h2>
+    <div class="features">
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></div>
+        <h3>Scansiona</h3>
+        <p>Con la fotocamera o da un'immagine della galleria, codici QR e codici a barre.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg></div>
+        <h3>Crea</h3>
+        <p>12 tipi standard e 10 social network, con colori, forme e il tuo logo.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></div>
+        <h3>Organizza</h3>
+        <p>Cronologia con ricerca e filtri, preferiti e statistiche.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="m9.5 13.5 2 2 3.5-3.5"/></svg></div>
+        <h3>Conserva</h3>
+        <p>Tutto sincronizzato nel cloud, con esportazione in PDF, Excel o CSV e backup JSON.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <div class="label">Come funziona</div>
+    <h2>Dal codice all'azione in tre passi</h2>
+    <div class="steps">
+      <div class="card step">
+        <h3>Inquadra</h3>
+        <p>Punti la fotocamera o scegli un'immagine: QRation riconosce QR e codici a barre.</p>
+      </div>
+      <div class="card step">
+        <h3>Usalo</h3>
+        <p>Apri il link, salva il contatto, collegati al Wi-Fi o aggiungi l'evento con un tocco.</p>
+      </div>
+      <div class="card step">
+        <h3>Crea il tuo</h3>
+        <p>Scegli il tipo, personalizza colori e logo, poi salvalo o condividilo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Installazione</div>
+    <h2>Come installarla</h2>
+    <div class="install single">
+      <div class="card">
+        <h3>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="os-fill" d="M6 9h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.5a1.25 1.25 0 0 1-2.5 0V19h-3v2.5a1.25 1.25 0 0 1-2.5 0V19h-.5A1.5 1.5 0 0 1 6 17.5zM3.75 9A1.25 1.25 0 0 1 5 10.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 3.75 9m16.5 0a1.25 1.25 0 0 1 1.25 1.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 20.25 9M8.4 3.1l-.9-1.4a.3.3 0 0 1 .5-.3l.95 1.45A6.3 6.3 0 0 1 12 2.3c1.1 0 2.15.2 3.05.55L16 1.4a.3.3 0 0 1 .5.3l-.9 1.4A5.3 5.3 0 0 1 18 8H6a5.3 5.3 0 0 1 2.4-4.9M9.5 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg>
+          Su Android
+        </h3>
+        <div class="download">
+          <img src="img/qr_apk.svg" alt="QR code per scaricare l'APK di QRation">
+          <div>
+            <p class="qr-main">Inquadra e scarica</p>
+            <a class="url" href="https://github.com/ndenicolais/QRation/releases/latest">github.com/ndenicolais/QRation/releases/latest</a>
+            <a class="btn screen-only" href="https://github.com/ndenicolais/QRation/releases/latest">Scarica l'APK · v2.0.0</a>
+          </div>
+        </div>
+        <ol>
+          <li>Apri il link, scorri fino ad <strong>Assets</strong> e tocca il file <code>.apk</code>.</li>
+          <li>Se il telefono lo chiede, consenti <strong>"Installa app sconosciute"</strong> per l'app da cui lo stai aprendo (browser, WhatsApp, File…).</li>
+          <li>Tocca <strong>Installa</strong>, poi apri QRation.</li>
+          <li>Accedi con <strong>Google</strong> o registrati con la tua email.</li>
+        </ol>
+        <p class="note">Durante l'installazione Android potrebbe avvisarti che l'app non è sicura o mostrare "App bloccata per proteggere il dispositivo": lo segnala per tutte le app installate fuori dal Play Store, dove QRation per ora non c'è. Tocca <strong>Altri dettagli → Installa comunque</strong>. QRation usa solo i dati descritti nell'<a href="https://ndenicolais.github.io/qration/privacy/">informativa privacy</a>. Fotocamera, foto e contatti vengono chiesti solo quando servono.</p>
+        <p class="note">Hai già QRation 1.x? Disinstallala prima di installare la 2.0: i tuoi codici tornano appena accedi. Serve Android 7.0 o successivo, a 64 bit. Per ora QRation è disponibile solo su Android.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card story">
+    <div class="label">Il nome</div>
+    <h2>Perché si chiama QRation</h2>
+    <p>Il nome unisce <em>QR</em> e <em>Creation</em>: i codici non si leggono soltanto, si creano.</p>
+    <p>QRation è nata per avere <strong>un solo posto per tutti i codici che leggo e che creo</strong>.</p>
+  </section>
+
+  <footer>
+    <div>
+      <div class="cta">Il prossimo QR lo crei tu</div>
+      <p>Dal Wi-Fi di casa al tuo profilo Instagram, in pochi tocchi.</p>
+    </div>
+    <div class="links">
+      Pagina: <a href="https://ndenicolais.github.io/qration/">ndenicolais.github.io/qration</a><br>
+      Privacy: <a href="https://ndenicolais.github.io/qration/privacy/">ndenicolais.github.io/qration/privacy</a><br>
+      Idee e problemi: <a href="mailto:ndn21dev@gmail.com?subject=QRation">ndn21dev@gmail.com</a><br>
+      Sviluppata da Nicola De Nicolais
+    </div>
+    <figure class="qr">
+      <img src="img/qr_page.svg" alt="QR code per ndenicolais.github.io/qration">
+      <figcaption><span class="url">ndenicolais.github.io/qration</span></figcaption>
+    </figure>
+  </footer>
+
+</main>
+</body>
+</html>

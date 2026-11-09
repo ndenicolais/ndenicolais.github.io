@@ -178,6 +178,7 @@ export const qrationApp: AppPage = {
     { src: "/images/qration/settings.png", caption: { it: "Impostazioni", en: "Settings" } },
     { src: "/images/qration/database.png", caption: { it: "Database", en: "Database" } },
   ],
+  links: [{ label: { it: "Scheda app", en: "App sheet (Italian)" }, href: "/qration/scheda/QRation_scheda.pdf" }],
   downloadUrl: "https://github.com/ndenicolais/QRation/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/QRation",
   privacyUrl: `${siteUrl}/qration/privacy/`,

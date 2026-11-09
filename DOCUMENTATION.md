@@ -24,7 +24,7 @@ Each published app gets a public homepage and privacy policy on this domain: app
 | App | Routes | Content | Images |
 |---|---|---|---|
 | Shox | `/shox/`, `/shox/privacy/`, `/shox/scheda/` | `shoxApp` in `src/lib/apps.ts`, `src/content/shox-privacy.md` | `public/images/shox/`, `public/shox/` |
-| QRation | `/qration/`, `/qration/privacy/` | `qrationApp` in `src/lib/apps.ts`, `src/content/qration-privacy.md` | `public/images/qration/` |
+| QRation | `/qration/`, `/qration/privacy/`, `/qration/scheda/` | `qrationApp` in `src/lib/apps.ts`, `src/content/qration-privacy.md` | `public/images/qration/`, `public/qration/` |
 | Fivelink | `/fivelink/`, `/fivelink/privacy/` | `fivelinkApp` in `src/lib/apps.ts`, `src/content/fivelink-privacy.md` | `public/images/fivelink/` |
 | Noteep | `/noteep/`, `/noteep/privacy/` | `noteepApp` in `src/lib/apps.ts`, `src/content/noteep-privacy.md` | `public/images/noteep/` |
 | Pawer | `/pawer/`, `/pawer/privacy/`, `/pawer/scheda/` | `pawerApp` in `src/lib/apps.ts`, `src/content/pawer-privacy.md` | `public/images/pawer/`, `public/pawer/` |
@@ -37,7 +37,7 @@ To add an app: add an `AppPage` entry in `src/lib/apps.ts`, copy its `PRIVACY.md
 - `downloadUrl` is optional: without it the page shows "Coming soon on Google Play" instead of the download button (Fivelink, while in closed testing). A path on this site (Pawer's `/pawer/Pawer.apk`, relative so it also works on the dev server) downloads in place and is shown as a full URL; other URLs open in a new tab. `downloadLabel` overrides the button text and `downloadQr` shows a QR code to the same URL.
 - `sourceUrl` and `credits` are optional: omit them for private repositories (Pawer) to hide the "Source code" button and the code license line; the site footer still shows the copyright.
 - `install`, `stories` and `links` add an installation guide, text sections with an optional illustration and extra entries in the Links card (used by Pawer). Their strings are localized like the rest of the page; install steps accept inline Markdown.
-- Pawer's APK is `public/pawer/Pawer.apk`, with a fixed name so the links and printed QR codes stay valid: replace the file for each new version and update `downloadLabel`. `public/pawer/scheda/` is a standalone static page, published as is, and the only copy of it: `Pawer_scheda.pdf` is printed from its `index.html` with Chrome (A4, no margins, background graphics on; 2 pages). Shox has the same kind of sheet in `public/shox/scheda/` (`Shox_scheda.pdf`); its APK stays on GitHub Releases, so its QR code points to `releases/latest`.
+- Pawer's APK is `public/pawer/Pawer.apk`, with a fixed name so the links and printed QR codes stay valid: replace the file for each new version and update `downloadLabel`. `public/pawer/scheda/` is a standalone static page, published as is, and the only copy of it: `Pawer_scheda.pdf` is printed from its `index.html` with Chrome (A4, no margins, background graphics on; 2 pages). Shox and QRation have the same kind of sheet in `public/shox/scheda/` (`Shox_scheda.pdf`) and `public/qration/scheda/` (`QRation_scheda.pdf`); their APKs stay on GitHub Releases, so their QR codes point to `releases/latest`.
 - `src/content/<slug>-privacy.md` is a verbatim copy of `PRIVACY.md` from the app repository: when that file changes, copy it here again and redeploy.
 - The Search Console verification file (`googleXXXXXXXX.html`) belongs in `public/` and must never be removed.
 
