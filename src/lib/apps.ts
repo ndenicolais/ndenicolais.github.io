@@ -319,6 +319,7 @@ export const noteepApp: AppPage = {
     { src: "/images/noteep/calendar.png", caption: { it: "Calendario", en: "Calendar" } },
     { src: "/images/noteep/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
   ],
+  links: [{ label: { it: "Scheda app", en: "App sheet (Italian)" }, href: "/noteep/scheda/Noteep_scheda.pdf" }],
   downloadUrl: "https://github.com/ndenicolais/Noteep/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/Noteep",
   privacyUrl: `${siteUrl}/noteep/privacy/`,
