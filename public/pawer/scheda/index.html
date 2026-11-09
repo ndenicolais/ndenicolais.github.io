@@ -177,6 +177,9 @@
     section > h2 { font-size: 22px; }
     .card { padding: 16px; }
     .feature p, .step p { font-size: 13px; }
+    /* 6 funzionalità: 3 per riga, così restano due righe e la prima pagina non trabocca */
+    .features { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .feature h3 { font-size: 16px; margin-top: 10px; }
     .card.step { padding-top: 46px; }
     .step::before { top: 12px; left: 16px; }
     .install li { margin-bottom: 5px; }
@@ -219,7 +222,7 @@
         <span>Pawer</span>
       </div>
       <h1>Ogni zampa merita<br>un futuro migliore</h1>
-      <p class="lead">L'app per segnalare cani e gatti randagi o in difficoltà e aiutarli a essere soccorsi.</p>
+      <p class="lead">L'app per segnalare cani e gatti randagi o in difficoltà, aiutarli a essere soccorsi e ritrovare quelli smarriti.</p>
       <div class="chips">
         <span class="chip">Android</span>
         <span class="chip">Web</span>
@@ -249,6 +252,11 @@
         <p>Foto, colori, condizioni e posizione: bastano pochi passaggi per far sapere dove si trova.</p>
       </div>
       <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></div>
+        <h3>Animali smarriti</h3>
+        <p>Hai perso il tuo animale? Pubblica un annuncio: chi è in zona riceve una notifica e può chiamarti.</p>
+      </div>
+      <div class="card feature">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg></div>
         <h3>Mappa</h3>
         <p>Le segnalazioni aperte della tua regione e la navigazione fino al punto.</p>
@@ -262,6 +270,11 @@
         <div class="icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M12 10.5v5.5M9.25 13.25h5.5"/></svg></div>
         <h3>Strutture</h3>
         <p>Rifugi e numeri utili della tua regione, da chiamare direttamente dall'app.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Notifiche</h3>
+        <p>Nuove segnalazioni e animali smarriti della tua zona, e gli avvistamenti di quelli che segui.</p>
       </div>
     </div>
   </section>

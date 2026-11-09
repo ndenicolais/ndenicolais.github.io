@@ -341,8 +341,8 @@ export const pawerApp: AppPage = {
     en: "Every paw deserves a better future",
   },
   description: {
-    it: "Pawer aiuta a segnalare cani e gatti randagi o in difficoltà, così da farli soccorrere e adottare. Chi ne incontra uno può segnalarlo in pochi passaggi, con foto, descrizione e posizione: la segnalazione compare sulla mappa e chiunque lo riveda può aggiungere un avvistamento, così da seguirne gli spostamenti. Accanto alle segnalazioni trovi i rifugi e i numeri utili della tua regione, per sapere subito a chi rivolgerti.",
-    en: "Pawer helps report stray or distressed dogs and cats so they can be rescued and adopted. Anyone who meets one can report it in a few steps, with photos, a description and the location: the report appears on the map and anyone who sees the animal again can add a sighting to follow its movements. Next to the reports you find the shelters and useful numbers of your region, so you know right away who to contact.",
+    it: "Pawer aiuta a segnalare cani e gatti randagi o in difficoltà, così da farli soccorrere e adottare. Chi ne incontra uno può segnalarlo in pochi passaggi, con foto, descrizione e posizione: la segnalazione compare sulla mappa e chiunque lo riveda può aggiungere un avvistamento, così da seguirne gli spostamenti. Se invece hai perso il tuo animale, puoi pubblicare un annuncio: chi segue la tua zona riceve subito una notifica e, se lo avvista, può chiamarti, scriverti o lasciare un commento. Accanto alle segnalazioni trovi i rifugi e i numeri utili della tua regione, per sapere subito a chi rivolgerti.",
+    en: "Pawer helps report stray or distressed dogs and cats so they can be rescued and adopted. Anyone who meets one can report it in a few steps, with photos, a description and the location: the report appears on the map and anyone who sees the animal again can add a sighting to follow its movements. If you have lost your own pet, you can post an announcement: people following your area get notified right away and, if they spot it, can call you, message you or leave a comment. Next to the reports you find the shelters and useful numbers of your region, so you know right away who to contact.",
   },
   features: [
     {
@@ -350,6 +350,13 @@ export const pawerApp: AppPage = {
       text: {
         it: "Foto, colori, condizioni e posizione in pochi passaggi.",
         en: "Photos, colors, condition and location in a few steps.",
+      },
+    },
+    {
+      title: { it: "Animali smarriti", en: "Lost pets" },
+      text: {
+        it: "Pubblica un annuncio e fatti contattare da chi lo avvista.",
+        en: "Post an announcement and get contacted by whoever spots your pet.",
       },
     },
     {
@@ -371,6 +378,13 @@ export const pawerApp: AppPage = {
       text: {
         it: "Rifugi e numeri utili per regione, con chiamata diretta.",
         en: "Shelters and useful numbers by region, with direct calling.",
+      },
+    },
+    {
+      title: { it: "Notifiche", en: "Notifications" },
+      text: {
+        it: "Avvisi dalla tua zona e sulle segnalazioni che segui.",
+        en: "Alerts from your area and about the reports you follow.",
       },
     },
   ],
