@@ -143,7 +143,12 @@ export default function AppHome({ app }: { app: AppPage }) {
       <section className="mt-24">
         <h2 className="text-2xl font-bold tracking-tight text-heading sm:text-3xl">{appUi.features[lang]}</h2>
         <div className="mt-4 h-px w-16 bg-accent" />
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 3 per row when that fills every row (e.g. 6 features), otherwise 4 */}
+        <div
+          className={`mt-8 grid gap-6 sm:grid-cols-2 ${
+            app.features.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-4"
+          }`}
+        >
           {app.features.map((feature) => (
             <div key={feature.title.en} className="rounded-2xl border border-border bg-card p-6">
               <h3 className="text-lg font-semibold text-heading">{feature.title[lang]}</h3>
