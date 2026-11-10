@@ -96,9 +96,9 @@ export default function Projects() {
                         <Image
                           src={project.logo}
                           alt={`${project.title} logo`}
-                          width={36}
-                          height={36}
-                          className="h-9 w-9 rounded-lg object-contain"
+                          width={40}
+                          height={40}
+                          className="h-10 w-10 shrink-0 rounded-lg border border-border bg-card object-contain p-1.5"
                         />
                       )}
                       <h3 className="text-lg font-semibold text-heading">{project.title}</h3>
