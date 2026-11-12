@@ -285,15 +285,15 @@ export const noteepApp: AppPage = {
     {
       title: { it: "Attività e calendario", en: "Tasks and calendar" },
       text: {
-        it: "Pianifica attività ed eventi giorno per giorno.",
-        en: "Plan your to-dos and events day by day.",
+        it: "Attività divise per giorno e un calendario con compleanni, onomastici e il luogo degli eventi.",
+        en: "Tasks grouped by day and a calendar with birthdays, name days and event locations.",
       },
     },
     {
-      title: { it: "Promemoria", en: "Reminders" },
+      title: { it: "Notifiche", en: "Notifications" },
       text: {
-        it: "Notifiche puntuali e un widget per la schermata Home.",
-        en: "Timely notifications and a Home screen widget.",
+        it: "Avvisi puntuali per note, attività ed eventi, e widget per la schermata Home.",
+        en: "Timely alerts for notes, tasks and events, and Home screen widgets.",
       },
     },
     {
