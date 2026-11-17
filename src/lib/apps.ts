@@ -271,15 +271,15 @@ export const noteepApp: AppPage = {
     en: "Notes, tasks and reminders in one place",
   },
   description: {
-    it: "Noteep raccoglie note, liste di controllo, attività ed eventi del calendario, sincronizzati sul tuo account e disponibili su ogni dispositivo. Aggiunge promemoria, etichette, note vocali, widget per la schermata Home, backup ed esportazione in PDF, in italiano e in inglese, con tema chiaro e scuro.",
-    en: "Noteep brings together notes, checklists, tasks and calendar events, synced to your account and available on every device. It adds reminders, labels, voice notes, Home screen widgets, backups and export to PDF, in Italian and English, with a light and a dark theme.",
+    it: "Noteep raccoglie note, liste di controllo, attività ed eventi del calendario, sincronizzati sul tuo account e disponibili su ogni dispositivo. Aggiunge promemoria, etichette, note vocali, condivisione di note, attività ed eventi con altri utenti, widget per la schermata Home, backup ed esportazione in PDF, in italiano e in inglese, con tema chiaro e scuro.",
+    en: "Noteep brings together notes, checklists, tasks and calendar events, synced to your account and available on every device. It adds reminders, labels, voice notes, sharing of notes, tasks and events with other users, Home screen widgets, backups and export to PDF, in Italian and English, with a light and a dark theme.",
   },
   features: [
     {
       title: { it: "Note", en: "Notes" },
       text: {
-        it: "Testo formattato, liste di controllo e note vocali.",
-        en: "Formatted text, checklists and voice notes.",
+        it: "Testo formattato, liste di controllo, note vocali e condivisione con altri utenti.",
+        en: "Formatted text, checklists, voice notes and sharing with other users.",
       },
     },
     {
@@ -309,8 +309,8 @@ export const noteepApp: AppPage = {
     en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store.",
   },
   privacyNotice: {
-    it: "Se accedi con Google, Noteep riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere note, attività ed eventi sincronizzati sul tuo account; non vengono mai condivisi, venduti o usati per pubblicità. Informativa privacy completa:",
-    en: "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never shared, sold or used for advertising. See the full privacy policy:",
+    it: "Se accedi con Google, Noteep riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere note, attività ed eventi sincronizzati sul tuo account; non vengono mai venduti o usati per pubblicità, e nome ed email sono visibili solo alle persone con cui condividi un elemento. Informativa privacy completa:",
+    en: "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never sold or used for advertising, and your name and email are visible only to the people you share an item with. See the full privacy policy:",
   },
   screenshots: [
     { src: "/images/noteep/home.png", caption: { it: "Home", en: "Home" } },

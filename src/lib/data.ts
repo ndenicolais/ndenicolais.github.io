@@ -84,8 +84,8 @@ export const projects: Project[] = [
     slug: "noteep",
     title: "Noteep",
     description: {
-      it: "Note, liste di controllo, attività ed eventi del calendario sincronizzati sul tuo account, con promemoria, note vocali, widget e backup.",
-      en: "Notes, checklists, tasks and calendar events synced to your account, with reminders, voice notes, widgets and backups.",
+      it: "Note, liste di controllo, attività ed eventi del calendario sincronizzati sul tuo account, con promemoria, condivisione, note vocali, widget e backup.",
+      en: "Notes, checklists, tasks and calendar events synced to your account, with reminders, sharing, voice notes, widgets and backups.",
     },
     tech: ["Flutter", "Dart", "Firebase", "Figma"],
     category: "flutter",
