@@ -6,6 +6,7 @@ import { GithubIcon } from "./BrandIcons";
 import { InlineContent } from "./MarkdownContent";
 import { usePageLang } from "@/context/LanguageContext";
 import { appUi, siteUrl, type AppPage } from "@/lib/apps";
+import { localize } from "@/lib/data";
 import { parseInline } from "@/lib/markdown";
 
 export default function AppHome({ app }: { app: AppPage }) {
@@ -222,8 +223,8 @@ export default function AppHome({ app }: { app: AppPage }) {
               </a>
             </li>
             {app.links?.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="flex items-center gap-2 text-text-2 hover:text-accent">
+              <li key={link.label.it}>
+                <a href={localize(link.href, lang)} className="flex items-center gap-2 text-text-2 hover:text-accent">
                   <Link2 size={15} /> {link.label[lang]}
                 </a>
               </li>

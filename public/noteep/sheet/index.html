@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noteep — Notes, tasks and reminders in one place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5EDD8;
+    --surface: #FFFFFF;
+    --fg: #3D3F4D;
+    --muted: #5A5C6B;
+    --primary: #3D3F4D;
+    --accent: #CCA775;
+    --on-primary: #FFF9EE;
+    --on-primary-soft: #F5EDD8;
+    --on-primary-muted: #FEDFA9;
+    --line: #E6DCC4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Exo 2', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    font-size: 17px;
+  }
+  .sheet { max-width: 880px; margin: 0 auto; padding: 32px 24px 48px; }
+  h1, h2, h3 { font-weight: 700; line-height: 1.15; }
+  p { color: var(--muted); }
+  strong { color: var(--fg); }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 28px;
+    padding: 36px 36px 0 36px;
+    overflow: hidden;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 0 0 2px color-mix(in srgb, var(--on-primary) 35%, transparent); }
+  .brand span { font-size: 40px; font-weight: 700; letter-spacing: .5px; }
+  .hero h1 { font-size: 34px; margin-top: 22px; color: var(--on-primary); }
+  .hero .lead { color: var(--on-primary-soft); font-size: 19px; margin-top: 12px; max-width: 30ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 36px; }
+  .chip {
+    background: color-mix(in srgb, var(--on-primary) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--on-primary) 40%, transparent);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  /* The screenshot is taller than the hero: the hero's overflow cuts it at the bottom edge. */
+  .hero-art { align-self: end; height: 330px; display: flex; justify-content: center; }
+  .hero-art img {
+    width: 100%; max-width: 230px; height: auto; align-self: flex-start; display: block;
+    margin-top: 6px; border-radius: 24px; transform: rotate(4deg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+  }
+
+  /* Sections */
+  section { margin-top: 36px; }
+  .label {
+    font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--primary); margin-bottom: 10px;
+  }
+  section > h2 { font-size: 28px; margin-bottom: 14px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 22px;
+  }
+
+  /* Pitch (the light logo sits on the app's slate, as in the launcher icon) */
+  .pitch { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+  .pitch .big {
+    width: 92px; height: 92px; border-radius: 24px; background: var(--primary);
+    display: grid; place-items: center;
+  }
+  .pitch .big img { width: 64px; }
+  .pitch h2 { font-size: 26px; margin-bottom: 8px; }
+  .pitch p + p { margin-top: 8px; }
+
+  /* Features (dark strokes on warm brown, like the app's buttons) */
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .feature h3 { font-size: 19px; margin: 12px 0 4px; }
+  .feature p { font-size: 16px; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 14px; background: var(--accent);
+    display: grid; place-items: center;
+  }
+  .icon svg { width: 26px; height: 26px; stroke: var(--fg); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: step; }
+  .card.step { position: relative; padding-top: 58px; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; top: 18px; left: 22px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--primary); color: var(--on-primary);
+    font-weight: 700; display: grid; place-items: center;
+  }
+  .step h3 { font-size: 18px; margin-bottom: 4px; }
+  .step p { font-size: 15.5px; }
+
+  /* Install */
+  .install { display: grid; grid-template-columns: 1.5fr 1fr; gap: 14px; }
+  .install.single { grid-template-columns: 1fr; }
+  .install h3 { font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .install h3 svg { width: 26px; height: 26px; flex-shrink: 0; }
+  .os-fill { fill: var(--primary); }
+  .install ol { padding-left: 22px; color: var(--muted); }
+  .install li { margin-bottom: 8px; padding-left: 4px; }
+  .install li::marker { color: var(--primary); font-weight: 700; }
+  .note { font-size: 14.5px; margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 12px; }
+  .note + .note { margin-top: 6px; border-top: 0; padding-top: 0; }
+  .note a { color: var(--primary); font-weight: 600; }
+  code, .mono { font-family: inherit; font-weight: 700; color: var(--fg); }
+  .download { display: flex; align-items: center; gap: 16px; background: var(--bg); border-radius: 16px; padding: 12px 14px; margin-bottom: 14px; }
+  .download img { width: 96px; height: 96px; display: block; flex-shrink: 0; }
+  .download .qr-main { font-size: 15px; font-weight: 600; color: var(--fg); }
+  .download .url { display: block; font-size: 14px; font-weight: 700; color: var(--primary); margin-top: 2px; word-break: break-all; }
+  .download .btn { display: inline-block; background: var(--primary); color: var(--on-primary); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 9px 18px; margin-top: 10px; }
+
+  /* Story (no illustration: one column) */
+  .story h2 { font-size: 24px; margin-bottom: 8px; }
+  .story p + p { margin-top: 8px; }
+
+  /* Footer */
+  footer {
+    margin-top: 36px; padding: 24px 28px; border-radius: 20px;
+    background: var(--primary); color: var(--on-primary);
+    display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 24px;
+  }
+  footer p { color: var(--on-primary-muted); font-size: 15px; }
+  footer .cta { font-size: 21px; font-weight: 700; color: var(--on-primary); }
+  footer a { color: var(--on-primary); font-weight: 600; }
+  footer .links { font-size: 15px; line-height: 1.7; }
+  .qr { background: var(--surface); border-radius: 14px; padding: 10px 10px 6px; text-align: center; }
+  .qr img { width: 104px; height: 104px; display: block; margin: 0 auto; }
+  .qr figcaption { color: var(--fg); font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .qr figcaption .url { font-weight: 700; color: var(--primary); }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .sheet { padding: 16px 14px 32px; }
+    .hero { grid-template-columns: 1fr; padding: 28px 24px 0; }
+    .hero h1 { font-size: 28px; }
+    .hero-art { height: 240px; }
+    .hero-art img { max-width: 200px; }
+    .chips { margin-bottom: 8px; }
+    .features, .steps, .install { grid-template-columns: 1fr; }
+    .pitch { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    footer { grid-template-columns: 1fr; justify-items: start; }
+  }
+
+  /* A4 print, two clean pages: no page margin, so the background covers the whole sheet; the 10 mm become inner padding. */
+  @page { size: A4; margin: 0; }
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { background: var(--bg); }
+    body { font-size: 13.5px; }
+    .sheet { max-width: none; padding: 10mm; }
+    .screen-only { display: none !important; }
+    .hero { padding: 26px 28px 0; border-radius: 20px; }
+    .hero h1 { font-size: 27px; }
+    .hero .lead { font-size: 15.5px; }
+    .hero-art { height: 250px; }
+    .hero-art img { max-width: 190px; }
+    section { margin-top: 22px; break-inside: avoid; }
+    section > h2 { font-size: 22px; }
+    .card { padding: 16px; }
+    .feature p, .step p { font-size: 13px; }
+    .card.step { padding-top: 46px; padding-bottom: 12px; }
+    .step::before { top: 12px; left: 16px; }
+    .page-break { break-before: page; margin-top: 0; padding-top: 10mm; }
+    .page-break ~ section { margin-top: 12px; }
+    .page-break ~ section > h2 { font-size: 19px; margin-bottom: 10px; }
+    .page-break .label, .page-break ~ section .label { margin-bottom: 6px; }
+    .install h3 { margin-bottom: 8px; }
+    .install .card { padding-bottom: 12px; }
+    .install li { font-size: 12.5px; margin-bottom: 5px; }
+    .note { margin-top: 8px; padding-top: 8px; font-size: 12.5px; line-height: 1.4; }
+    .download { padding: 6px 10px; margin-bottom: 8px; gap: 12px; }
+    .download img { width: 64px; height: 64px; }
+    .download .qr-main { font-size: 12.5px; }
+    .download .url { font-size: 12px; }
+    .story h2 { font-size: 20px; margin-bottom: 4px; }
+    .story p { font-size: 12.5px; }
+    .story p + p { margin-top: 4px; }
+    footer { margin-top: 14px; padding: 16px 22px; break-inside: avoid; }
+    footer .cta { font-size: 18px; }
+    footer p, footer .links { font-size: 13px; line-height: 1.5; }
+    .qr img { width: 78px; height: 78px; }
+    .qr figcaption { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="hero">
+    <div>
+      <div class="brand">
+        <img src="../scheda/img/app_logo_icon.png" alt="Noteep logo">
+        <span>Noteep</span>
+      </div>
+      <h1>Notes, tasks and reminders<br>in one place</h1>
+      <p class="lead">The app to write notes, organise your tasks and never miss an appointment.</p>
+      <div class="chips">
+        <span class="chip">Android</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="../scheda/img/home.png" alt="Noteep home screen with colourful notes">
+    </div>
+  </header>
+
+  <section class="card pitch">
+    <div class="big"><img src="../scheda/img/app_logo_light.png" alt=""></div>
+    <div>
+      <h2>Noteep is reborn</h2>
+      <p>Noteep 2.0 has been rewritten from scratch: notes, tasks and calendar now live together and sync to your account. <strong>I want to find out whether it really makes your day simpler.</strong></p>
+      <p>Use it for a few days instead of your notepad or sticky notes: <strong>try it and tell me what to improve.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">What it does</div>
+    <h2>Your whole day in one app</h2>
+    <div class="features">
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+        <h3>Notes</h3>
+        <p>Formatted text, checklists and voice notes, each with its own font and colours, to share with other Noteep users.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+        <h3>Tasks and calendar</h3>
+        <p>Tasks grouped by day and a calendar with birthdays, name days and event locations.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
+        <h3>Notifications</h3>
+        <p>Timely reminders for notes, tasks and events, plus widgets for your Home screen.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="m9.5 13.5 2 2 3.5-3.5"/></svg></div>
+        <h3>Sync and backup</h3>
+        <p>Everything on your account, offline too, with backups and PDF export.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <div class="label">How it works</div>
+    <h2>From idea to reminder in three steps</h2>
+    <div class="steps">
+      <div class="card step">
+        <h3>Jot it down</h3>
+        <p>Write a note or a list, or record a voice note.</p>
+      </div>
+      <div class="card step">
+        <h3>Plan it</h3>
+        <p>Turn it into a task with a due date or a calendar event.</p>
+      </div>
+      <div class="card step">
+        <h3>Get reminded</h3>
+        <p>Pick a day and time and Noteep will remind you at the right moment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Installation</div>
+    <h2>How to install it</h2>
+    <div class="install single">
+      <div class="card">
+        <h3>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="os-fill" d="M6 9h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.5a1.25 1.25 0 0 1-2.5 0V19h-3v2.5a1.25 1.25 0 0 1-2.5 0V19h-.5A1.5 1.5 0 0 1 6 17.5zM3.75 9A1.25 1.25 0 0 1 5 10.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 3.75 9m16.5 0a1.25 1.25 0 0 1 1.25 1.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 20.25 9M8.4 3.1l-.9-1.4a.3.3 0 0 1 .5-.3l.95 1.45A6.3 6.3 0 0 1 12 2.3c1.1 0 2.15.2 3.05.55L16 1.4a.3.3 0 0 1 .5.3l-.9 1.4A5.3 5.3 0 0 1 18 8H6a5.3 5.3 0 0 1 2.4-4.9M9.5 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg>
+          On Android
+        </h3>
+        <div class="download">
+          <img src="../scheda/img/qr_apk.svg" alt="QR code to download the Noteep APK">
+          <div>
+            <p class="qr-main">Scan and download</p>
+            <a class="url" href="https://github.com/ndenicolais/Noteep/releases/latest">github.com/ndenicolais/Noteep/releases/latest</a>
+            <a class="btn screen-only" href="https://github.com/ndenicolais/Noteep/releases/latest">Download the APK · v2.0.0</a>
+          </div>
+        </div>
+        <ol>
+          <li>Open the link, scroll down to <strong>Assets</strong> and tap the <code>.apk</code> file.</li>
+          <li>If your phone asks, allow <strong>"Install unknown apps"</strong> for the app you are opening it from (browser, WhatsApp, Files…).</li>
+          <li>Tap <strong>Install</strong>, then open Noteep.</li>
+          <li>Sign in with <strong>Google</strong> or sign up with your email.</li>
+        </ol>
+        <p class="note">During installation Android may warn you that the app is unsafe or show "App blocked to protect your device": it does this for every app installed outside the Play Store, where Noteep is not available yet. Tap <strong>More details → Install anyway</strong>. Noteep only uses the data described in the <a href="https://ndenicolais.github.io/noteep/privacy/#english">privacy policy</a>. Microphone and notification access are requested only when needed.</p>
+        <p class="note">Already have Noteep 1.x? Uninstall it before installing 2.0: your notes, tasks and events come back as soon as you sign in, while audio notes and automatic backups stay in the old app only. Requires Android 7.0 or later, 64-bit. For now Noteep is available on Android only.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card story">
+    <div class="label">The logo</div>
+    <h2>An idea, a tick</h2>
+    <p>The light bulb is an idea you have just had; the tick is that same idea carried through.</p>
+    <p>Noteep was born to <strong>stop losing ideas along the way</strong>: write them down right away and find them again when you need them.</p>
+  </section>
+
+  <footer>
+    <div>
+      <div class="cta">Your next idea? Write it down here</div>
+      <p>Notes, tasks and reminders always with you, even offline.</p>
+    </div>
+    <div class="links">
+      Page: <a href="https://ndenicolais.github.io/noteep/">ndenicolais.github.io/noteep</a><br>
+      Privacy: <a href="https://ndenicolais.github.io/noteep/privacy/#english">ndenicolais.github.io/noteep/privacy</a><br>
+      Ideas and issues: <a href="mailto:ndn21dev@gmail.com?subject=Noteep">ndn21dev@gmail.com</a><br>
+      Developed by Nicola De Nicolais
+    </div>
+    <figure class="qr">
+      <img src="../scheda/img/qr_page.svg" alt="QR code for ndenicolais.github.io/noteep">
+      <figcaption><span class="url">ndenicolais.github.io/noteep</span></figcaption>
+    </figure>
+  </footer>
+
+</main>
+</body>
+</html>

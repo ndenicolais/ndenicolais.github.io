@@ -1,4 +1,4 @@
-import type { Localized } from "./data";
+import type { Localized, MaybeLocalized } from "./data";
 import type { Lang } from "@/context/LanguageContext";
 
 export interface AppPage {
@@ -39,8 +39,8 @@ export interface AppPage {
   };
   /** Extra text sections shown after the screenshots, optionally with an illustration. */
   stories?: { title: Localized; text: Localized; image?: { src: string; width: number; height: number } }[];
-  /** Extra entries of the "Links" card, after the privacy policy. */
-  links?: { label: Localized; href: string }[];
+  /** Extra entries of the "Links" card, after the privacy policy. `href` can be localized (e.g. the app sheet PDF in each language). */
+  links?: { label: Localized; href: MaybeLocalized }[];
   privacyUrl: string;
   contactEmail: string;
   /** License line under the page; omit it when the code is not public (the site footer covers the rest). */
@@ -319,7 +319,12 @@ export const noteepApp: AppPage = {
     { src: "/images/noteep/calendar.png", caption: { it: "Calendario", en: "Calendar" } },
     { src: "/images/noteep/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
   ],
-  links: [{ label: { it: "Scheda app", en: "App sheet (Italian)" }, href: "/noteep/scheda/Noteep_scheda.pdf" }],
+  links: [
+    {
+      label: { it: "Scheda app", en: "App sheet" },
+      href: { it: "/noteep/scheda/Noteep_scheda.pdf", en: "/noteep/sheet/Noteep_sheet.pdf" },
+    },
+  ],
   downloadUrl: "https://github.com/ndenicolais/Noteep/releases/latest",
   sourceUrl: "https://github.com/ndenicolais/Noteep",
   privacyUrl: `${siteUrl}/noteep/privacy/`,

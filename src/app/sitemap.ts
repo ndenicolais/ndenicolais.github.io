@@ -77,6 +77,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: "https://ndenicolais.github.io/noteep/sheet/",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: "https://ndenicolais.github.io/pawer/",
       lastModified: new Date(),
       changeFrequency: "monthly",
