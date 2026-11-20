@@ -259,48 +259,48 @@ export const fivelinkApp: AppPage = {
   },
 };
 
-export const noteepApp: AppPage = {
-  slug: "noteep",
-  name: "Noteep",
-  logo: "/images/noteep_logo.png",
-  preview: "/images/noteep/preview.png",
-  icons: { icon: "/images/noteep/favicon_32.png", apple: "/images/noteep/icon_192.png" },
+export const taskendaApp: AppPage = {
+  slug: "taskenda",
+  name: "Taskenda",
+  logo: "/images/taskenda_logo.png",
+  preview: "/images/taskenda/preview.png",
+  icons: { icon: "/images/taskenda/favicon_32.png", apple: "/images/taskenda/icon_192.png" },
   lang: "en",
   tagline: {
-    it: "Note, attività e promemoria in un unico posto",
-    en: "Notes, tasks and reminders in one place",
+    it: "Calendario, task e note in un unico posto",
+    en: "Calendar, tasks and notes in one place",
   },
   description: {
-    it: "Noteep raccoglie note, liste di controllo, attività ed eventi del calendario, sincronizzati sul tuo account e disponibili su ogni dispositivo. Aggiunge promemoria, etichette, note vocali, condivisione di note, attività ed eventi con altri utenti, widget per la schermata Home, backup ed esportazione in PDF, in italiano e in inglese, con tema chiaro e scuro.",
-    en: "Noteep brings together notes, checklists, tasks and calendar events, synced to your account and available on every device. It adds reminders, labels, voice notes, sharing of notes, tasks and events with other users, Home screen widgets, backups and export to PDF, in Italian and English, with a light and a dark theme.",
+    it: "Taskenda raccoglie eventi del calendario, task e note, sincronizzati sul tuo account e disponibili su ogni dispositivo. Aggiunge promemoria, eventi ricorrenti, compleanni e onomastici, sottotask, liste di controllo, note vocali, etichette, condivisione di note, task ed eventi con altri utenti, widget per la schermata Home, backup ed esportazione in PDF, in italiano e in inglese, con tema chiaro e scuro.",
+    en: "Taskenda brings together calendar events, tasks and notes, synced to your account and available on every device. It adds reminders, recurring events, birthdays and name days, subtasks, checklists, voice notes, labels, sharing of notes, tasks and events with other users, Home screen widgets, backups and export to PDF, in Italian and English, with a light and a dark theme.",
   },
   features: [
     {
+      title: { it: "Calendario", en: "Calendar" },
+      text: {
+        it: "Viste giorno, settimana, mese e anno, eventi ricorrenti, compleanni, onomastici, festività e il luogo degli eventi.",
+        en: "Day, week, month and year views, recurring events, birthdays, name days, holidays and event locations.",
+      },
+    },
+    {
+      title: { it: "Task", en: "Tasks" },
+      text: {
+        it: "Elenchi personalizzati, sottotask, scadenze con orario e ricorrenze, raggruppati per giorno.",
+        en: "Custom lists, subtasks, due dates with a time and recurrence, grouped by day.",
+      },
+    },
+    {
       title: { it: "Note", en: "Notes" },
       text: {
-        it: "Testo formattato, liste di controllo, note vocali e condivisione con altri utenti.",
-        en: "Formatted text, checklists, voice notes and sharing with other users.",
-      },
-    },
-    {
-      title: { it: "Attività e calendario", en: "Tasks and calendar" },
-      text: {
-        it: "Attività divise per giorno e un calendario con compleanni, onomastici e il luogo degli eventi.",
-        en: "Tasks grouped by day and a calendar with birthdays, name days and event locations.",
-      },
-    },
-    {
-      title: { it: "Notifiche", en: "Notifications" },
-      text: {
-        it: "Avvisi puntuali per note, attività ed eventi, e widget per la schermata Home.",
-        en: "Timely alerts for notes, tasks and events, and Home screen widgets.",
+        it: "Testo formattato, liste di controllo e note vocali, con font e colori propri e condivisione con altri utenti.",
+        en: "Formatted text, checklists and voice notes, each with its own font and colours, shareable with other users.",
       },
     },
     {
       title: { it: "Sincronizzazione e backup", en: "Sync and backup" },
       text: {
-        it: "Dati sul tuo account, backup ed esportazione in PDF, TXT, JSON, CSV e HTML.",
-        en: "Data on your account, backups and export to PDF, TXT, JSON, CSV and HTML.",
+        it: "Dati sul tuo account, promemoria, widget per la schermata Home, backup ed esportazione in PDF, TXT, JSON, CSV, HTML e ICS.",
+        en: "Data on your account, reminders, Home screen widgets, backups and export to PDF, TXT, JSON, CSV, HTML and ICS.",
       },
     },
   ],
@@ -309,25 +309,25 @@ export const noteepApp: AppPage = {
     en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store.",
   },
   privacyNotice: {
-    it: "Se accedi con Google, Noteep riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere note, attività ed eventi sincronizzati sul tuo account; non vengono mai venduti o usati per pubblicità, e nome ed email sono visibili solo alle persone con cui condividi un elemento. Informativa privacy completa:",
-    en: "When you sign in with Google, Noteep receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your notes, tasks and events synced to your account; they are never sold or used for advertising, and your name and email are visible only to the people you share an item with. See the full privacy policy:",
+    it: "Se accedi con Google, Taskenda riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere eventi, task e note sincronizzati sul tuo account; non vengono mai venduti o usati per pubblicità, e nome ed email sono visibili solo alle persone con cui condividi un elemento. Informativa privacy completa:",
+    en: "When you sign in with Google, Taskenda receives your Google account name, email address and profile photo. They are used only to sign you in and to keep your events, tasks and notes synced to your account; they are never sold or used for advertising, and your name and email are visible only to the people you share an item with. See the full privacy policy:",
   },
   screenshots: [
-    { src: "/images/noteep/home.png", caption: { it: "Home", en: "Home" } },
-    { src: "/images/noteep/editor.png", caption: { it: "Editor note", en: "Note editor" } },
-    { src: "/images/noteep/tasks.png", caption: { it: "Attività", en: "Tasks" } },
-    { src: "/images/noteep/calendar.png", caption: { it: "Calendario", en: "Calendar" } },
-    { src: "/images/noteep/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
+    { src: "/images/taskenda/home.png", caption: { it: "Home", en: "Home" } },
+    { src: "/images/taskenda/editor.png", caption: { it: "Editor note", en: "Note editor" } },
+    { src: "/images/taskenda/tasks.png", caption: { it: "Task", en: "Tasks" } },
+    { src: "/images/taskenda/calendar.png", caption: { it: "Calendario", en: "Calendar" } },
+    { src: "/images/taskenda/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
   ],
   links: [
     {
       label: { it: "Scheda app", en: "App sheet" },
-      href: { it: "/noteep/scheda/Noteep_scheda.pdf", en: "/noteep/sheet/Noteep_sheet.pdf" },
+      href: { it: "/taskenda/scheda/Taskenda_scheda.pdf", en: "/taskenda/sheet/Taskenda_sheet.pdf" },
     },
   ],
-  downloadUrl: "https://github.com/ndenicolais/Noteep/releases/latest",
-  sourceUrl: "https://github.com/ndenicolais/Noteep",
-  privacyUrl: `${siteUrl}/noteep/privacy/`,
+  downloadUrl: "https://github.com/ndenicolais/Taskenda/releases/latest",
+  sourceUrl: "https://github.com/ndenicolais/Taskenda",
+  privacyUrl: `${siteUrl}/taskenda/privacy/`,
   contactEmail,
   credits: {
     it: "© 2026 Nicola De Nicolais — Licenza source-available, non commerciale (tutti i diritti riservati; vedi LICENSE nel repository).",

@@ -3,32 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noteep — Notes, tasks and reminders in one place</title>
+<title>Taskenda — Calendar, tasks and notes in one place</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F5EDD8;
+    --bg: #F6F6FB;
     --surface: #FFFFFF;
-    --fg: #3D3F4D;
-    --muted: #5A5C6B;
-    --primary: #3D3F4D;
-    --accent: #CCA775;
-    --on-primary: #FFF9EE;
-    --on-primary-soft: #F5EDD8;
-    --on-primary-muted: #FEDFA9;
-    --line: #E6DCC4;
+    --fg: #1B1B2F;
+    --muted: #4A4A63;
+    --primary: #5B5BD6;
+    --accent: #EEEEFB;
+    --on-primary: #FFFFFF;
+    --on-primary-soft: #E4E4F8;
+    --on-primary-muted: #FDDCA4;
+    --line: #E4E4F0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Exo 2', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--bg);
     color: var(--fg);
     line-height: 1.5;
     font-size: 17px;
   }
   .sheet { max-width: 880px; margin: 0 auto; padding: 32px 24px 48px; }
+  h1, h2, h3, .brand span, footer .cta { font-family: 'Manrope', 'Inter', system-ui, sans-serif; }
   h1, h2, h3 { font-weight: 700; line-height: 1.15; }
   p { color: var(--muted); }
   strong { color: var(--fg); }
@@ -81,7 +82,7 @@
     padding: 22px;
   }
 
-  /* Pitch (the light logo sits on the app's slate, as in the launcher icon) */
+  /* Pitch (the logo sits on the app's indigo, as in the launcher icon) */
   .pitch { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
   .pitch .big {
     width: 92px; height: 92px; border-radius: 24px; background: var(--primary);
@@ -91,7 +92,7 @@
   .pitch h2 { font-size: 26px; margin-bottom: 8px; }
   .pitch p + p { margin-top: 8px; }
 
-  /* Features (dark strokes on warm brown, like the app's buttons) */
+  /* Features (indigo strokes on the app's light indigo tint, like its event cards) */
   .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .feature h3 { font-size: 19px; margin: 12px 0 4px; }
   .feature p { font-size: 16px; }
@@ -99,7 +100,7 @@
     width: 46px; height: 46px; border-radius: 14px; background: var(--accent);
     display: grid; place-items: center;
   }
-  .icon svg { width: 26px; height: 26px; stroke: var(--fg); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .icon svg { width: 26px; height: 26px; stroke: var(--primary); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
   /* Steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: step; }
@@ -213,26 +214,26 @@
   <header class="hero">
     <div>
       <div class="brand">
-        <img src="../scheda/img/app_logo_icon.png" alt="Noteep logo">
-        <span>Noteep</span>
+        <img src="../scheda/img/app_logo_icon.png" alt="Taskenda logo">
+        <span>Taskenda</span>
       </div>
-      <h1>Notes, tasks and reminders<br>in one place</h1>
-      <p class="lead">The app to write notes, organise your tasks and never miss an appointment.</p>
+      <h1>Calendar, tasks and notes<br>in one place</h1>
+      <p class="lead">The app to organise your day: appointments, to-dos and ideas, always with you.</p>
       <div class="chips">
         <span class="chip">Android</span>
       </div>
     </div>
     <div class="hero-art">
-      <img src="../scheda/img/home.png" alt="Noteep home screen with colourful notes">
+      <img src="../scheda/img/home.png" alt="Taskenda home screen with colourful notes">
     </div>
   </header>
 
   <section class="card pitch">
     <div class="big"><img src="../scheda/img/app_logo_light.png" alt=""></div>
     <div>
-      <h2>Noteep is reborn</h2>
-      <p>Noteep 2.0 has been rewritten from scratch: notes, tasks and calendar now live together and sync to your account. <strong>I want to find out whether it really makes your day simpler.</strong></p>
-      <p>Use it for a few days instead of your notepad or sticky notes: <strong>try it and tell me what to improve.</strong></p>
+      <h2>Meet Taskenda</h2>
+      <p>Calendar, tasks and notes in the same app at last, synced to your account. <strong>I want to find out whether it really makes your day simpler.</strong></p>
+      <p>Use it for a few days instead of your diary, notepad or sticky notes: <strong>try it and tell me what to improve.</strong></p>
     </div>
   </section>
 
@@ -241,24 +242,24 @@
     <h2>Your whole day in one app</h2>
     <div class="features">
       <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+        <h3>Calendar</h3>
+        <p>Day, week, month and year views, recurring events, birthdays, name days and holidays.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Tasks</h3>
+        <p>Lists, subtasks, due dates with a time and recurrence, grouped by day.</p>
+      </div>
+      <div class="card feature">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
         <h3>Notes</h3>
-        <p>Formatted text, checklists and voice notes, each with its own font and colours, to share with other Noteep users.</p>
-      </div>
-      <div class="card feature">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
-        <h3>Tasks and calendar</h3>
-        <p>Tasks grouped by day and a calendar with birthdays, name days and event locations.</p>
-      </div>
-      <div class="card feature">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
-        <h3>Notifications</h3>
-        <p>Timely reminders for notes, tasks and events, plus widgets for your Home screen.</p>
+        <p>Formatted text, checklists and voice notes, each with its own font and colours.</p>
       </div>
       <div class="card feature">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="m9.5 13.5 2 2 3.5-3.5"/></svg></div>
-        <h3>Sync and backup</h3>
-        <p>Everything on your account, offline too, with backups and PDF export.</p>
+        <h3>Sharing and backup</h3>
+        <p>Notes, tasks and events to share with other Taskenda users, everything on your account, offline too.</p>
       </div>
     </div>
   </section>
@@ -277,7 +278,7 @@
       </div>
       <div class="card step">
         <h3>Get reminded</h3>
-        <p>Pick a day and time and Noteep will remind you at the right moment.</p>
+        <p>Pick a day and time and Taskenda will remind you at the right moment.</p>
       </div>
     </div>
   </section>
@@ -292,46 +293,46 @@
           On Android
         </h3>
         <div class="download">
-          <img src="../scheda/img/qr_apk.svg" alt="QR code to download the Noteep APK">
+          <img src="../scheda/img/qr_apk.svg" alt="QR code to download the Taskenda APK">
           <div>
             <p class="qr-main">Scan and download</p>
-            <a class="url" href="https://github.com/ndenicolais/Noteep/releases/latest">github.com/ndenicolais/Noteep/releases/latest</a>
-            <a class="btn screen-only" href="https://github.com/ndenicolais/Noteep/releases/latest">Download the APK · v2.0.0</a>
+            <a class="url" href="https://github.com/ndenicolais/Taskenda/releases/latest">github.com/ndenicolais/Taskenda/releases/latest</a>
+            <a class="btn screen-only" href="https://github.com/ndenicolais/Taskenda/releases/latest">Download the APK · v1.0.0</a>
           </div>
         </div>
         <ol>
           <li>Open the link, scroll down to <strong>Assets</strong> and tap the <code>.apk</code> file.</li>
           <li>If your phone asks, allow <strong>"Install unknown apps"</strong> for the app you are opening it from (browser, WhatsApp, Files…).</li>
-          <li>Tap <strong>Install</strong>, then open Noteep.</li>
+          <li>Tap <strong>Install</strong>, then open Taskenda.</li>
           <li>Sign in with <strong>Google</strong> or sign up with your email.</li>
         </ol>
-        <p class="note">During installation Android may warn you that the app is unsafe or show "App blocked to protect your device": it does this for every app installed outside the Play Store, where Noteep is not available yet. Tap <strong>More details → Install anyway</strong>. Noteep only uses the data described in the <a href="https://ndenicolais.github.io/noteep/privacy/#english">privacy policy</a>. Microphone and notification access are requested only when needed.</p>
-        <p class="note">Already have Noteep 1.x? Uninstall it before installing 2.0: your notes, tasks and events come back as soon as you sign in, while audio notes and automatic backups stay in the old app only. Requires Android 7.0 or later, 64-bit. For now Noteep is available on Android only.</p>
+        <p class="note">During installation Android may warn you that the app is unsafe or show "App blocked to protect your device": it does this for every app installed outside the Play Store, where Taskenda is not available yet. Tap <strong>More details → Install anyway</strong>. Taskenda only uses the data described in the <a href="https://ndenicolais.github.io/taskenda/privacy/#english">privacy policy</a>. Microphone and notification access are requested only when needed.</p>
+        <p class="note">Requires Android 7.0 or later, 64-bit. For now Taskenda is available on Android only.</p>
       </div>
     </div>
   </section>
 
   <section class="card story">
     <div class="label">The logo</div>
-    <h2>An idea, a tick</h2>
-    <p>The light bulb is an idea you have just had; the tick is that same idea carried through.</p>
-    <p>Noteep was born to <strong>stop losing ideas along the way</strong>: write them down right away and find them again when you need them.</p>
+    <h2>A notebook, a tick</h2>
+    <p>The notebook gathers notes and ideas, the bookmark keeps your place among appointments, the tick is the thing done.</p>
+    <p>The name blends <em>task</em> and <em>agenda</em>: Taskenda was born to <strong>keep appointments, to-dos and notes together</strong>, so you get to the evening without forgetting anything.</p>
   </section>
 
   <footer>
     <div>
-      <div class="cta">Your next idea? Write it down here</div>
-      <p>Notes, tasks and reminders always with you, even offline.</p>
+      <div class="cta">Your day, in order</div>
+      <p>Calendar, tasks and notes always with you, even offline.</p>
     </div>
     <div class="links">
-      Page: <a href="https://ndenicolais.github.io/noteep/">ndenicolais.github.io/noteep</a><br>
-      Privacy: <a href="https://ndenicolais.github.io/noteep/privacy/#english">ndenicolais.github.io/noteep/privacy</a><br>
-      Ideas and issues: <a href="mailto:ndn21dev@gmail.com?subject=Noteep">ndn21dev@gmail.com</a><br>
+      Page: <a href="https://ndenicolais.github.io/taskenda/">ndenicolais.github.io/taskenda</a><br>
+      Privacy: <a href="https://ndenicolais.github.io/taskenda/privacy/#english">ndenicolais.github.io/taskenda/privacy</a><br>
+      Ideas and issues: <a href="mailto:ndn21dev@gmail.com?subject=Taskenda">ndn21dev@gmail.com</a><br>
       Developed by Nicola De Nicolais
     </div>
     <figure class="qr">
-      <img src="../scheda/img/qr_page.svg" alt="QR code for ndenicolais.github.io/noteep">
-      <figcaption><span class="url">ndenicolais.github.io/noteep</span></figcaption>
+      <img src="../scheda/img/qr_page.svg" alt="QR code for ndenicolais.github.io/taskenda">
+      <figcaption><span class="url">ndenicolais.github.io/taskenda</span></figcaption>
     </figure>
   </footer>
 

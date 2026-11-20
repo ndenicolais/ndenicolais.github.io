@@ -1,4 +1,4 @@
-import { fivelinkApp, noteepApp, pawerApp, qrationApp, shoxApp } from "./apps";
+import { fivelinkApp, taskendaApp, pawerApp, qrationApp, shoxApp } from "./apps";
 
 export interface Localized<T = string> {
   it: T;
@@ -81,18 +81,18 @@ export const projects: Project[] = [
     logo: "/images/pawer_logo.png",
   },
   {
-    slug: "noteep",
-    title: "Noteep",
+    slug: "taskenda",
+    title: "Taskenda",
     description: {
-      it: "Note, liste di controllo, attività ed eventi del calendario sincronizzati sul tuo account, con promemoria, condivisione, note vocali, widget e backup.",
-      en: "Notes, checklists, tasks and calendar events synced to your account, with reminders, sharing, voice notes, widgets and backups.",
+      it: "Eventi del calendario, task e note sincronizzati sul tuo account, con promemoria, condivisione, note vocali, widget e backup.",
+      en: "Calendar events, tasks and notes synced to your account, with reminders, sharing, voice notes, widgets and backups.",
     },
     tech: ["Flutter", "Dart", "Firebase", "Figma"],
     category: "flutter",
-    githubUrl: "https://github.com/ndenicolais/Noteep",
-    pageUrl: "/noteep/",
-    image: noteepApp.preview,
-    logo: "/images/noteep_logo.png",
+    githubUrl: "https://github.com/ndenicolais/Taskenda",
+    pageUrl: "/taskenda/",
+    image: taskendaApp.preview,
+    logo: "/images/taskenda_logo.png",
   },
   {
     slug: "fivelink",
@@ -269,14 +269,14 @@ export const experiences: Experience[] = [
         "Progettazione e sviluppo di Shox, un guardaroba digitale per catalogare la propria collezione di scarpe con foto, marca, taglia, colori e stagione, ricerca e filtri per categoria.",
         "Integrazione con Firebase per autenticazione (Google ed email) e salvataggio dei dati su cloud, con statistiche della collezione, export in PDF e backup e ripristino in JSON.",
         "Design delle interfacce in Figma e rilascio delle versioni tramite GitHub Releases.",
-        "Pianificazione di QRation e Noteep, definendone funzionalità e design prima dello sviluppo, avviato nel 2025.",
+        "Pianificazione di QRation e Taskenda, definendone funzionalità e design prima dello sviluppo, avviato nel 2025.",
         "Sviluppo di un'app privata per coppie per raccogliere i momenti della propria storia in una timeline condivisa, con eventi visualizzabili in lista, calendario e mappa, calcolo del tempo insieme e promemoria di anniversari: dati su Firestore, immagini su Supabase Storage, tema chiaro/scuro, localizzazione IT/EN ed export/import in JSON.",
       ],
       en: [
         "Designed and built Shox, a digital wardrobe to catalog a shoe collection with photos, brand, size, colors and season, search and category filters.",
         "Integrated Firebase for authentication (Google and email) and cloud data storage, with collection statistics, PDF export and JSON backup and restore.",
         "Designed the interfaces in Figma and shipped versions through GitHub Releases.",
-        "Planned QRation and Noteep, defining their features and design before development started in 2025.",
+        "Planned QRation and Taskenda, defining their features and design before development started in 2025.",
         "Built a private app for couples to collect the moments of their story in a shared timeline, with events shown as a list, calendar and map, time-together tracking and anniversary reminders: data on Firestore, images on Supabase Storage, light/dark theme, IT/EN localization and JSON export/import.",
       ],
     },

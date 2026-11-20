@@ -1,4 +1,4 @@
-# Noteep — Privacy Policy
+# Taskenda — Privacy Policy
 
 [Italiano](#italiano) · [English](#english)
 
@@ -8,11 +8,11 @@
 
 **Ultimo aggiornamento: 17 novembre 2026**
 
-Noteep è un'app per note, task e calendario. Questa informativa spiega quali dati tratta, perché e come puoi controllarli. Noteep non mostra pubblicità, non usa strumenti di analisi o di tracciamento e non vende né cede i tuoi dati.
+Taskenda è un'app per note, task e calendario. Questa informativa spiega quali dati tratta, perché e come puoi controllarli. Taskenda non mostra pubblicità, non usa strumenti di analisi o di tracciamento e non vende né cede i tuoi dati.
 
 ### 1. Titolare del trattamento
 
-Il titolare del trattamento è Nicola De Nicolais, sviluppatore di Noteep. Per qualsiasi domanda sulla privacy o per esercitare i tuoi diritti puoi scrivere a [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com).
+Il titolare del trattamento è Nicola De Nicolais, sviluppatore di Taskenda. Per qualsiasi domanda sulla privacy o per esercitare i tuoi diritti puoi scrivere a [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com).
 
 ### 2. Dati che raccogliamo
 
@@ -24,13 +24,13 @@ Il titolare del trattamento è Nicola De Nicolais, sviluppatore di Noteep. Per q
 
 ### 3. Come usiamo i dati
 
-I dati servono solo a far funzionare Noteep: accedere al tuo account, salvare i tuoi contenuti e sincronizzarli tra i tuoi dispositivi, inviarti le notifiche e i promemoria che imposti e creare i backup. La tua email viene usata solo per l'accesso e, se lo chiedi, per inviarti il link per reimpostare la password. Nessuna profilazione, nessuna pubblicità, nessuna analisi statistica né segnalazione automatica degli errori.
+I dati servono solo a far funzionare Taskenda: accedere al tuo account, salvare i tuoi contenuti e sincronizzarli tra i tuoi dispositivi, inviarti le notifiche e i promemoria che imposti e creare i backup. La tua email viene usata solo per l'accesso e, se lo chiedi, per inviarti il link per reimpostare la password. Nessuna profilazione, nessuna pubblicità, nessuna analisi statistica né segnalazione automatica degli errori.
 
 ### 4. Dove sono conservati
 
-Account e contenuti sono conservati su Google Firebase (Firebase Authentication e Cloud Firestore), servizi forniti da Google. I contenuti sono conservati su server negli Stati Uniti e anche Firebase Authentication può trattare i dati fuori dall'Unione europea: il trasferimento avviene con le garanzie previste dai termini di Google Firebase. I dati viaggiano cifrati e le regole di sicurezza del database fanno sì che solo il tuo account possa leggere e modificare i tuoi contenuti, oltre alle persone con cui scegli di condividere un elemento. Le notifiche di condivisione sono inviate tramite Firebase Cloud Messaging, un servizio di Google. Lo sviluppatore non consulta i tuoi contenuti e non li condivide con nessuno.
+Account e contenuti sono conservati su Google Firebase (Firebase Authentication e Cloud Firestore), servizi forniti da Google. I contenuti sono conservati su server nell'Unione europea, mentre Firebase Authentication può trattare i dati anche fuori dall'Unione europea: il trasferimento avviene con le garanzie previste dai termini di Google Firebase. I dati viaggiano cifrati e le regole di sicurezza del database fanno sì che solo il tuo account possa leggere e modificare i tuoi contenuti, oltre alle persone con cui scegli di condividere un elemento. Le notifiche di condivisione sono inviate tramite Firebase Cloud Messaging, un servizio di Google. Lo sviluppatore non consulta i tuoi contenuti e non li condivide con nessuno.
 
-Mentre scrivi il luogo di un evento, il testo digitato viene inviato al servizio di ricerca di OpenStreetMap (Nominatim, gestito dalla OpenStreetMap Foundation) per suggerirti gli indirizzi: non viene inviato nient'altro, né la tua posizione né i dati del tuo account. Se tocchi il luogo per aprirlo in Maps, la ricerca passa all'app o al sito di Google Maps.
+Mentre scrivi il luogo di un evento, il testo digitato, la lingua dell'app e il paese impostato sul dispositivo passano dal server di Taskenda (Firebase Cloud Functions) al servizio Google Places di Google per suggerirti luoghi e indirizzi: non viene inviato nient'altro, né la tua posizione né i dati del tuo account, e Google non riceve il tuo indirizzo IP. Se tocchi il luogo per aprirlo in Maps, la ricerca passa all'app o al sito di Google Maps.
 
 ### 5. Elaborazione sul dispositivo
 
@@ -45,17 +45,17 @@ I file che esporti o condividi finiscono dove scegli tu (ad esempio una cartella
 
 ### 6. Permessi
 
-Su Android Noteep usa questi permessi:
+Su Android Taskenda usa questi permessi:
 
 - **Microfono**: solo per registrare le note audio, quando avvii una registrazione.
-- **Notifiche**: per mostrarti i promemoria e le notifiche di task ed eventi.
+- **Notifiche**: per mostrarti i promemoria, le notifiche di task ed eventi e gli avvisi quando qualcuno condivide qualcosa con te. Viene chiesto la prima volta che apri l'app dopo l'accesso.
 - **Sveglie e promemoria esatti**: per far scattare i promemoria all'orario impostato.
 - **Avvio all'accensione**: per riprogrammare i promemoria dopo il riavvio del telefono.
 - **Mantenere attivo il dispositivo e vibrazione**: per consegnare i promemoria anche in standby.
 - **Servizio in primo piano**: richiesto dal componente di Android che esegue le attività in background, come l'aggiornamento del widget della schermata Home.
 - **Internet e stato della rete**: per sincronizzare i dati con Firebase e capire quando sei offline.
 
-Noteep non accede a posizione, contatti, fotocamera, foto o file del telefono: i file da importare li scegli tu dal selettore di sistema.
+Taskenda non accede a posizione, contatti, fotocamera, foto o file del telefono: i file da importare li scegli tu dal selettore di sistema.
 
 ### 7. Conservazione e cancellazione
 
@@ -74,7 +74,7 @@ Per esercitarli scrivi a [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com). Hai an
 
 ### 9. Minori
 
-Noteep non è rivolta ai minori di 14 anni, l'età minima in Italia per acconsentire da soli ai servizi online. Sotto questa età puoi usarla solo con il consenso di un genitore o di chi ne fa le veci. Nei Paesi che prevedono un'età diversa vale quella stabilita dalla legge locale.
+Taskenda non è rivolta ai minori di 14 anni, l'età minima in Italia per acconsentire da soli ai servizi online. Sotto questa età puoi usarla solo con il consenso di un genitore o di chi ne fa le veci. Nei Paesi che prevedono un'età diversa vale quella stabilita dalla legge locale.
 
 ### 10. Modifiche
 
@@ -86,11 +86,11 @@ Se questa informativa cambia, la nuova versione sarà disponibile nell'app (*Inf
 
 **Last updated: November 17, 2026**
 
-Noteep is an app for notes, tasks and calendar. This policy explains which data it processes, why, and how you can control it. Noteep shows no ads, uses no analytics or tracking tools, and does not sell or hand over your data.
+Taskenda is an app for notes, tasks and calendar. This policy explains which data it processes, why, and how you can control it. Taskenda shows no ads, uses no analytics or tracking tools, and does not sell or hand over your data.
 
 ### 1. Data controller
 
-The data controller is Nicola De Nicolais, developer of Noteep. For any privacy question or to exercise your rights you can write to [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com).
+The data controller is Nicola De Nicolais, developer of Taskenda. For any privacy question or to exercise your rights you can write to [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com).
 
 ### 2. Data we collect
 
@@ -102,13 +102,13 @@ The data controller is Nicola De Nicolais, developer of Noteep. For any privacy 
 
 ### 3. How we use data
 
-Data is used only to make Noteep work: signing in to your account, saving your content and syncing it across your devices, sending you the notifications and reminders you set and creating backups. Your email is used only to sign in and, if you ask, to send you a password reset link. No profiling, no ads, no analytics and no automatic crash reporting.
+Data is used only to make Taskenda work: signing in to your account, saving your content and syncing it across your devices, sending you the notifications and reminders you set and creating backups. Your email is used only to sign in and, if you ask, to send you a password reset link. No profiling, no ads, no analytics and no automatic crash reporting.
 
 ### 4. Where it is stored
 
-Account and content are stored on Google Firebase (Firebase Authentication and Cloud Firestore), services provided by Google. Content is stored on servers in the United States and Firebase Authentication may also process data outside the European Union: the transfer takes place with the safeguards provided by the Google Firebase terms. Data travels encrypted and the database security rules make sure only your account can read and change your content, plus the people you choose to share an item with. Sharing notifications are sent through Firebase Cloud Messaging, a Google service. The developer does not look at your content and does not share it with anyone.
+Account and content are stored on Google Firebase (Firebase Authentication and Cloud Firestore), services provided by Google. Content is stored on servers in the European Union, while Firebase Authentication may also process data outside the European Union: the transfer takes place with the safeguards provided by the Google Firebase terms. Data travels encrypted and the database security rules make sure only your account can read and change your content, plus the people you choose to share an item with. Sharing notifications are sent through Firebase Cloud Messaging, a Google service. The developer does not look at your content and does not share it with anyone.
 
-While you type the location of an event, the typed text is sent to the OpenStreetMap search service (Nominatim, run by the OpenStreetMap Foundation) to suggest addresses: nothing else is sent, neither your position nor your account data. If you tap the location to open it in Maps, the search is handed to the Google Maps app or website.
+While you type the location of an event, the typed text, the app language and the country set on the device go through Taskenda's server (Firebase Cloud Functions) to Google's Places service to suggest places and addresses: nothing else is sent, neither your position nor your account data, and Google does not receive your IP address. If you tap the location to open it in Maps, the search is handed to the Google Maps app or website.
 
 ### 5. On-device processing
 
@@ -123,17 +123,17 @@ Files you export or share go wherever you choose (for example a folder or anothe
 
 ### 6. Permissions
 
-On Android Noteep uses these permissions:
+On Android Taskenda uses these permissions:
 
 - **Microphone**: only to record audio notes, when you start a recording.
-- **Notifications**: to show you reminders and task and event notifications.
+- **Notifications**: to show you reminders, task and event notifications and alerts when someone shares something with you. Asked the first time you open the app after signing in.
 - **Alarms and exact reminders**: to fire reminders at the time you set.
 - **Run at startup**: to schedule reminders again after the phone restarts.
 - **Keep the device awake and vibration**: to deliver reminders even in standby.
 - **Foreground service**: required by the Android component that runs background work, such as updating the Home screen widget.
 - **Internet and network state**: to sync data with Firebase and detect when you are offline.
 
-Noteep does not access your location, contacts, camera, photos or phone files: you pick the files to import yourself from the system picker.
+Taskenda does not access your location, contacts, camera, photos or phone files: you pick the files to import yourself from the system picker.
 
 ### 7. Retention and deletion
 
@@ -152,7 +152,7 @@ To exercise them write to [ndn21dev@gmail.com](mailto:ndn21dev@gmail.com). You a
 
 ### 9. Children
 
-Noteep is not intended for children under 14, the minimum age in Italy to consent to online services on their own. Below that age you may use it only with the consent of a parent or guardian. In countries that set a different age, the one set by local law applies.
+Taskenda is not intended for children under 14, the minimum age in Italy to consent to online services on their own. Below that age you may use it only with the consent of a parent or guardian. In countries that set a different age, the one set by local law applies.
 
 ### 10. Changes
 
