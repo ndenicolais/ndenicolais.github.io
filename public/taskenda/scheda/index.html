@@ -121,6 +121,7 @@
   .install h3 { font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
   .install h3 svg { width: 26px; height: 26px; flex-shrink: 0; }
   .os-fill { fill: var(--primary); }
+  .os-line { fill: none; stroke: var(--primary); stroke-width: 1.8; stroke-linecap: round; }
   .install ol { padding-left: 22px; color: var(--muted); }
   .install li { margin-bottom: 8px; padding-left: 4px; }
   .install li::marker { color: var(--primary); font-weight: 700; }
@@ -221,6 +222,7 @@
       <p class="lead">L'app per organizzare la giornata: impegni, cose da fare e idee, sempre con te.</p>
       <div class="chips">
         <span class="chip">Android</span>
+        <span class="chip">Web</span>
       </div>
     </div>
     <div class="hero-art">
@@ -286,7 +288,7 @@
   <section>
     <div class="label">Installazione</div>
     <h2>Come installarla</h2>
-    <div class="install single">
+    <div class="install">
       <div class="card">
         <h3>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path class="os-fill" d="M6 9h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.5a1.25 1.25 0 0 1-2.5 0V19h-3v2.5a1.25 1.25 0 0 1-2.5 0V19h-.5A1.5 1.5 0 0 1 6 17.5zM3.75 9A1.25 1.25 0 0 1 5 10.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 3.75 9m16.5 0a1.25 1.25 0 0 1 1.25 1.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 20.25 9M8.4 3.1l-.9-1.4a.3.3 0 0 1 .5-.3l.95 1.45A6.3 6.3 0 0 1 12 2.3c1.1 0 2.15.2 3.05.55L16 1.4a.3.3 0 0 1 .5.3l-.9 1.4A5.3 5.3 0 0 1 18 8H6a5.3 5.3 0 0 1 2.4-4.9M9.5 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg>
@@ -307,7 +309,18 @@
           <li>Accedi con <strong>Google</strong> o registrati con la tua email.</li>
         </ol>
         <p class="note">Durante l'installazione Android potrebbe avvisarti che l'app non è sicura o mostrare "App bloccata per proteggere il dispositivo": lo segnala per tutte le app installate fuori dal Play Store, dove Taskenda per ora non c'è. Tocca <strong>Altri dettagli → Installa comunque</strong>. Taskenda usa solo i dati descritti nell'<a href="https://ndenicolais.github.io/taskenda/privacy/">informativa privacy</a>. Microfono e notifiche vengono chiesti solo quando servono.</p>
-        <p class="note">Serve Android 7.0 o successivo, a 64 bit. Per ora Taskenda è disponibile solo su Android.</p>
+        <p class="note">Serve Android 7.0 o successivo, a 64 bit.</p>
+      </div>
+      <div class="card">
+        <h3>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><g class="os-line"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8"/><path d="M12 16.5v4"/></g></svg>
+          Sul web
+        </h3>
+        <ol>
+          <li>Apri <strong>taskenda21.web.app</strong> con qualsiasi browser, dal computer o da iPhone, o inquadra il QR code in fondo.</li>
+          <li>Accedi con lo stesso account: ritrovi note, task ed eventi del telefono.</li>
+        </ol>
+        <p class="note">Sul web non ci sono promemoria, registrazione audio, widget e backup automatici.</p>
       </div>
     </div>
   </section>
@@ -326,13 +339,14 @@
     </div>
     <div class="links">
       Pagina: <a href="https://ndenicolais.github.io/taskenda/">ndenicolais.github.io/taskenda</a><br>
+      Sito web: <a href="https://taskenda21.web.app">taskenda21.web.app</a><br>
       Privacy: <a href="https://ndenicolais.github.io/taskenda/privacy/">ndenicolais.github.io/taskenda/privacy</a><br>
       Idee e problemi: <a href="mailto:ndn21dev@gmail.com?subject=Taskenda">ndn21dev@gmail.com</a><br>
       Sviluppata da Nicola De Nicolais
     </div>
     <figure class="qr">
-      <img src="img/qr_page.svg" alt="QR code per ndenicolais.github.io/taskenda">
-      <figcaption><span class="url">ndenicolais.github.io/taskenda</span></figcaption>
+      <img src="img/qr_web.svg" alt="QR code per taskenda21.web.app">
+      <figcaption><span class="url">taskenda21.web.app</span></figcaption>
     </figure>
   </footer>
 

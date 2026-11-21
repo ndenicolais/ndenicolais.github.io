@@ -305,8 +305,8 @@ export const taskendaApp: AppPage = {
     },
   ],
   platform: {
-    it: "Android 7.0+ (64-bit, arm64), con Google Play services e una connessione Internet per accesso e sincronizzazione. Accesso con un account Google o con email e password. Distribuita come APK su GitHub Releases, non sul Play Store.",
-    en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store.",
+    it: "Android 7.0+ (64-bit, arm64), con Google Play services e una connessione Internet per accesso e sincronizzazione. Accesso con un account Google o con email e password. Distribuita come APK su GitHub Releases, non sul Play Store. Disponibile anche come web app su https://taskenda21.web.app, con lo stesso account, senza promemoria, registrazione audio, widget e backup automatici.",
+    en: "Android 7.0+ (64-bit, arm64), with Google Play services and an internet connection for sign-in and sync. Sign in with a Google account or with email and password. Distributed as an APK on GitHub Releases, not on the Play Store. Also available as a web app at https://taskenda21.web.app, with the same account, without reminders, voice recording, widgets and automatic backups.",
   },
   privacyNotice: {
     it: "Se accedi con Google, Taskenda riceve il nome, l'indirizzo email e la foto del profilo del tuo account Google. Servono solo per l'accesso e per mantenere eventi, task e note sincronizzati sul tuo account; non vengono mai venduti o usati per pubblicità, e nome ed email sono visibili solo alle persone con cui condividi un elemento. Informativa privacy completa:",
@@ -320,6 +320,7 @@ export const taskendaApp: AppPage = {
     { src: "/images/taskenda/stats.png", caption: { it: "Statistiche", en: "Statistics" } },
   ],
   links: [
+    { label: { it: "Versione web", en: "Web app" }, href: "https://taskenda21.web.app" },
     {
       label: { it: "Scheda app", en: "App sheet" },
       href: { it: "/taskenda/scheda/Taskenda_scheda.pdf", en: "/taskenda/sheet/Taskenda_sheet.pdf" },
