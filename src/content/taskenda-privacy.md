@@ -6,7 +6,7 @@
 
 ## Italiano
 
-**Ultimo aggiornamento: 17 novembre 2026**
+**Ultimo aggiornamento: 21 novembre 2026**
 
 Taskenda è un'app per note, task e calendario. Questa informativa spiega quali dati tratta, perché e come puoi controllarli. Taskenda non mostra pubblicità, non usa strumenti di analisi o di tracciamento e non vende né cede i tuoi dati.
 
@@ -20,7 +20,8 @@ Il titolare del trattamento è Nicola De Nicolais, sviluppatore di Taskenda. Per
 - **Contenuti**: note (titolo, testo, liste di controllo, etichette, colori e stile, promemoria, collegamenti tra note, cronologia delle modifiche), task ed elenchi (sottotask, scadenze, ricorrenze, priorità), eventi del calendario (compreso il luogo) ed etichette.
 - **Note audio**: le registrazioni restano solo sul dispositivo; con la nota vengono sincronizzati soltanto nome, durata e percorso del file.
 - **Condivisione**: per permettere ad altri di condividere note, task ed eventi con te, la tua email e il tuo nome vengono salvati in un elenco consultabile solo conoscendo l'email esatta. Quando condividi un elemento, le persone che aggiungi ne vedono il contenuto, il tuo nome e la tua email, e tu vedi i loro; pin, archivio, promemoria, avvisi ed etichette restano personali. Per avvisarti quando qualcuno condivide qualcosa con te, l'app salva per ogni dispositivo un identificativo per le notifiche push (token di Firebase Cloud Messaging) e la lingua dell'app; viene cancellato quando esci dall'account su quel dispositivo.
-- **Sul dispositivo**: preferenze dell'app (lingua, tema, layout, ordinamento, opzioni di note e task, guida introduttiva e novità già viste, impostazioni dei backup), i backup automatici, una copia dei dati per l'uso offline, i promemoria programmati e i dati mostrati dai widget della schermata Home (titoli e anteprime di note, task e impegni). Sul web le preferenze sono salvate nel browser.
+- **Preferenze**: lingua, tema, sezione iniziale, layout, ordinamenti, opzioni di note, task e calendario e orari degli avvisi vengono salvati anche sul tuo account, così li ritrovi su web e su un nuovo dispositivo dopo l'accesso.
+- **Sul dispositivo**: una copia delle preferenze, la guida introduttiva e le novità già viste, le impostazioni dei backup automatici, i backup automatici, una copia dei dati per l'uso offline, i promemoria programmati e i dati mostrati dai widget della schermata Home (titoli e anteprime di note, task e impegni). Sul web le preferenze sono salvate nel browser.
 
 ### 3. Come usiamo i dati
 
@@ -84,7 +85,7 @@ Se questa informativa cambia, la nuova versione sarà disponibile nell'app (*Inf
 
 ## English
 
-**Last updated: November 17, 2026**
+**Last updated: November 21, 2026**
 
 Taskenda is an app for notes, tasks and calendar. This policy explains which data it processes, why, and how you can control it. Taskenda shows no ads, uses no analytics or tracking tools, and does not sell or hand over your data.
 
@@ -98,7 +99,8 @@ The data controller is Nicola De Nicolais, developer of Taskenda. For any privac
 - **Content**: notes (title, text, checklists, labels, colors and style, reminders, links between notes, edit history), tasks and lists (subtasks, due dates, recurrence, priority), calendar events (location included) and labels.
 - **Audio notes**: recordings stay on your device only; just the file name, duration and path are synced with the note.
 - **Sharing**: so that other users can share notes, tasks and events with you, your email and name are saved in a directory that can only be looked up by the exact email. When you share an item, the people you add see its content, your name and your email, and you see theirs; pins, archive, reminders, alerts and labels stay personal. To tell you when someone shares something with you, the app saves a push notification identifier for each device (Firebase Cloud Messaging token) and the app language; it is deleted when you sign out on that device.
-- **On your device**: app preferences (language, theme, layout, sorting, note and task options, intro guide and what's new already seen, backup settings), automatic backups, a copy of your data for offline use, scheduled reminders and the data shown by the Home screen widgets (titles and previews of notes, tasks and upcoming entries). On the web, preferences are saved in the browser.
+- **Preferences**: language, theme, start section, layout, sorting, note, task and calendar options and alert times are also saved to your account, so you find them on the web and on a new device after signing in.
+- **On your device**: a copy of your preferences, intro guide and what's new already seen, automatic backup settings, automatic backups, a copy of your data for offline use, scheduled reminders and the data shown by the Home screen widgets (titles and previews of notes, tasks and upcoming entries). On the web, preferences are saved in the browser.
 
 ### 3. How we use data
 

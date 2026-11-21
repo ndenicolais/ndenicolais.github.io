@@ -299,8 +299,8 @@ export const taskendaApp: AppPage = {
     {
       title: { it: "Sincronizzazione e backup", en: "Sync and backup" },
       text: {
-        it: "Dati sul tuo account, promemoria, widget per la schermata Home, backup ed esportazione in PDF, TXT, JSON, CSV, HTML e ICS.",
-        en: "Data on your account, reminders, Home screen widgets, backups and export to PDF, TXT, JSON, CSV, HTML and ICS.",
+        it: "Dati e preferenze sul tuo account, promemoria, widget per la schermata Home, backup ed esportazione in PDF, TXT, JSON, CSV, HTML e ICS.",
+        en: "Data and preferences on your account, reminders, Home screen widgets, backups and export to PDF, TXT, JSON, CSV, HTML and ICS.",
       },
     },
   ],
