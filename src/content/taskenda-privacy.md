@@ -6,7 +6,7 @@
 
 ## Italiano
 
-**Ultimo aggiornamento: 21 novembre 2026**
+**Ultimo aggiornamento: 25 novembre 2026**
 
 Taskenda è un'app per note, task e calendario. Questa informativa spiega quali dati tratta, perché e come puoi controllarli. Taskenda non mostra pubblicità, non usa strumenti di analisi o di tracciamento e non vende né cede i tuoi dati.
 
@@ -85,7 +85,7 @@ Se questa informativa cambia, la nuova versione sarà disponibile nell'app (*Inf
 
 ## English
 
-**Last updated: November 21, 2026**
+**Last updated: November 25, 2026**
 
 Taskenda is an app for notes, tasks and calendar. This policy explains which data it processes, why, and how you can control it. Taskenda shows no ads, uses no analytics or tracking tools, and does not sell or hand over your data.
 
