@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pawer — Every paw deserves a better future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8EEE4;
+    --surface: #FFF9F3;
+    --fg: #5C4A3F;
+    --muted: #7A6659;
+    --primary: #6F5B4E;
+    --bark: #988578;
+    --on-primary: #F8EEE4;
+    --line: #E6D7C8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Josefin Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    font-size: 17px;
+  }
+  .sheet { max-width: 880px; margin: 0 auto; padding: 32px 24px 48px; }
+  h1, h2, h3 { font-weight: 700; line-height: 1.15; }
+  p { color: var(--muted); }
+  strong { color: var(--fg); }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 28px;
+    padding: 36px 36px 0 36px;
+    overflow: hidden;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 0 0 2px rgba(248,238,228,.35); }
+  .brand span { font-size: 40px; font-weight: 700; letter-spacing: .5px; }
+  .hero h1 { font-size: 34px; margin-top: 22px; color: var(--on-primary); }
+  .hero .lead { color: #FBF3EA; font-size: 19px; margin-top: 12px; max-width: 30ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 36px; }
+  .chip {
+    background: rgba(248,238,228,.18);
+    border: 1px solid rgba(248,238,228,.4);
+    border-radius: 999px;
+    padding: 6px 14px 4px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .hero-art { align-self: end; display: flex; justify-content: center; }
+  .hero-art img { width: 100%; max-width: 300px; display: block; }
+
+  /* Sezioni */
+  section { margin-top: 36px; }
+  .label {
+    font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--primary); margin-bottom: 10px;
+  }
+  section > h2 { font-size: 28px; margin-bottom: 14px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 22px;
+  }
+
+  /* Scommessa */
+  .bet { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+  .bet .big {
+    width: 92px; height: 92px; border-radius: 24px; background: var(--bg);
+    display: grid; place-items: center;
+  }
+  .bet .big img { width: 64px; }
+  .bet h2 { font-size: 26px; margin-bottom: 8px; }
+  .bet p + p { margin-top: 8px; }
+
+  /* Funzionalità */
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .feature h3 { font-size: 19px; margin: 12px 0 4px; }
+  .feature p { font-size: 16px; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 14px; background: var(--bark);
+    display: grid; place-items: center;
+  }
+  .icon svg { width: 26px; height: 26px; stroke: var(--on-primary); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Passi */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: step; }
+  .card.step { position: relative; padding-top: 58px; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; top: 18px; left: 22px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--primary); color: var(--on-primary);
+    font-weight: 700; display: grid; place-items: center; padding-top: 3px;
+  }
+  .step h3 { font-size: 18px; margin-bottom: 4px; }
+  .step p { font-size: 15.5px; }
+
+  /* Installazione */
+  .install { display: grid; grid-template-columns: 1.5fr 1fr; gap: 14px; }
+  .install h3 { font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .install ol { padding-left: 22px; color: var(--muted); }
+  .install li { margin-bottom: 8px; padding-left: 4px; }
+  .install li::marker { color: var(--primary); font-weight: 700; }
+  .note { font-size: 14.5px; margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 12px; }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    background: #FBEBCB; color: #8A5300; border-radius: 999px; padding: 3px 10px 1px;
+  }
+  code, .mono { font-family: inherit; font-weight: 700; color: var(--fg); }
+
+  /* Orsetto */
+  .memory { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center; }
+  .memory img { width: 150px; display: block; }
+  .memory h2 { font-size: 24px; margin-bottom: 8px; }
+  .memory p + p { margin-top: 8px; }
+
+  /* Footer */
+  footer {
+    margin-top: 36px; padding: 24px 28px; border-radius: 20px;
+    background: var(--primary); color: var(--on-primary);
+    display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 24px;
+  }
+  footer p { color: #EADCCF; font-size: 15px; }
+  footer .cta { font-size: 21px; font-weight: 700; color: var(--on-primary); }
+  footer a { color: var(--on-primary); font-weight: 600; }
+  footer .links { font-size: 15px; line-height: 1.7; }
+  .download { display: flex; align-items: center; gap: 16px; background: var(--bg); border-radius: 16px; padding: 12px 14px; margin-bottom: 14px; }
+  .download .btn { display: inline-block; background: var(--primary); color: var(--on-primary); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 10px 18px 8px; }
+  .download .qr-main { font-size: 15px; font-weight: 600; color: var(--fg); }
+  .download .url { display: block; font-size: 14px; font-weight: 700; color: var(--primary); margin-top: 2px; word-break: break-all; }
+  .download .btn { margin-top: 10px; }
+  .qr figcaption .url { font-weight: 700; color: var(--primary); }
+  .download img { width: 96px; height: 96px; display: block; flex-shrink: 0; }
+  .qr { background: var(--surface); border-radius: 14px; padding: 10px 10px 6px; text-align: center; }
+  .qr img { width: 104px; height: 104px; display: block; margin: 0 auto; }
+  .qr figcaption { color: var(--fg); font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .note a { color: var(--primary); font-weight: 600; }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .sheet { padding: 16px 14px 32px; }
+    .hero { grid-template-columns: 1fr; padding: 28px 24px 0; }
+    .hero h1 { font-size: 28px; }
+    .hero-art img { max-width: 220px; }
+    .chips { margin-bottom: 8px; }
+    .features, .steps, .install { grid-template-columns: 1fr; }
+    .bet, .memory { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    footer { grid-template-columns: 1fr; justify-items: start; }
+
+  }
+
+  /* Stampa A4: due pagine pulite */
+  /* Margine di pagina a zero: lo sfondo copre tutto il foglio; i 10 mm diventano padding interno. */
+  @page { size: A4; margin: 0; }
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { background: var(--bg); }
+    body { font-size: 13.5px; }
+    .sheet { max-width: none; padding: 10mm; }
+    .hero { padding: 26px 28px 0; border-radius: 20px; }
+    .hero h1 { font-size: 27px; }
+    .hero .lead { font-size: 15.5px; }
+    .hero-art img { max-width: 230px; }
+    section { margin-top: 22px; break-inside: avoid; }
+    section > h2 { font-size: 22px; }
+    .card { padding: 16px; }
+    .feature p, .step p { font-size: 13px; }
+    /* 6 funzionalità: 3 per riga, così restano due righe e la prima pagina non trabocca */
+    .features { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .feature h3 { font-size: 16px; margin-top: 10px; }
+    .card.step { padding-top: 46px; }
+    .step::before { top: 12px; left: 16px; }
+    .install li { margin-bottom: 5px; }
+    .memory { grid-template-columns: 1fr; }
+    .memory img { display: none; }
+    .memory p { font-size: 12.5px; }
+    .install li { font-size: 12.5px; }
+    .page-break ~ section > h2 { font-size: 19px; margin-bottom: 10px; }
+    .memory h2 { font-size: 20px; margin-bottom: 4px; }
+    .install h3 { margin-bottom: 8px; }
+    .note { margin-top: 8px; padding-top: 8px; font-size: 12.5px; }
+    footer { padding: 16px 22px; }
+    footer .cta { font-size: 18px; }
+    footer p, footer .links { font-size: 13px; line-height: 1.5; }
+    .qr img { width: 78px; height: 78px; }
+    .download { padding: 6px 10px; margin-bottom: 8px; gap: 12px; }
+    .download img { width: 64px; height: 64px; }
+    .download .qr-main { font-size: 12.5px; }
+    .download .url { font-size: 12px; }
+    .screen-only { display: none !important; }
+    .note { line-height: 1.4; }
+    .memory p + p { margin-top: 4px; }
+    .page-break .label, .page-break ~ section .label { margin-bottom: 6px; }
+    .qr figcaption { font-size: 10px; }
+    .card.step { padding-bottom: 12px; }
+    .install .card { padding-bottom: 12px; }
+    .page-break ~ section { margin-top: 12px; }
+    .page-break { break-before: page; margin-top: 0; padding-top: 10mm; }
+    footer { margin-top: 14px; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="hero">
+    <div>
+      <div class="brand">
+        <img src="../scheda/img/app_logo_icon.png" alt="Pawer logo">
+        <span>Pawer</span>
+      </div>
+      <h1>Every paw deserves<br>a better future</h1>
+      <p class="lead">The app to report stray or distressed dogs and cats, help get them rescued and find lost pets.</p>
+      <div class="chips">
+        <span class="chip">Android</span>
+        <span class="chip">Web</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="../scheda/img/orsetto.png" alt="Illustration of Orsetto, a brown and white dog">
+    </div>
+  </header>
+
+  <section class="card bet">
+    <div class="big"><img src="../scheda/img/app_logo_light.png" alt=""></div>
+    <div>
+      <h2>Pawer is a gamble</h2>
+      <p>Lots of people see an animal on the street, but often nobody knows who to tell. Pawer wants to change that: <strong>whoever meets it reports it, whoever sees it again updates it</strong>, and whoever can help knows where to go.</p>
+      <p>It only works if lots of us use it. Pawer is being tested: <strong>try it and tell us what to improve.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">What it does</div>
+    <h2>Everything you need to help them</h2>
+    <div class="features">
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2l1.5-2h6l1.5 2h2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg></div>
+        <h3>Report an animal</h3>
+        <p>Photos, colours, condition and location: a few steps are enough to let people know where it is.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></div>
+        <h3>Lost pets</h3>
+        <p>Lost your pet? Post an announcement: people in the area get a notification and can call you.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg></div>
+        <h3>Map</h3>
+        <p>The open reports in your region and directions to the spot.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><ellipse cx="7.5" cy="9" rx="2.6" ry="4"/><path d="M5.5 15.5h4"/><ellipse cx="16.5" cy="6.5" rx="2.6" ry="4"/><path d="M14.5 13h4"/><path d="M6 18.5c.5 1.3 2.5 1.3 3 0M15 16c.5 1.3 2.5 1.3 3 0"/></svg></div>
+        <h3>Sightings</h3>
+        <p>If you see an animal again, mark its new position: the whole community keeps its history up to date.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M12 10.5v5.5M9.25 13.25h5.5"/></svg></div>
+        <h3>Shelters</h3>
+        <p>Shelters and useful numbers in your region, to call straight from the app.</p>
+      </div>
+      <div class="card feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Notifications</h3>
+        <p>New reports and lost pets in your area, and sightings of the ones you follow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <div class="label">How it works</div>
+    <h2>Three steps, one rescue</h2>
+    <div class="steps">
+      <div class="card step">
+        <h3>You see it</h3>
+        <p>You come across a stray, injured or lost dog or cat.</p>
+      </div>
+      <div class="card step">
+        <h3>You report it</h3>
+        <p>Take a photo, describe how it is doing and the location fills itself in.</p>
+      </div>
+      <div class="card step">
+        <h3>We follow it</h3>
+        <p>The report appears on the map and every new sighting updates its position, until someone rescues it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Installation</div>
+    <h2>How to install it</h2>
+    <div class="install">
+      <div class="card">
+        <h3>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#6F5B4E" aria-hidden="true"><path d="M6 9h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.5a1.25 1.25 0 0 1-2.5 0V19h-3v2.5a1.25 1.25 0 0 1-2.5 0V19h-.5A1.5 1.5 0 0 1 6 17.5zM3.75 9A1.25 1.25 0 0 1 5 10.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 3.75 9m16.5 0a1.25 1.25 0 0 1 1.25 1.25v5a1.25 1.25 0 0 1-2.5 0v-5A1.25 1.25 0 0 1 20.25 9M8.4 3.1l-.9-1.4a.3.3 0 0 1 .5-.3l.95 1.45A6.3 6.3 0 0 1 12 2.3c1.1 0 2.15.2 3.05.55L16 1.4a.3.3 0 0 1 .5.3l-.9 1.4A5.3 5.3 0 0 1 18 8H6a5.3 5.3 0 0 1 2.4-4.9M9.5 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg>
+          On Android
+        </h3>
+        <div class="download">
+          <img src="../scheda/img/qr_apk.svg" alt="QR code to download the Pawer APK">
+          <div>
+            <p class="qr-main">Scan and download</p>
+            <a class="url" href="https://ndenicolais.github.io/pawer/Pawer.apk">ndenicolais.github.io/pawer/Pawer.apk</a>
+            <a class="btn screen-only" href="https://ndenicolais.github.io/pawer/Pawer.apk">Download the APK · v1.1.0</a>
+          </div>
+        </div>
+        <ol>
+          <li>Download the APK to your phone and open it.</li>
+          <li>If your phone asks, allow <strong>"Install unknown apps"</strong> for the app you are opening it from (browser, WhatsApp, Files…).</li>
+          <li>Tap <strong>Install</strong>, then open Pawer.</li>
+          <li>Sign up with your email or with <strong>Google</strong> and choose your region.</li>
+        </ol>
+        <p class="note">During installation Android may warn you that the app is unsafe or show "App blocked to protect your device": it does this for every app installed outside the Play Store, where Pawer is not available yet. Tap <strong>More details → Install anyway</strong>. Pawer only uses the data described in the <a href="https://ndenicolais.github.io/pawer/privacy/#english">privacy policy</a>. Camera, location and notifications are requested only when needed.</p>
+      </div>
+      <div class="card">
+        <h3>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6F5B4E" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+          On iPhone
+        </h3>
+        <p style="margin-bottom:10px"><span class="tag">In testing</span></p>
+        <ol>
+          <li>Open <strong>pawerapp.web.app</strong> in Safari, or scan the QR code at the bottom.</li>
+          <li>Tap <strong>Share</strong> → <strong>Add to Home Screen</strong>.</li>
+          <li>Open Pawer from its icon like any other app.</li>
+        </ol>
+        <p class="note">It also works in your computer's browser, at the same address.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card memory">
+    <img src="../scheda/img/orsetto.png" alt="Illustration of Orsetto">
+    <div>
+      <div class="label">Why it exists</div>
+      <h2>In memory of Orsetto</h2>
+      <p>Pawer was born for Orsetto, a little brown and white furball found on the street. He was kindness and innocence in dog form, endlessly loyal from the very first moment. Even if only for a short time, he made his whole family's life better.</p>
+      <p>This app is a way to give back everything he gave: <strong>helping other dogs and cats like him find someone to take care of them.</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="cta">Try it and spread the word</div>
+      <p>Every report is a step towards a rescue and, maybe, a new home.</p>
+    </div>
+    <div class="links">
+      Page: <a href="https://ndenicolais.github.io/pawer/">ndenicolais.github.io/pawer</a><br>
+      Website: <a href="https://pawerapp.web.app">pawerapp.web.app</a><br>
+      Privacy: <a href="https://ndenicolais.github.io/pawer/privacy/#english">ndenicolais.github.io/pawer/privacy</a><br>
+      Ideas and issues: <a href="mailto:ndn21dev@gmail.com?subject=Pawer">ndn21dev@gmail.com</a><br>
+      Developed by Nicola De Nicolais
+    </div>
+    <figure class="qr">
+      <img src="../scheda/img/qr_pawerapp.svg" alt="QR code for pawerapp.web.app">
+      <figcaption><span class="url">pawerapp.web.app</span></figcaption>
+    </figure>
+  </footer>
+
+</main>
+</body>
+</html>
